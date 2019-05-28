@@ -1,5 +1,7 @@
 import 'raf/polyfill';
 import React from 'react';
 import { render } from 'react-dom';
+import { HashRouter as Router } from 'react-router-dom';
+import App from './components/App';
 
-render(<div>Hello World!</div>, document.getElementById('root'));
+render(<Router><App /></Router>, document.getElementById('root'));
