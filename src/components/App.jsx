@@ -1,7 +1,8 @@
 import React from 'react';
-import LazyHero from 'react-lazy-hero';
+import HomePage from '../pages/home';
+import Nav from './Nav';
 
-import '../styles/app.scss';
+import '../styles/index.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,12 +12,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <LazyHero
-        imageSrc="https://unsplash.it/2000/1000"
-        minHeight="100vh"
-      >
-        <h1>Generic Startup Hype Headline</h1>
-      </LazyHero>
+      <React.Fragment>
+        <Nav />
+        <HomePage />
+      </React.Fragment>
     );
   }
 }
