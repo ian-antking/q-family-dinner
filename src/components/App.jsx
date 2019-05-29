@@ -1,4 +1,7 @@
 import React from 'react';
+import LazyHero from 'react-lazy-hero';
+
+import '../styles/app.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,10 +11,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Hello World!</h1>
-    )
+      <LazyHero
+        imageSrc="https://unsplash.it/2000/1000"
+        minHeight="100vh"
+      >
+        <h1>Generic Startup Hype Headline</h1>
+      </LazyHero>
+    );
   }
-
 }
 
 export default App;
