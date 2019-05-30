@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../pages/home';
 import AboutPage from '../pages/about';
 import EventsPage from '../pages/events';
+import ContactPage from '../pages/contact';
 import Nav from './Nav';
 
 import '../styles/index.scss';
@@ -30,6 +31,10 @@ class App extends React.Component {
           <Route
             path="/events"
             render={() => <EventsPage />}
+          />
+          <Route
+            path="/contact"
+            render={() => <ContactPage />}
           />
           <Route
             render={() => <Redirect to="/" />}
