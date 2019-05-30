@@ -32,6 +32,7 @@ class Nav extends React.Component {
 
   _handleNavClick(route) {
     this.props.history.push(route);
+    if (this.state.open) this._handleMenuClick();
   }
 
   render() {
