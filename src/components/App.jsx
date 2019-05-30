@@ -25,7 +25,6 @@ class App extends React.Component {
             render={() => <Redirect to="/" />}
           />
         </Switch>
-        <HomePage />
       </React.Fragment>
     );
   }
