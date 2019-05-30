@@ -43,6 +43,7 @@ class Nav extends React.Component {
           <Navbar.Item>
             <Heading
               weight="bold"
+              onClick={() => this._handleNavClick('/')}
             >
               Queer Family Tea
             </Heading>
