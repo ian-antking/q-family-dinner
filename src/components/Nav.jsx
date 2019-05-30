@@ -1,9 +1,24 @@
 import React from 'react';
 import { Navbar, Heading } from 'react-bulma-components/full';
+import { withRouter } from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor(props) {
     super(props);
+    this.links = [
+      {
+        name: 'About',
+        route: '/about',
+      },
+      {
+        name: 'Events',
+        route: '/events',
+      },
+      {
+        name: 'Contact',
+        route: '/contact',
+      },
+    ];
     this.state = {
       open: false,
     };
@@ -13,6 +28,10 @@ class Nav extends React.Component {
     this.setState({
       open: !this.state.open,
     });
+  }
+
+  _handleNavClick(route) {
+    this.props.history.push(route);
   }
 
   render() {
@@ -40,12 +59,18 @@ class Nav extends React.Component {
           <Navbar.Container
             position="end"
           >
-            <Navbar.Item>
-              <h2>About</h2>
-            </Navbar.Item>
-            <Navbar.Item>
-              <h2>Events</h2>
-            </Navbar.Item>
+            {
+              this.links.map(link => {
+                return (
+                  <Navbar.Item
+                    key={`navlink-${link.name}`}
+                    onClick={() => this._handleNavClick(link.route)}
+                  >
+                    <h2>{link.name}</h2>
+                  </Navbar.Item>
+                );
+              })
+            }
           </Navbar.Container>
         </Navbar.Menu>
       </Navbar>
@@ -53,4 +78,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
