@@ -4,6 +4,20 @@ import { Navbar, Heading } from 'react-bulma-components/full';
 class Nav extends React.Component {
   constructor(props) {
     super(props);
+    this.links = [
+      {
+        name: 'About',
+        route: '/about',
+      },
+      {
+        name: 'Events',
+        route: '/events',
+      },
+      {
+        name: 'Contact',
+        route: '/contact',
+      },
+    ];
     this.state = {
       open: false,
     };
@@ -40,12 +54,18 @@ class Nav extends React.Component {
           <Navbar.Container
             position="end"
           >
-            <Navbar.Item>
-              <h2>About</h2>
-            </Navbar.Item>
-            <Navbar.Item>
-              <h2>Events</h2>
-            </Navbar.Item>
+            {
+              this.links.map(link => {
+                return (
+                  <Navbar.Item
+                    key={`navlink-${link.name}`}
+                    onClick={() => window.alert(link.name)}
+                  >
+                    <h2>{link.name}</h2>
+                  </Navbar.Item>
+                );
+              })
+            }
           </Navbar.Container>
         </Navbar.Menu>
       </Navbar>
