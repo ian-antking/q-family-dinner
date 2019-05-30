@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Heading } from 'react-bulma-components/full';
+import { withRouter } from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -27,6 +28,10 @@ class Nav extends React.Component {
     this.setState({
       open: !this.state.open,
     });
+  }
+
+  _handleNavClick(route) {
+    this.props.history.push(route);
   }
 
   render() {
@@ -59,7 +64,7 @@ class Nav extends React.Component {
                 return (
                   <Navbar.Item
                     key={`navlink-${link.name}`}
-                    onClick={() => window.alert(link.name)}
+                    onClick={() => this._handleNavClick(link.route)}
                   >
                     <h2>{link.name}</h2>
                   </Navbar.Item>
@@ -73,4 +78,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
