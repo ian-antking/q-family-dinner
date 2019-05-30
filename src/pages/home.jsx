@@ -1,17 +1,33 @@
 import React from 'react';
 import LazyHero from 'react-lazy-hero';
-import { Heading } from 'react-bulma-components/full';
+import { Heading, Box } from 'react-bulma-components/full';
 
 const HomePage = () => (
   <LazyHero
     imageSrc="https://unsplash.it/2000/1000"
     minHeight="100vh"
   >
-    <Heading
-      size={1}
+    <Box
+      style={
+        {
+          backgroundColor: '#383838',
+          padding: '50px',
+          transform: 'rotate(-20deg)',
+        }
+      }
     >
-      Queer Family Tea
-    </Heading>
+      <Heading
+        size={1}
+        weight="bold"
+        style={
+          {
+            color: 'white',
+          }
+        }
+      >
+        Queer Family Tea
+      </Heading>
+    </Box>
   </LazyHero>
 );
 
