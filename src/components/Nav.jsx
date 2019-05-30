@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from 'react-bulma-components/full';
+import { Navbar, Heading } from 'react-bulma-components/full';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -22,7 +22,11 @@ class Nav extends React.Component {
       >
         <Navbar.Brand>
           <Navbar.Item>
-            <h1>Queer Family Tea</h1>
+            <Heading
+              weight="bold"
+            >
+              Queer Family Tea
+            </Heading>
           </Navbar.Item>
           <Navbar.Burger
             active="open"
