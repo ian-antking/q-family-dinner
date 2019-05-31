@@ -1,9 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import HomePage from '../pages/home';
-import AboutPage from '../pages/about';
-import EventsPage from '../pages/events';
-import ContactPage from '../pages/contact';
+import HomePage from '../containers/home';
+import Page from '../containers/page';
+import Colors from '../utils/colors';
 import Nav from './Nav';
 
 import '../styles/index.scss';
@@ -26,15 +25,39 @@ class App extends React.Component {
           />
           <Route
             path="/about"
-            render={() => <AboutPage />}
+            render={(props) => (
+              <Page
+                {...props}
+                color={Colors.trans.blue}
+                title={'About Us'}
+                page={'about'}
+              />
+            )
+          }
           />
           <Route
             path="/events"
-            render={() => <EventsPage />}
+            render={(props) => (
+              <Page
+                {...props}
+                color={Colors.trans.pink}
+                title={'Events'}
+                page={'events'}
+              />
+            )
+          }
           />
           <Route
             path="/contact"
-            render={() => <ContactPage />}
+            render={(props) => (
+              <Page
+                {...props}
+                color={Colors.trans.blue}
+                title={'Contact Us'}
+                page={'contact'}
+              />
+            )
+          }
           />
           <Route
             render={() => <Redirect to="/" />}

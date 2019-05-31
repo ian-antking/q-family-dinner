@@ -8,7 +8,7 @@ const textStyle = {
   color: Colors.trans.white,
 };
 
-const HomePage = () => (
+const Splash = () => (
   <LazyHero
     minHeight="100vh"
     opacity={0.5}
@@ -46,4 +46,4 @@ const HomePage = () => (
   </LazyHero>
 );
 
-export default HomePage;
+export default Splash;

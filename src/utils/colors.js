@@ -1,6 +1,6 @@
 const Colors = {
   trans: {
-    pink: '#55cdfc',
+    pink: '#f7a8b8',
     blue: '#55cdfc',
     white: '#ffffff',
   },
