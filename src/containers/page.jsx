@@ -22,7 +22,17 @@ const Page = (props) => {
         title={props.title}
         color={props.color}
       />
-      <render.page />
+      <div
+        style={
+          {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }
+        }
+      >
+        <render.page />
+      </div>
     </React.Fragment>
   );
 };
