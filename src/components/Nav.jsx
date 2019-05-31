@@ -2,8 +2,6 @@ import React from 'react';
 import { Navbar, Heading } from 'react-bulma-components/full';
 import { withRouter } from 'react-router-dom';
 
-import '../styles/navbar.scss';
-
 class Nav extends React.Component {
   constructor(props) {
     super(props);

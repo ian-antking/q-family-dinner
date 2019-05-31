@@ -6,6 +6,7 @@ import Colors from './utils/colors';
 import Nav from './components/nav';
 
 import './styles/index.scss';
+import './styles/mobile.scss';
 
 class App extends React.Component {
   constructor(props) {
