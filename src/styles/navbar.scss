@@ -3,13 +3,13 @@
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-    .nav-link{
+    .navbar-end .title{
       font-size: 5em;
 
     }
 
-    #nav-brand{
-      font-size: 3em;
+    .navbar-brand{
+      font-size: 1em;
     }
 
 }

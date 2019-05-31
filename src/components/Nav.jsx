@@ -55,7 +55,6 @@ class Nav extends React.Component {
           <Navbar.Burger
             active="open"
             onClick={() => this._handleMenuClick()}
-            className="is-large"
           />
         </Navbar.Brand>
         <Navbar.Menu
@@ -72,11 +71,7 @@ class Nav extends React.Component {
                     key={`navlink-${link.name}`}
                     onClick={() => this._handleNavClick(link.route)}
                   >
-                    <Heading
-                      className="nav-link"
-                    >
-                      {link.name}
-                    </Heading>
+                    <Heading>{link.name}</Heading>
                   </Navbar.Item>
                 );
               })
