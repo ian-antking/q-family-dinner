@@ -1,35 +1,38 @@
 import React from 'react';
 import { Hero, Heading, Container } from 'react-bulma-components/full';
 
-const PageHeader = (props) => (
-  <Hero
-    style={
-    {
-      backgroundColor: props.color,
+const PageHeader = (props) => {
+  console.log(props.title);
+  return (
+    <Hero
+      style={
+      {
+        backgroundColor: props.color,
+      }
     }
-  }
-  >
-    <Hero.Body>
-      <Container
-        style={
-          {
-            display: 'flex',
-            justifyContent: 'center',
-          }
-        }
-      >
-        <Heading
+    >
+      <Hero.Body>
+        <Container
           style={
             {
-              color: props.textColor || 'white',
+              display: 'flex',
+              justifyContent: 'center',
             }
           }
         >
-          {props.title}
-        </Heading>
-      </Container>
-    </Hero.Body>
-  </Hero>
-);
+          <Heading
+            style={
+              {
+                color: props.textColor || 'white',
+              }
+            }
+          >
+            {props.title}
+          </Heading>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  );
+};
 
 export default PageHeader;
