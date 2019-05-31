@@ -1,9 +1,9 @@
 import React from 'react';
 import LazyHero from 'react-lazy-hero';
 import { Heading, Box } from 'react-bulma-components/full';
-import prideGradient from '../assets/pride-gradient';
+import prideGradient from '../utils/pride-gradient';
 
-const textStyle =  {
+const textStyle = {
   color: 'white',
 };
 
