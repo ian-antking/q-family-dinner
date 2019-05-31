@@ -1,9 +1,11 @@
 import React from 'react';
 import PageHeader from '../components/page-header';
+import Colors from '../utils/colors';
+
 
 const EventsPage = () => (
   <PageHeader
-    color="#f7a8b8"
+    color={Colors.trans.pink}
     title="Events"
   />
 );
