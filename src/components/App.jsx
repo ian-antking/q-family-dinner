@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../pages/home';
 import Nav from './Nav';
 
@@ -14,7 +15,16 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Nav />
-        <HomePage />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage />}
+          />
+          <Route
+            render={() => <Redirect to="/" />}
+          />
+        </Switch>
       </React.Fragment>
     );
   }
