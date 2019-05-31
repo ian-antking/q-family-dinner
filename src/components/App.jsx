@@ -30,6 +30,7 @@ class App extends React.Component {
                 {...props}
                 color={Colors.trans.blue}
                 title={'About Us'}
+                page={'about'}
               />
             )
           }
@@ -41,6 +42,7 @@ class App extends React.Component {
                 {...props}
                 color={Colors.trans.pink}
                 title={'Events'}
+                page={'events'}
               />
             )
           }
@@ -52,6 +54,7 @@ class App extends React.Component {
                 {...props}
                 color={Colors.trans.blue}
                 title={'Contact Us'}
+                page={'contact'}
               />
             )
           }
