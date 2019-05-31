@@ -2,6 +2,8 @@ import React from 'react';
 import { Navbar, Heading } from 'react-bulma-components/full';
 import { withRouter } from 'react-router-dom';
 
+import '../styles/navbar.scss';
+
 class Nav extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +47,7 @@ class Nav extends React.Component {
             <Heading
               weight="bold"
               onClick={() => this._handleNavClick('/')}
+              id="nav-brand"
             >
               Queer Family Tea
             </Heading>
@@ -52,6 +55,7 @@ class Nav extends React.Component {
           <Navbar.Burger
             active="open"
             onClick={() => this._handleMenuClick()}
+            className="is-large"
           />
         </Navbar.Brand>
         <Navbar.Menu
@@ -68,7 +72,11 @@ class Nav extends React.Component {
                     key={`navlink-${link.name}`}
                     onClick={() => this._handleNavClick(link.route)}
                   >
-                    <Heading>{link.name}</Heading>
+                    <Heading
+                      className="nav-link"
+                    >
+                      {link.name}
+                    </Heading>
                   </Navbar.Item>
                 );
               })
