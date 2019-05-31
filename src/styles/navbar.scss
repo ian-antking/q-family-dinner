@@ -3,13 +3,18 @@
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-    .navbar-end .title{
-      font-size: 5em;
+    .navbar-brand{
+      font-size: 1em;
+    }
+
+    .navbar-burger{
+      width: 6.5rem;
 
     }
 
-    .navbar-brand{
-      font-size: 1em;
+    .navbar-end .title{
+      font-size: 5em;
+
     }
 
 }
