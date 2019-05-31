@@ -1,9 +1,11 @@
 import React from 'react';
 import PageHeader from '../components/page-header';
+import Colors from '../utils/colors';
+
 
 const ContactPage = () => (
   <PageHeader
-    color="#55cdfc"
+    color={Colors.trans.blue}
     title="Contact"
   />
 );
