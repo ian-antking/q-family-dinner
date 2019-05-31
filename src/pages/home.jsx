@@ -2,9 +2,10 @@ import React from 'react';
 import LazyHero from 'react-lazy-hero';
 import { Heading, Box } from 'react-bulma-components/full';
 import prideGradient from '../utils/pride-gradient';
+import Colors from '../utils/colors';
 
 const textStyle = {
-  color: 'white',
+  color: Colors.trans.white,
 };
 
 const HomePage = () => (
@@ -21,7 +22,7 @@ const HomePage = () => (
     <Box
       style={
         {
-          backgroundColor: '#383838',
+          backgroundColor: Colors.general.darkGrey,
           padding: '50px',
           transform: 'rotate(-20deg)',
         }
