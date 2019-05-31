@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import HomePage from '../containers/home';
-import Page from '../containers/page';
-import Colors from '../utils/colors';
-import Nav from './Nav';
+import HomePage from './containers/home';
+import Page from './containers/page';
+import Colors from './utils/colors';
+import Nav from './components/nav';
 
-import '../styles/index.scss';
+import './styles/index.scss';
 
 class App extends React.Component {
   constructor(props) {

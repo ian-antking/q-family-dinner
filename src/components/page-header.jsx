@@ -2,7 +2,6 @@ import React from 'react';
 import { Hero, Heading, Container } from 'react-bulma-components/full';
 
 const PageHeader = (props) => {
-  console.log(props.title);
   return (
     <Hero
       style={
