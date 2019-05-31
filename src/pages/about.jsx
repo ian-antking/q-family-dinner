@@ -1,7 +1,12 @@
 import React from 'react';
+import PageHeader from '../components/page-header';
+
 
 const About = () => (
-  <h1>About Page</h1>
+  <PageHeader
+    color="#55cdfc"
+    title="About Us"
+  />
 );
 
 export default About;

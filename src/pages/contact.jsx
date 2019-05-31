@@ -1,7 +1,11 @@
 import React from 'react';
+import PageHeader from '../components/page-header';
 
 const ContactPage = () => (
-  <h1>Contact Page</h1>
+  <PageHeader
+    color="#55cdfc"
+    title="Contact"
+  />
 );
 
 export default ContactPage;
