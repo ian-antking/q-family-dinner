@@ -4,7 +4,7 @@
   and (-webkit-min-device-pixel-ratio: 2) {
 
     *{
-      font-size: 150%;
+      font-size: 100%;
     }
 
     article{
@@ -16,5 +16,13 @@
       height: 6.5rem;
     }
 
+    .section{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container{
+      width: 90%;
+    }
 
 }

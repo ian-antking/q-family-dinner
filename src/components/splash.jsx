@@ -36,11 +36,11 @@ const Splash = () => (
         Queer Family Tea
       </Heading>
       <Heading
-        size={3}
+        size={4}
         subtitle
         style={textStyle}
       >
-        [inspirational subheading here]
+        For the queer community by the queer community.
       </Heading>
     </Box>
   </LazyHero>
