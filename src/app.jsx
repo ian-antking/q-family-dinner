@@ -17,53 +17,57 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Nav />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <HomePage />}
-          />
-          <Route
-            path="/about"
-            render={(props) => (
-              <Page
-                {...props}
-                color={Colors.trans.blue}
-                title={'About Us'}
-                page={'about'}
-              />
-            )
-          }
-          />
-          <Route
-            path="/events"
-            render={(props) => (
-              <Page
-                {...props}
-                color={Colors.trans.pink}
-                title={'Events'}
-                page={'events'}
-              />
-            )
-          }
-          />
-          <Route
-            path="/contact"
-            render={(props) => (
-              <Page
-                {...props}
-                color={Colors.trans.blue}
-                title={'Contact Us'}
-                page={'contact'}
-              />
-            )
-          }
-          />
-          <Route
-            render={() => <Redirect to="/" />}
-          />
-        </Switch>
+        <header>
+          <Nav />
+        </header>
+        <article>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <HomePage />}
+            />
+            <Route
+              path="/about"
+              render={(props) => (
+                <Page
+                  {...props}
+                  color={Colors.trans.blue}
+                  title={'About Us'}
+                  page={'about'}
+                />
+              )
+            }
+            />
+            <Route
+              path="/events"
+              render={(props) => (
+                <Page
+                  {...props}
+                  color={Colors.trans.pink}
+                  title={'Events'}
+                  page={'events'}
+                />
+              )
+            }
+            />
+            <Route
+              path="/contact"
+              render={(props) => (
+                <Page
+                  {...props}
+                  color={Colors.trans.blue}
+                  title={'Contact Us'}
+                  page={'contact'}
+                />
+              )
+            }
+            />
+            <Route
+              render={() => <Redirect to="/" />}
+            />
+          </Switch>
+        </article>
       </React.Fragment>
     );
   }
