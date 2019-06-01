@@ -16,4 +16,13 @@
       height: 6.5rem;
     }
 
+    .section{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container{
+      width: 90%;
+    }
+
 }
