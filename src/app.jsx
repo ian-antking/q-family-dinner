@@ -11,7 +11,20 @@ import './styles/mobile.scss';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      events: null,
+    };
+  }
+
+  componentDidMount() {
+    window.fetch('./src/content/mock_events.json')
+      .then(res => res.json())
+      .then(body => {
+        this.setState({
+          events: body.events,
+        });
+        console.log(this.state.events);
+      });
   }
 
   render() {
