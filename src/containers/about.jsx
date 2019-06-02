@@ -1,6 +1,11 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Section, Content, Heading, Container } from 'react-bulma-components/full';
+import {
+  Section,
+  Content,
+  Heading,
+  Container,
+} from 'react-bulma-components/full';
 
 
 const AboutPage = () => (
