@@ -31,7 +31,9 @@ const Page = (props) => {
           }
         }
       >
-        <render.page />
+        <render.page
+          {...props}
+        />
       </div>
     </React.Fragment>
   );

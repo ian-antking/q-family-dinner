@@ -16,15 +16,21 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  _fetchEvents() {
     window.fetch('./src/content/mock_events.json')
       .then(res => res.json())
       .then(body => {
-        this.setState({
-          events: body.events,
+        const eventList = body.events.sort((event1, event2) => {
+          return event1.date - event2.date;
         });
-        console.log(this.state.events);
+        this.setState({
+          events: eventList,
+        });
       });
+  }
+
+  componentDidMount() {
+    this._fetchEvents();
   }
 
   render() {
@@ -60,6 +66,7 @@ class App extends React.Component {
                   color={Colors.trans.pink}
                   title={'Events'}
                   page={'events'}
+                  events={this.state.events}
                 />
               )
             }
