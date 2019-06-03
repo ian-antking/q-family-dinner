@@ -4,6 +4,7 @@ import HomePage from './containers/home';
 import Page from './containers/page';
 import Colors from './utils/colors';
 import Nav from './components/nav';
+import apiString from './utils/api-config';
 
 import './styles/index.scss';
 import './styles/mobile.scss';
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
 
   _fetchEvents() {
-    window.fetch('./src/content/mock_events.json')
+    window.fetch(`${apiString}/event`)
       .then(res => res.json())
       .then(body => {
         const eventList = body.events.sort((event1, event2) => {
