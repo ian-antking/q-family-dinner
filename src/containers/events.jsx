@@ -1,10 +1,10 @@
 import React from 'react';
 import EventCard from '../components/event-card';
-import { Loader } from 'react-bulma-components/full';
+import { Loader, Heading } from 'react-bulma-components/full';
 
-const EventsPage = (props) => (
-  props.events ? (
-    props.events.map(event => {
+const _renderEvents = (events) => {
+  return events.length > 0 ? (
+    events.map(event => {
       return (
         <EventCard
           key={event._id}
@@ -13,8 +13,27 @@ const EventsPage = (props) => (
       );
     })
   ) : (
-    <Loader />
-  )
-);
+    <React.Fragment>
+      <Heading>
+        No Events Yet
+      </Heading>
+      <Heading
+        subtitle
+      >
+        Check back soon!
+      </Heading>
+    </React.Fragment>
+  );
+};
+
+const EventsPage = (props) => {
+  return (
+    props.events ? (
+      _renderEvents(props.events)
+    ) : (
+      <Loader />
+    )
+  );
+};
 
 export default EventsPage;
