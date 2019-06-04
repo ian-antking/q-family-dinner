@@ -19,7 +19,7 @@ class App extends React.Component {
     };
     this.flagInterval = setInterval(() => {
       this.setState({
-        splashFlag: this._randomFlag(),
+        splashFlag: this.changeFlag(),
       });
     }, 5000);
   }
@@ -28,7 +28,6 @@ class App extends React.Component {
     const keys = Object.keys(Flags);
     return Flags[keys[Math.floor(Math.random() * keys.length)]];
   };
-
 
   _fetchEvents() {
     window.fetch(`${apiString}/event`)
@@ -42,6 +41,16 @@ class App extends React.Component {
         });
       });
   }
+
+  changeFlag = () => {
+    const flag = this._randomFlag();
+    if (this.splashFlag !== flag) {
+      return this.setState({
+        splashFlag: flag,
+      });
+    }
+    this.changeFlag();
+  };
 
   componentDidMount() {
     this._fetchEvents();
