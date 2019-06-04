@@ -11,7 +11,7 @@ const Splash = (props) => {
   return (
     <LazyHero
       minHeight="100vh"
-      opacity={0.25}
+      opacity={0.5}
       imgSrc=""
       style={
       {
