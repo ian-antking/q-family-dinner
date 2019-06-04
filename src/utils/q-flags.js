@@ -50,7 +50,62 @@ const Flags = {
     ${Colors.pan.yellow} ${(100 / 3) * 2}%,
     ${Colors.pan.blue} ${(100 / 3) * 2}%,
     ${Colors.pan.blue} ${(100 / 3) * 3}%
-  )`
+  )`,
+  polysexual: `linear-gradient(
+    180deg,
+    ${Colors.polysexual.pink} 0%,
+    ${Colors.polysexual.pink} ${100 / 3}%,
+    ${Colors.polysexual.green} ${100 / 3}%,
+    ${Colors.polysexual.green} ${(100 / 3) * 2}%,
+    ${Colors.polysexual.blue} ${(100 / 3) * 2}%,
+    ${Colors.polysexual.blue} ${(100 / 3) * 3}%
+  )`,
+  asexual: `linear-gradient(
+    180deg,
+    ${Colors.asexual.black} 0%,
+    ${Colors.asexual.black} 25%,
+    ${Colors.asexual.grey} 25%,
+    ${Colors.asexual.grey} 50%,
+    ${Colors.asexual.white} 50%,
+    ${Colors.asexual.white} 75%,
+    ${Colors.asexual.purple} 75%,
+    ${Colors.asexual.purple} 100%
+    )`,
+  nonbinary: `linear-gradient(
+      180deg,
+      ${Colors.nonbinary.black} 0%,
+      ${Colors.nonbinary.black} 20%,
+      ${Colors.nonbinary.yellow} 20%,
+      ${Colors.nonbinary.yellow} 40%,
+      ${Colors.nonbinary.white} 40%,
+      ${Colors.nonbinary.white} 60%,
+      ${Colors.nonbinary.purple} 60%,
+      ${Colors.nonbinary.purple} 80%,
+      ${Colors.nonbinary.black} 80%,
+      ${Colors.nonbinary.black} 100%
+      )`,
+  genderqueer: `linear-gradient(
+    180deg,
+    ${Colors.genderqueer.purple} 0%,
+    ${Colors.genderqueer.purple} ${100 / 3}%,
+    ${Colors.genderqueer.white} ${100 / 3}%,
+    ${Colors.genderqueer.white} ${(100 / 3) * 2}%,
+    ${Colors.genderqueer.green} ${(100 / 3) * 2}%,
+    ${Colors.genderqueer.green} ${(100 / 3) * 3}%
+  )`,
+  nonbinary: `linear-gradient(
+    180deg,
+    ${Colors.genderfluid.pink} 0%,
+    ${Colors.genderfluid.pink} 20%,
+    ${Colors.genderfluid.white} 20%,
+    ${Colors.genderfluid.white} 40%,
+    ${Colors.genderfluid.purple} 40%,
+    ${Colors.genderfluid.purple} 60%,
+    ${Colors.genderfluid.black} 60%,
+    ${Colors.genderfluid.black} 80%,
+    ${Colors.genderfluid.blue} 80%,
+    ${Colors.genderfluid.blue} 100%
+    )`,
 };
 
 export default Flags;
