@@ -5,6 +5,7 @@ import Page from './containers/page';
 import Colors from './utils/colors';
 import Nav from './components/nav';
 import apiString from './utils/api-config';
+import Flags from './utils/q-flags';
 
 import './styles/index.scss';
 import './styles/mobile.scss';
@@ -14,8 +15,20 @@ class App extends React.Component {
     super(props);
     this.state = {
       events: null,
+      splashFlag: this._randomFlag(),
     };
+    this.flagInterval = setInterval(() => {
+      this.setState({
+        splashFlag: this._randomFlag(),
+      });
+    }, 5000);
   }
+
+  _randomFlag = () => {
+    const keys = Object.keys(Flags);
+    return Flags[keys[Math.floor(Math.random() * keys.length)]];
+  };
+
 
   _fetchEvents() {
     window.fetch(`${apiString}/event`)
@@ -34,6 +47,10 @@ class App extends React.Component {
     this._fetchEvents();
   }
 
+  componentWillUnmount() {
+    clearInterval(this.flagInterval);
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -45,7 +62,12 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              render={() => <HomePage />}
+              render={(props) => (
+                <HomePage
+                  {...props}
+                  flag={this.state.splashFlag}
+                />
+              )}
             />
             <Route
               path="/about"
