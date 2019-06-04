@@ -18,9 +18,7 @@ class App extends React.Component {
       splashFlag: this._randomFlag(),
     };
     this.flagInterval = setInterval(() => {
-      this.setState({
-        splashFlag: this.changeFlag(),
-      });
+      this.changeFlag();
     }, 5000);
   }
 
@@ -44,12 +42,13 @@ class App extends React.Component {
 
   changeFlag = () => {
     const flag = this._randomFlag();
-    if (this.splashFlag !== flag) {
-      return this.setState({
+    if (this.state.splashFlag !== flag) {
+      this.setState({
         splashFlag: flag,
       });
-    }
-    this.changeFlag();
+    } else {
+      this.changeFlag();
+    };
   };
 
   componentDidMount() {
