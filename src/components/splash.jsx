@@ -1,11 +1,16 @@
 import React from 'react';
 import LazyHero from 'react-lazy-hero';
 import { Heading, Box } from 'react-bulma-components/full';
-import prideGradient from '../utils/pride-gradient';
+import Flags from '../utils/q-flags';
 import Colors from '../utils/colors';
 
 const textStyle = {
   color: Colors.trans.white,
+};
+
+const _randomFlag = () => {
+  const keys = Object.keys(Flags);
+  return Flags[keys[Math.floor(Math.random() * keys.length)]];
 };
 
 const Splash = () => (
@@ -14,7 +19,7 @@ const Splash = () => (
     opacity={0.5}
     style={
       {
-        background: prideGradient,
+        background: _randomFlag(),
         overflow: 'hidden',
       }
     }
