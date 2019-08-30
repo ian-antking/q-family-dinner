@@ -1,0 +1,13 @@
+.contact-card{
+    margin: 10%;
+}
+
+.link-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a > .link-list{
+    font-size: 45pt;
+}
