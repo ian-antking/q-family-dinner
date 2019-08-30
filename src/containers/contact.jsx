@@ -1,7 +1,8 @@
 import React from 'react';
+import ContactInfo from '../components/contact-info';
 
 const ContactPage = () => (
-  <h1>contact</h1>
+  <ContactInfo />
 );
 
 export default ContactPage;
