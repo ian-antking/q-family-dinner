@@ -1,11 +1,17 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  Redirect,
+  withRouter,
+} from 'react-router-dom';
 import HomePage from './containers/home';
 import Page from './containers/page';
 import Colors from './utils/colors';
-import Nav from './components/nav';
+import Nav from './components/Nav';
 import apiString from './utils/api-config';
 import Flags from './utils/q-flags';
+import SocialsCard from './components/socials-card';
 
 import './styles/index.scss';
 import './styles/mobile.scss';
@@ -48,7 +54,7 @@ class App extends React.Component {
       });
     } else {
       this.changeFlag();
-    };
+    }
   };
 
   componentDidMount() {
@@ -108,7 +114,7 @@ class App extends React.Component {
                 <Page
                   {...props}
                   color={Colors.trans.blue}
-                  title={'Contact Us'}
+                  title={'Contact'}
                   page={'contact'}
                 />
               )
@@ -119,9 +125,21 @@ class App extends React.Component {
             />
           </Switch>
         </article>
+        <footer>
+          { this.props.location.pathname !== '/contact' ? (
+            <SocialsCard
+              facebook="https://www.facebook.com/Queer-Family-Tea-638643326624464"
+              instagram="https://www.instagram.com/queerfamilytea/"
+              email="mailto:info@queerfamilytea.com"
+            />
+          ) : (
+            null
+          )
+          }
+        </footer>
       </React.Fragment>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
