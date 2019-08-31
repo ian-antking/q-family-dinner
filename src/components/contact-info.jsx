@@ -1,32 +1,39 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookSquare,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import SocialsCard from './socials-card';
+
 import {
   Content,
   Container,
+  Heading,
+  Section,
 } from 'react-bulma-components/full';
 
 import '../styles/contact-info.scss';
 
 const ContactInfo = () => (
   <Content>
-    <Container className="contact-card">
-      <div className="link-list">
-        <a href="https://www.facebook.com/Queer-Family-Tea-638643326624464">
-          <FontAwesomeIcon icon={faFacebookSquare} />
-        </a>
-        <a href="https://www.instagram.com/queerfamilytea/">
-          <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a href="mailto:info@queerfamilytea.com">
-          <FontAwesomeIcon icon={faEnvelopeSquare} />
-        </a>
-      </div>
-    </Container>
+    <Section>
+
+      <Container className="contact-card">
+        <Heading>Queer Family Tea</Heading>
+        <SocialsCard
+          facebook="https://www.facebook.com/Queer-Family-Tea-638643326624464"
+          instagram="https://www.instagram.com/queerfamilytea/"
+          email="mailto:info@queerfamilytea.com"
+        />
+      </Container>
+
+      <Container className="contact-card">
+        <Heading>Partisan</Heading>
+        <SocialsCard
+          website="https://partisancollective.net"
+          facebook="https://www.facebook.com/partisancollective/"
+          instagram="https://www.instagram.com/partisancollective/?hl=en"
+          email="mailto:info@partisancollective.net"
+        />
+      </Container>
+
+    </Section>
   </Content>
 );
 
