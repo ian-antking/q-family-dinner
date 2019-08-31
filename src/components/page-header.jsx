@@ -1,5 +1,7 @@
 import React from 'react';
-import { Hero, Heading, Container } from 'react-bulma-components/full';
+import { Hero, Heading } from 'react-bulma-components/full';
+
+import '../styles/index.scss';
 
 const PageHeader = (props) => {
   return (
@@ -11,14 +13,7 @@ const PageHeader = (props) => {
     }
     >
       <Hero.Body>
-        <Container
-          style={
-            {
-              display: 'flex',
-              justifyContent: 'center',
-            }
-          }
-        >
+        <div className="heading-container">
           <Heading
             style={
               {
@@ -28,7 +23,7 @@ const PageHeader = (props) => {
           >
             {props.title}
           </Heading>
-        </Container>
+        </div>
       </Hero.Body>
     </Hero>
   );

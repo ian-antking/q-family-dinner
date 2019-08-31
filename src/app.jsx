@@ -114,7 +114,7 @@ class App extends React.Component {
                 <Page
                   {...props}
                   color={Colors.trans.blue}
-                  title={'Contact Us'}
+                  title={'Contact'}
                   page={'contact'}
                 />
               )

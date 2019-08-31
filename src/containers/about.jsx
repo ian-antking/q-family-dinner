@@ -10,16 +10,14 @@ import {
 
 const AboutPage = () => (
   <Content>
-    <Section>
-      <Container>
-        <p>
-        Queer family tea is a weekly gathering at Partisan each Thursday between 6pm and 9pm.  It originated from a group of queers coming together in each others home and we decided more people might like to take part. So we are trialling it to see if this is true.
-        </p>
-        <p>
-        This is a non profit and volunteer led event ran by the queer community for the queer community and those who support them.  Remember that when you come along.  We are just a group of queers trying to make a positive difference. We will probably have teething problems in the beginning.  If we aren't doing something well then please feel free to tell us. All we ask is that you suggest solutions to things, and if you feel able help to improve them.
-        </p>
-      </Container>
-    </Section>
+    <Container>
+      <p>
+      Queer family tea is a weekly gathering at Partisan each Thursday between 6pm and 9pm.  It originated from a group of queers coming together in each others home and we decided more people might like to take part. So we are trialling it to see if this is true.
+      </p>
+      <p>
+      This is a non profit and volunteer led event ran by the queer community for the queer community and those who support them.  Remember that when you come along.  We are just a group of queers trying to make a positive difference. We will probably have teething problems in the beginning.  If we aren't doing something well then please feel free to tell us. All we ask is that you suggest solutions to things, and if you feel able help to improve them.
+      </p>
+    </Container>
     <Section>
       <Container>
         <Heading>
@@ -40,7 +38,7 @@ const AboutPage = () => (
             Unfortunately at the moment Partisan isn't wheelchair accessible but they are seeking funding to deal with this. We will actively support the other range of disabilities both visible and invisible as best as we can.
         </p>
         <p>
-            Please note: you don't have to prove your queerness to us!
+          <b>Please note: you don't have to prove your queerness to us!</b>
         </p>
       </Container>
     </Section>
