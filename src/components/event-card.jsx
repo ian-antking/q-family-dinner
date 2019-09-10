@@ -1,20 +1,32 @@
 import React from 'react';
-import { Card, Heading } from 'react-bulma-components/full';
+import { Card, Heading, Container } from 'react-bulma-components/full';
+import { parseISO, format } from 'date-fns';
 
 const EventCard = (props) => {
-  const date = props.event.start_time;
+  const date = parseISO(props.event.start_time);
   return (
     <Card>
       <Heading
-        size={3}
+        size={4}
       >
         {props.event.name}
       </Heading>
       <Heading
-        size={4}
+        size={5}
       >
-        {date}
+        {`${format(date, 'io MMM yy')} - ${format(date, 'HH:mm')}`}
       </Heading>
+      <Container>
+        {props.event.description}
+      </Container>
+      <Heading>
+        Location
+      </Heading>
+      <Container>
+        <span>{props.event.place.location.city}</span>
+        <span>{props.event.place.location.longitude}</span>
+        <span>{props.event.place.location.latitude}</span>
+      </Container>
     </Card>
   );
 };
