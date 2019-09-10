@@ -4,6 +4,7 @@ import {
   Route,
   Redirect,
   withRouter,
+  Link,
 } from 'react-router-dom';
 import HomePage from './containers/home';
 import Page from './containers/page';
@@ -24,7 +25,9 @@ class App extends React.Component {
       splashFlag: this._randomFlag(),
     };
     this.flagInterval = setInterval(() => {
-      this.changeFlag();
+      if (this.props.location.pathname === '/') {
+        this.changeFlag();
+      }
     }, 5000);
   }
 
@@ -37,7 +40,7 @@ class App extends React.Component {
     window.fetch(`${apiString}/event`)
       .then(res => res.json())
       .then(body => {
-        const eventList = body.events.sort((event1, event2) => {
+        const eventList = body.data.sort((event1, event2) => {
           return event1.date - event2.date;
         });
         this.setState({
@@ -121,6 +124,18 @@ class App extends React.Component {
             }
             />
             <Route
+              exact
+              path="/privacy"
+              render={(props) => (
+                <Page
+                  {...props}
+                  color={Colors.trans.pink}
+                  title={'Privacy Policy'}
+                  page={'privacy'}
+                />
+              )}
+            />
+            <Route
               render={() => <Redirect to="/" />}
             />
           </Switch>
@@ -132,6 +147,14 @@ class App extends React.Component {
               instagram="https://www.instagram.com/queerfamilytea/"
               email="mailto:info@queerfamilytea.com"
             />
+          ) : (
+            null
+          )
+          }
+          { this.props.location.pathname !== '/privacy' ? (
+            <div className="link-list">
+              <Link className="link" to="/privacy">Our Privacy Policy</Link>
+            </div>
           ) : (
             null
           )

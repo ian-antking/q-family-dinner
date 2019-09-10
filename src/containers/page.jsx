@@ -3,11 +3,13 @@ import PageHeader from '../components/page-header';
 import AboutPage from './about';
 import EventsPage from './events';
 import ContactPage from './contact';
+import PrivacyPage from './privacy';
 
 const pages = {
   about: AboutPage,
   events: EventsPage,
   contact: ContactPage,
+  privacy: PrivacyPage,
 };
 
 
