@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Heading, Container } from 'react-bulma-components/full';
+import { Card, Heading, Container, Content } from 'react-bulma-components/full';
 import { parseISO, format } from 'date-fns';
 
 const EventCard = (props) => {
@@ -16,9 +16,9 @@ const EventCard = (props) => {
       >
         {`${format(date, 'io MMM yy')} - ${format(date, 'HH:mm')}`}
       </Heading>
-      <Container>
+      <Content style={{ whiteSpace: 'pre-line' }}>
         {props.event.description}
-      </Container>
+      </Content>
       <Heading>
         Location
       </Heading>
