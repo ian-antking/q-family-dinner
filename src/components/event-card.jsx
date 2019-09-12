@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   Heading,
-  Container,
   Content,
 } from 'react-bulma-components/full';
 import { parseISO, format } from 'date-fns';
