@@ -3,5 +3,11 @@
     overflow: hidden;
 }
 .open{
-    height: 100%;
+    height: auto;
+}
+
+.expand-button{
+    size: 1.5em;
+    width: 100%;
+    text-align: right;
 }
