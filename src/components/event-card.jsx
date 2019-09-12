@@ -1,6 +1,13 @@
 import React from 'react';
-import { Card, Heading, Container, Content } from 'react-bulma-components/full';
+import {
+  Card,
+  Heading,
+  Container,
+  Content,
+} from 'react-bulma-components/full';
 import { parseISO, format } from 'date-fns';
+import MapComponent from './map-component';
+import { googleKey } from '../utils/api-config';
 
 const EventCard = (props) => {
   const date = parseISO(props.event.start_time);
@@ -22,11 +29,15 @@ const EventCard = (props) => {
       <Heading>
         Location
       </Heading>
-      <Container>
-        <span>{props.event.place.location.city}</span>
-        <span>{props.event.place.location.longitude}</span>
-        <span>{props.event.place.location.latitude}</span>
-      </Container>
+      <MapComponent
+        isMarkerShown
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${googleKey}`}
+        loadingElement={<div style={{ height: '100%' }} />}
+        containerElement={<div style={{ height: '400px' }} />}
+        mapElement={<div style={{ height: '100%' }} />}
+        longitude={props.event.place.location.longitude}
+        latitude={props.event.place.location.latitude}
+      />
     </Card>
   );
 };
