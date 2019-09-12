@@ -1,4 +1,41 @@
 body{
   margin: 0px;
+  padding: 0px;
   
+}
+
+.content{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.container{
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card{
+  width: 30vw;
+  margin: 1%;
+  padding: 1%;
 }

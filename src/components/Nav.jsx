@@ -45,6 +45,7 @@ class Nav extends React.Component {
             <Heading
               weight="bold"
               onClick={() => this._handleNavClick('/')}
+              id="nav-brand"
             >
               Queer Family Tea
             </Heading>
@@ -68,7 +69,7 @@ class Nav extends React.Component {
                     key={`navlink-${link.name}`}
                     onClick={() => this._handleNavClick(link.route)}
                   >
-                    <h2>{link.name}</h2>
+                    <Heading>{link.name}</Heading>
                   </Navbar.Item>
                 );
               })
