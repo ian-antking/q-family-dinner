@@ -5,7 +5,7 @@ import {
 import ImageCard from './image-card';
 
 const ImageGallery = (props) => (
-  <Section>
+  <Section className="image-gallery">
     {
       props.images.map(image => {
         return (
@@ -13,6 +13,7 @@ const ImageGallery = (props) => (
             key={image.node.id}
             altText={image.node.accessibility_caption}
             image={image.node.display_url}
+            text={image.node.edge_media_to_caption.edges[0]}
           />
         );
       })

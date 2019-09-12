@@ -35,7 +35,19 @@ body{
 }
 
 .card{
-  width: 30vw;
+  width: 500px;
   margin: 1%;
   padding: 1%;
+}
+
+.image-gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.image {
+   min-width: 150px;
 }

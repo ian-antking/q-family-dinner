@@ -3,6 +3,7 @@ import {
   Image,
   Card,
 } from 'react-bulma-components/full';
+import CollapseText from './collapse-text';
 
 const ImageCard = (props) => {
   return (
@@ -11,6 +12,9 @@ const ImageCard = (props) => {
         src={props.image}
         alt={props.altText}
         size={'square'}
+      />
+      <CollapseText
+        text={props.text ? props.text.node.text : null}
       />
     </Card>
   );
