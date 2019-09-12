@@ -10,7 +10,10 @@ import HomePage from './containers/home';
 import Page from './containers/page';
 import Colors from './utils/colors';
 import Nav from './components/Nav';
-import { apiString } from './utils/api-config';
+import {
+  apiString,
+  instagramUsername,
+} from './utils/api-config';
 import Flags from './utils/q-flags';
 import SocialsCard from './components/socials-card';
 
@@ -22,6 +25,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       events: null,
+      images: null,
       splashFlag: this._randomFlag(),
     };
     this.flagInterval = setInterval(() => {
@@ -49,6 +53,17 @@ class App extends React.Component {
       });
   }
 
+  _fetchImages() {
+    const url = `https://www.instagram.com/${instagramUsername}/?__a=1`;
+    window.fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          images: data.graphql.user.edge_owner_to_timeline_media.edges,
+        });
+      });
+  }
+
   changeFlag = () => {
     const flag = this._randomFlag();
     if (this.state.splashFlag !== flag) {
@@ -61,7 +76,9 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this._fetchEvents();
+    this._fetchImages();
   }
 
   componentWillUnmount() {
@@ -83,6 +100,7 @@ class App extends React.Component {
                 <HomePage
                   {...props}
                   flag={this.state.splashFlag}
+                  images={this.state.images}
                 />
               )}
             />
