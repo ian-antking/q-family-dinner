@@ -7,7 +7,7 @@ const _renderEvents = (events) => {
     events.map(event => {
       return (
         <EventCard
-          key={event._id}
+          key={event.id}
           event={event}
         />
       );

@@ -4,8 +4,9 @@
   "description": "front end app for managing lgbt+ dinner club",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack-dev-server --inline --hot --no-info --env dev",
+    "build:dev": "webpack --env dev --progress --profile --colors",
+    "build:prod": "webpack --env prod --progress --profile --colors",
     "test": "jest"
   },
   "keywords": [
@@ -27,14 +28,17 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.19.0",
-    "moment": "^2.24.0",
+    "date-fns": "^2.1.0",
+    "google-maps-react": "^2.0.2",
     "prop-types": "^15.6.1",
     "raf": "^3.4.0",
     "react": "^16.3.2",
     "react-bulma-components": "^2.3.0",
     "react-dom": "^16.3.2",
+    "react-google-maps": "^9.4.5",
     "react-lazy-hero": "^2.0.0",
     "react-router-dom": "^5.0.0",
+    "react-text-collapse": "^0.5.2",
     "styled-components": "^4.2.1"
   },
   "devDependencies": {
