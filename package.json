@@ -4,8 +4,9 @@
   "description": "front end app for managing lgbt+ dinner club",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack-dev-server --inline --hot --no-info --env dev",
+    "build:dev": "webpack --env dev --progress --profile --colors",
+    "build:prod": "webpack --env prod --progress --profile --colors",
     "test": "jest"
   },
   "keywords": [
