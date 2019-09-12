@@ -1,6 +1,6 @@
 import React from 'react';
 import Splash from '../components/splash';
-import ImageGallery from '../components/image-gallery'
+import ImageGallery from '../components/image-gallery';
 
 const HomePage = (props) => (
   <React.Fragment>
@@ -8,7 +8,7 @@ const HomePage = (props) => (
       flag={props.flag}
     />
     {props.images ? (
-      <ImageGallery 
+      <ImageGallery
         images={props.images}
       />
     ) : (

@@ -18,12 +18,19 @@ class CollapseText extends React.Component {
   render() {
     const { expanded } = this.state;
     return (
-      <p
-        className={expanded ? 'open' : 'closed'}
-        onClick={this.toggle}
-      >
-        {this.props.text}
-      </p>
+      <React.Fragment>
+        <p
+          className={expanded ? 'open' : 'closed'}
+        >
+          {this.props.text}
+        </p>
+        <div
+          className="expand-button"
+          onClick={this.toggle}
+        >
+          <b>{expanded ? 'show less' : 'show more...' }</b>
+        </div>
+      </React.Fragment>
     );
   }
 }
