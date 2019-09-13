@@ -22,6 +22,7 @@ class CollapseText extends React.Component {
         <React.Fragment>
           <p
             className={expanded ? 'open' : 'closed'}
+            style={{ whiteSpace: 'pre-line' }}
           >
             {this.props.text}
           </p>

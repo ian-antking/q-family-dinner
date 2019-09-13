@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Card,
   Heading,
-  Content,
 } from 'react-bulma-components/full';
+import CollapseText from './collapse-text';
 import { parseISO, format } from 'date-fns';
 import MapComponent from './map-component';
 import { googleKey } from '../utils/api-config';
@@ -22,9 +22,9 @@ const EventCard = (props) => {
       >
         {`${format(date, 'io MMM yy')} - ${format(date, 'HH:mm')}`}
       </Heading>
-      <Content style={{ whiteSpace: 'pre-line' }}>
-        {props.event.description}
-      </Content>
+      <CollapseText
+        text={props.event.description}
+      />
       <Heading>
         Location
       </Heading>
