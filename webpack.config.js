@@ -5,7 +5,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   target: 'web',
-  mode: 'production',
+  mode: 'development',
   entry: path.join(__dirname, 'src/index.jsx'),
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -21,7 +21,7 @@ module.exports = {
         },
       },
       {
-        test: /\.s?css$/,
+        test: /\.s?(c|a)ss$/,
         use: [{
           loader: 'style-loader',
         }, {

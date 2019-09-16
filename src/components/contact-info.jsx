@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialsCard from './socials-card';
+import ContactForm from './contact-form';
 
 import {
   Content,
@@ -31,6 +32,7 @@ const ContactInfo = () => (
       </Container>
       <Container className="contact-card">
         <Heading>Contact Us</Heading>
+        <ContactForm />
         <SocialsCard
           facebook="https://www.facebook.com/Queer-Family-Tea-638643326624464"
           instagram="https://www.instagram.com/queerfamilytea/"
