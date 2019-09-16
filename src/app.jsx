@@ -78,7 +78,7 @@ class App extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this._fetchEvents();
-    // this._fetchImages();
+    this._fetchImages();
   }
 
   componentWillUnmount() {
