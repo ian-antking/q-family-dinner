@@ -4,6 +4,10 @@ body{
   
 }
 
+form{
+  width: 100%;
+}
+
 .content{
   width: 100%;
   margin-top: 10px;
@@ -48,6 +52,10 @@ body{
   width: 100%;
 }
 
-.image {
+.image{
    min-width: 150px;
+}
+
+.notification{
+  width: 100%;
 }

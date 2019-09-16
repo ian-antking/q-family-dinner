@@ -32,12 +32,12 @@ const ContactInfo = () => (
       </Container>
       <Container className="contact-card">
         <Heading>Contact Us</Heading>
-        <ContactForm />
         <SocialsCard
           facebook="https://www.facebook.com/Queer-Family-Tea-638643326624464"
           instagram="https://www.instagram.com/queerfamilytea/"
           email="mailto:info@queerfamilytea.com"
         />
+        <ContactForm />
       </Container>
     </Section>
   </Content>
