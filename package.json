@@ -37,6 +37,7 @@
     "react-google-maps": "^9.4.5",
     "react-lazy-hero": "^2.0.0",
     "react-router-dom": "^5.0.0",
+    "react-svg": "^10.0.20",
     "react-text-collapse": "^0.5.2",
     "styled-components": "^4.2.1"
   },
