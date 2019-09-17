@@ -2,6 +2,7 @@ import React from 'react';
 import { apiString } from '../utils/api-config';
 import {
   Heading,
+  Content,
 } from 'react-bulma-components/full';
 import ReactSVG from 'react-svg';
 
@@ -31,17 +32,23 @@ class ThreeWordsCard extends React.Component {
   }
 
   render() {
+    const words = this.state.threeWords;
     return (
-      <React.Fragment>
+      <Content>
         <ReactSVG
-          src="../assets/w3w_HorizontalLogo_RGB_Black_ENG.svg"
+          src="src/assets/three-words-logo.svg"
+          className="three-words"
         />
         <Heading
           size={4}
         >
-          {this.state.threeWords}
+          <a
+            href={`https://what3words.com/${words}`}
+          >
+            {words}
+          </a>
         </Heading>
-      </React.Fragment>
+      </Content>
     );
   }
 }

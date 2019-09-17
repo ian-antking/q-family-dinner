@@ -7,7 +7,7 @@ import CollapseText from './collapse-text';
 import { parseISO, format } from 'date-fns';
 import MapComponent from './map-component';
 import { googleKey } from '../utils/api-config';
-// import ThreeWordsCard from './three-words-card';
+import ThreeWordsCard from './three-words-card';
 
 const EventCard = (props) => {
   const date = parseISO(props.event.start_time);
@@ -30,12 +30,12 @@ const EventCard = (props) => {
       <Heading>
         Location
       </Heading>
-      {/* <ThreeWordsCard
+      <ThreeWordsCard
         location={{
           latitude: latitude,
           longitude: longitude,
         }}
-      /> */}
+      />
       <MapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${googleKey}`}
