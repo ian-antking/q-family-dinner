@@ -3,23 +3,19 @@ import { Hero, Heading } from 'react-bulma-components/full';
 
 import '../styles/index.scss';
 
-const PageHeader = (props) => {
+const PageHeader = props => {
   return (
     <Hero
-      style={
-      {
+      style={{
         backgroundColor: props.color,
-      }
-    }
+      }}
     >
       <Hero.Body>
         <div className="heading-container">
           <Heading
-            style={
-              {
-                color: props.textColor || 'white',
-              }
-            }
+            style={{
+              color: props.textColor || 'white',
+            }}
           >
             {props.title}
           </Heading>

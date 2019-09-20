@@ -93,7 +93,7 @@ const Flags = {
     ${Colors.genderqueer.green} ${(100 / 3) * 2}%,
     ${Colors.genderqueer.green} ${(100 / 3) * 3}%
   )`,
-  nonbinary: `linear-gradient(
+  genderfluid: `linear-gradient(
     180deg,
     ${Colors.genderfluid.pink} 0%,
     ${Colors.genderfluid.pink} 20%,

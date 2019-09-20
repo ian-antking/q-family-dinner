@@ -9,11 +9,13 @@ import {
 import Button from 'react-bulma-components/lib/components/button';
 import Notification from 'react-bulma-components/lib/components/notification';
 import { apiString } from '../utils/api-config';
+import { Loader, Heading } from 'react-bulma-components/full';
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      sending: false,
       fields: {
         name: '',
         message: '',
@@ -80,6 +82,14 @@ class ContactForm extends React.Component {
   };
 
   render() {
+    if (this.state.sending) {
+      return (
+        <React.Fragment>
+          <Heading>Sending</Heading>
+          <Loader />
+        </React.Fragment>
+      );
+    }
     return (
       <React.Fragment>
         {
