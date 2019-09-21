@@ -52,33 +52,36 @@ class ContactForm extends React.Component {
     this.setState({
       error: '',
       message: '',
-    });
-    const URL = `${apiString}/message/enquiry`;
-    const message = this.constructMessage();
-    const messageBody = { text: message };
-    window.fetch(URL, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify(messageBody),
-    })
-      .then(() => {
-        this.setState({
-          message: 'Your message has been sent!',
-          fields: {
-            name: '',
-            message: '',
-            subject: '',
-            email: '',
-          },
-        });
+      sending: true,
+    }, () => {
+      const URL = `${apiString}/message/enquiry`;
+      const message = this.constructMessage();
+      const messageBody = { text: message };
+      window.fetch(URL, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify(messageBody),
       })
-      .catch(error => {
-        this.setState({
-          error: error.message,
+        .then(() => {
+          this.setState({
+            message: 'Your message has been sent!',
+            sending: false,
+            fields: {
+              name: '',
+              message: '',
+              subject: '',
+              email: '',
+            },
+          });
+        })
+        .catch(error => {
+          this.setState({
+            error: error.message,
+          });
         });
-      });
+    });
   };
 
   render() {
