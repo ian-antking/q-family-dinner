@@ -5,6 +5,7 @@ import {
   Label,
   Textarea,
   Input,
+  Checkbox,
 } from 'react-bulma-components/lib/components/form';
 import Button from 'react-bulma-components/lib/components/button';
 import Notification from 'react-bulma-components/lib/components/notification';
@@ -21,6 +22,7 @@ class ContactForm extends React.Component {
         message: '',
         subject: '',
         email: '',
+        termsAccepted: false,
       },
       message: null,
       error: null,
@@ -28,10 +30,11 @@ class ContactForm extends React.Component {
   }
 
   handleFieldChange = (event) => {
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
     this.setState({
       fields: {
         ...this.state.fields,
-        [event.target.name]: event.target.value,
+        [event.target.name]: value,
       },
     });
   };
@@ -150,6 +153,18 @@ class ContactForm extends React.Component {
                 onChange={this.handleFieldChange}
                 required
               />
+            </Control>
+          </Field>
+          <Field>
+            <Control>
+              <Checkbox
+                name="termsAccepted"
+                onChange={this.handleFieldChange}
+                required
+                checked={this.state.fields.termsAccepted}
+              >
+                I agree to the use of my information in the handling of this enquiry.
+              </Checkbox>
             </Control>
           </Field>
           <Button
