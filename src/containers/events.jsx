@@ -1,14 +1,40 @@
 import React from 'react';
 import EventCard from '../components/event-card';
 import { Loader, Heading } from 'react-bulma-components/full';
+import { parseISO, getUnixTime } from 'date-fns';
 
-const _renderEvents = (events) => {
-  return events.length > 0 ? (
+const _sortEvents = (events) => {
+  return events.filter((event) => {
+    return getUnixTime(parseISO(event.start_time)) > 1568916000;
+  }).reverse();
+};
+
+const _renderRepeatEvents = (event) => {
+  const repeatEvents = _sortEvents(event.event_times);
+  return (
+    repeatEvents.map(repeatEvent => {
+      return (
+        <EventCard
+          key={repeatEvent.id}
+          event={event}
+          date={repeatEvent.start_time}
+        />
+      );
+    })
+  );
+};
+
+const renderEvents = (events) => {
+  return events ? (
     events.map(event => {
+      if (event.event_times) {
+        return _renderRepeatEvents(event);
+      }
       return (
         <EventCard
           key={event.id}
           event={event}
+          date={event.start_time}
         />
       );
     })
@@ -29,7 +55,7 @@ const _renderEvents = (events) => {
 const EventsPage = (props) => {
   return (
     props.events ? (
-      _renderEvents(props.events)
+      renderEvents(props.events)
     ) : (
       <Loader />
     )

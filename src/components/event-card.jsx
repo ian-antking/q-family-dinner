@@ -10,7 +10,7 @@ import { googleKey } from '../utils/api-config';
 import ThreeWordsCard from './three-words-card';
 
 const EventCard = (props) => {
-  const date = parseISO(props.event.start_time);
+  const date = parseISO(props.date);
   const { longitude, latitude } = props.event.place.location;
   return (
     <Card>
