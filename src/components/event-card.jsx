@@ -22,7 +22,7 @@ const EventCard = (props) => {
       <Heading
         size={5}
       >
-        {`${format(date, 'io MMM yy')} - ${format(date, 'HH:mm')}`}
+        {`${format(date, 'do MMM yy')} - ${format(date, 'HH:mm')}`}
       </Heading>
       <CollapseText
         text={props.event.description}
