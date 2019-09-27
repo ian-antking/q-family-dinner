@@ -5,7 +5,8 @@ import { parseISO, getUnixTime } from 'date-fns';
 
 const _sortEvents = (events) => {
   return events.filter((event) => {
-    return getUnixTime(parseISO(event.start_time)) > 1568916000;
+    const time = Math.round((new Date()).getTime() / 1000);
+    return getUnixTime(parseISO(event.start_time)) > time;
   }).reverse();
 };
 
