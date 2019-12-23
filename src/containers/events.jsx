@@ -58,7 +58,12 @@ const EventsPage = (props) => {
     props.events ? (
       renderEvents(props.events)
     ) : (
-      <Loader />
+      <React.Fragment>
+        <Heading>
+          Loading...
+        </Heading>
+        <Loader />
+      </React.Fragment>
     )
   );
 };
