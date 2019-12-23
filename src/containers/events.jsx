@@ -4,8 +4,8 @@ import { Loader, Heading } from 'react-bulma-components/full';
 import { parseISO, getUnixTime } from 'date-fns';
 
 const _sortEvents = (events) => {
+  const time = Math.round((new Date()).getTime() / 1000);
   return events.filter((event) => {
-    const time = Math.round((new Date()).getTime() / 1000);
     return getUnixTime(parseISO(event.start_time)) > time;
   }).reverse();
 };
@@ -26,8 +26,9 @@ const _renderRepeatEvents = (event) => {
 };
 
 const renderEvents = (events) => {
-  return events ? (
-    events.map(event => {
+  const sortedEvents = _sortEvents(events);
+  return sortedEvents.lenth > 0 ? (
+    sortedEvents.map(event => {
       if (event.event_times) {
         return _renderRepeatEvents(event);
       }
@@ -42,12 +43,12 @@ const renderEvents = (events) => {
   ) : (
     <React.Fragment>
       <Heading>
-        No Events Yet
+        We're still planning!
       </Heading>
       <Heading
         subtitle
       >
-        Check back soon!
+        Why not come to our weekly get-together?
       </Heading>
     </React.Fragment>
   );
