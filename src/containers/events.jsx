@@ -1,7 +1,7 @@
-import React from "react";
-import EventCard from "../components/event-card";
-import { Loader, Heading } from "react-bulma-components/full";
-import { parseISO, getUnixTime } from "date-fns";
+import React from 'react';
+import EventCard from '../components/event-card';
+import { Loader, Heading } from 'react-bulma-components/full';
+import { parseISO, getUnixTime } from 'date-fns';
 
 const _sortEvents = events => {
   const time = Math.round(new Date().getTime() / 1000);
