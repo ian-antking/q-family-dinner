@@ -93,7 +93,7 @@ class App extends React.Component {
     });
     this._fetchEvents();
     this._fetchImages();
-  }``
+  }
 
   componentWillUnmount() {
     clearInterval(this.flagInterval);
