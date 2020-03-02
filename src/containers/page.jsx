@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '../components/page-header';
 import EventsPage from './events';
 import ContactPage from './contact';
-import Colors from '../utils/colors.js';
+import Colors from '../utils/colors';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import {
   Content,
