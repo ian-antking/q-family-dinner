@@ -98,6 +98,7 @@ class App extends React.Component {
       const items = data.items.map(item => {
         return {
           id: item.sys.id,
+          path: item.fields.path,
           title: item.fields.title,
           content: item.fields.content,
         };
@@ -108,7 +109,7 @@ class App extends React.Component {
       });
     });
     this._fetchEvents();
-    this._fetchImages();
+    // this._fetchImages();
   }
 
   componentWillUnmount() {
@@ -141,13 +142,12 @@ class App extends React.Component {
                   return (
                     <Route
                       key={page.id}
-                      path={`/${page.title.toLowerCase()}`}
+                      path={`/${page.path.toLowerCase()}`}
                       render={(props) => (
                         <Page
                           {...props}
                           color={Colors.trans.blue}
                           title={page.title}
-                          page={'about'}
                           content={page.content}
                         />
                       )}
@@ -174,24 +174,12 @@ class App extends React.Component {
               render={(props) => (
                 <Page
                   {...props}
-                  color={Colors.trans.blue}
+                  color={Colors.trans.pink}
                   title={'Contact'}
                   page={'contact'}
                 />
               )
             }
-            />
-            <Route
-              exact
-              path="/privacy"
-              render={(props) => (
-                <Page
-                  {...props}
-                  color={Colors.trans.pink}
-                  title={'Privacy Policy'}
-                  page={'privacy'}
-                />
-              )}
             />
             <Route
               render={() => <Redirect to="/" />}

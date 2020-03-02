@@ -1,22 +1,27 @@
 import React from 'react';
 import PageHeader from '../components/page-header';
-import AboutPage from './about';
 import EventsPage from './events';
 import ContactPage from './contact';
-import PrivacyPage from './privacy';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import {
+  Content,
+} from 'react-bulma-components/full';
 
 const pages = {
-  about: AboutPage,
   events: EventsPage,
   contact: ContactPage,
-  privacy: PrivacyPage,
 };
 
-
 const Page = (props) => {
-  const render = {
+  const render = props.page ? {
     page: pages[props.page],
-  };
+  } : null;
+
+  const content = props.content ? (
+    documentToHtmlString(props.content)
+  ) : (
+    null
+  );
 
   return (
     <React.Fragment>
@@ -30,12 +35,13 @@ const Page = (props) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            width: '50%',
+            margin: 'auto',
           }
         }
       >
-        <render.page
-          {...props}
-        />
+        {content && <Content dangerouslySetInnerHTML={{ __html: content }} />}
+        {render && <render.page {...props} />}
       </div>
     </React.Fragment>
   );
