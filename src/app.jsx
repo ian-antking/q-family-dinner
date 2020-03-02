@@ -8,7 +8,7 @@ import {
 import HomePage from './containers/home';
 import Page from './containers/page';
 import Colors from './utils/colors';
-import Nav from './components/nav';
+import Nav from './components/navbar';
 import {
   apiString,
   instagramUsername,
