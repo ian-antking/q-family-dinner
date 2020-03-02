@@ -4,7 +4,6 @@ import {
   Route,
   Redirect,
   withRouter,
-  Link,
 } from 'react-router-dom';
 import HomePage from './containers/home';
 import Page from './containers/page';
@@ -15,7 +14,7 @@ import {
   instagramUsername,
 } from './utils/api-config';
 import Flags from './utils/q-flags';
-import SocialsCard from './components/socials-card';
+import Footer from './components/footer';
 import { createClient } from 'contentful';
 
 import './styles/index.scss';
@@ -186,26 +185,7 @@ class App extends React.Component {
             />
           </Switch>
         </article>
-        <footer>
-          { this.props.location.pathname !== '/contact' ? (
-            <SocialsCard
-              facebook="https://www.facebook.com/Queer-Family-Tea-638643326624464"
-              instagram="https://www.instagram.com/queerfamilytea/"
-              email="mailto:info@queerfamilytea.com"
-            />
-          ) : (
-            null
-          )
-          }
-          { this.props.location.pathname !== '/privacy' ? (
-            <div className="link-list">
-              <Link className="link" to="/privacy">Our Privacy Policy</Link>
-            </div>
-          ) : (
-            null
-          )
-          }
-        </footer>
+        <Footer pathname={this.props.location.pathname} />
       </React.Fragment>
     );
   }
