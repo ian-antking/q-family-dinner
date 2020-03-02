@@ -109,7 +109,7 @@ class App extends React.Component {
       });
     });
     this._fetchEvents();
-    // this._fetchImages();
+    this._fetchImages();
   }
 
   componentWillUnmount() {
