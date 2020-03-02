@@ -14,7 +14,7 @@ const HomePage = props => {
       <Content>
         {announcements && announcements.map(announcement => {
           return (
-            <AnnouncementCard key={announcement.fields.is} announcement={announcement} />
+            <AnnouncementCard key={announcement.sys.id} announcement={announcement} />
           );
         })}
       </Content>
