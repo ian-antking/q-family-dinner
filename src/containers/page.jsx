@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '../components/page-header';
 import EventsPage from './events';
 import ContactPage from './contact';
+import Colors from '../utils/colors.js';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import {
   Content,
@@ -10,6 +11,13 @@ import {
 const pages = {
   events: EventsPage,
   contact: ContactPage,
+};
+
+const randomColor = () => {
+  const { pink, blue } = Colors.trans;
+  const colors = [pink, blue];
+  const index = Math.floor(Math.random() * 2);
+  return colors[index];
 };
 
 const Page = (props) => {
@@ -27,7 +35,7 @@ const Page = (props) => {
     <React.Fragment>
       <PageHeader
         title={props.title}
-        color={props.color}
+        color={randomColor()}
       />
       <div
         style={

@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import HomePage from './containers/home';
 import Page from './containers/page';
-import Colors from './utils/colors';
 import Nav from './components/navbar';
 import {
   apiString,
@@ -145,7 +144,6 @@ class App extends React.Component {
                       render={(props) => (
                         <Page
                           {...props}
-                          color={Colors.trans.blue}
                           title={page.title}
                           content={page.content}
                         />
@@ -160,7 +158,6 @@ class App extends React.Component {
               render={(props) => (
                 <Page
                   {...props}
-                  color={Colors.trans.pink}
                   title={'Events'}
                   page={'events'}
                   events={this.state.events}
@@ -173,7 +170,6 @@ class App extends React.Component {
               render={(props) => (
                 <Page
                   {...props}
-                  color={Colors.trans.pink}
                   title={'Contact'}
                   page={'contact'}
                 />
