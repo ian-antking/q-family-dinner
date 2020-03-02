@@ -16,6 +16,7 @@ import {
 } from './utils/api-config';
 import Flags from './utils/q-flags';
 import SocialsCard from './components/socials-card';
+import { createClient } from 'contentful';
 
 import './styles/index.scss';
 import './styles/mobile.scss';
@@ -24,6 +25,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      announcements: [],
       events: null,
       images: null,
       splashFlag: this._randomFlag(),
@@ -77,9 +79,21 @@ class App extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    const content = createClient({
+      space: 'yq2ab76w5obt',
+      accessToken: 'wePDL7dw8XEw_ph3Ds_c4us7XthCD3b1TMWUmSe_p94',
+    });
+    content.getEntries({
+      content_type: 'announcement',
+    }).then(data => {
+      this.setState({
+        ...this.state,
+        announcements: data.items,
+      });
+    });
     this._fetchEvents();
     this._fetchImages();
-  }
+  }``
 
   componentWillUnmount() {
     clearInterval(this.flagInterval);
@@ -101,6 +115,7 @@ class App extends React.Component {
                   {...props}
                   flag={this.state.splashFlag}
                   images={this.state.images}
+                  announcements={this.state.announcements}
                 />
               )}
             />
