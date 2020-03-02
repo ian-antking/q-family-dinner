@@ -26,6 +26,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       announcements: [],
+      pages: null,
       events: null,
       images: null,
       splashFlag: this._randomFlag(),
@@ -91,6 +92,21 @@ class App extends React.Component {
         announcements: data.items,
       });
     });
+    content.getEntries({
+      content_type: 'page',
+    }).then(data => {
+      const items = data.items.map(item => {
+        return {
+          id: item.sys.id,
+          title: item.fields.title,
+          content: item.fields.content,
+        };
+      });
+      this.setState({
+        ...this.state,
+        pages: items,
+      });
+    });
     this._fetchEvents();
     this._fetchImages();
   }
@@ -119,18 +135,27 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route
-              path="/about"
-              render={(props) => (
-                <Page
-                  {...props}
-                  color={Colors.trans.blue}
-                  title={'About Us'}
-                  page={'about'}
-                />
+            {
+              this.state.pages && (
+                this.state.pages.map(page => {
+                  return (
+                    <Route
+                      key={page.id}
+                      path={`/${page.title.toLowerCase()}`}
+                      render={(props) => (
+                        <Page
+                          {...props}
+                          color={Colors.trans.blue}
+                          title={page.title}
+                          page={'about'}
+                          content={page.content}
+                        />
+                      )}
+                    />
+                  );
+                })
               )
             }
-            />
             <Route
               path="/events"
               render={(props) => (
