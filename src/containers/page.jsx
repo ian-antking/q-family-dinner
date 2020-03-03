@@ -26,7 +26,7 @@ const Page = (props) => {
   } : null;
 
   const content = props.content ? (
-    documentToHtmlString(props.content)
+    documentToHtmlString(props.content.fields.content)
   ) : (
     null
   );

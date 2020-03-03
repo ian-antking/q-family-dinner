@@ -140,7 +140,7 @@ class App extends React.Component {
                         <Page
                           {...props}
                           title={page.fields.title}
-                          content={page.fields.content}
+                          content={page}
                         />
                       )}
                     />
