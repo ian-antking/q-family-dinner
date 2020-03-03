@@ -122,6 +122,25 @@ class App extends React.Component {
               )}
             />
             {
+              ['Events', 'Contact'].map(page => {
+                return (
+                  <Route
+                    key={page}
+                    path={`/${page.toLowerCase()}`}
+                    render={(props) => (
+                      <Page
+                        {...props}
+                        title={page}
+                        page={page.toLowerCase()}
+                        events={this.state.events}
+                      />
+                    )
+                }
+                  />
+                );
+              })
+            }
+            {
               this.state.pages && (
                 this.state.pages.map(page => {
                   return (
@@ -140,29 +159,6 @@ class App extends React.Component {
                 })
               )
             }
-            <Route
-              path="/events"
-              render={(props) => (
-                <Page
-                  {...props}
-                  title={'Events'}
-                  page={'events'}
-                  events={this.state.events}
-                />
-              )
-            }
-            />
-            <Route
-              path="/contact"
-              render={(props) => (
-                <Page
-                  {...props}
-                  title={'Contact'}
-                  page={'contact'}
-                />
-              )
-            }
-            />
             <Route
               render={() => <Redirect to="/" />}
             />
