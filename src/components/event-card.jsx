@@ -6,7 +6,7 @@ import {
 import CollapseText from './collapse-text';
 import { parseISO, format } from 'date-fns';
 import MapComponent from './map-component';
-import { googleKey } from '../utils/api-config';
+import { googleKey } from '../config/api';
 import ThreeWordsCard from './three-words-card';
 
 const EventCard = (props) => {

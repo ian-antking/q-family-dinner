@@ -1,5 +1,5 @@
 import React from 'react';
-import { apiString } from '../utils/api-config';
+import { apiString } from '../config/api';
 import {
   Heading,
   Content,

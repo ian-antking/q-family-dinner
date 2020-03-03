@@ -11,7 +11,8 @@ import Nav from './components/navbar';
 import {
   apiString,
   instagramUsername,
-} from './utils/api-config';
+  contentful,
+} from './config/api';
 import Flags from './utils/q-flags';
 import Footer from './components/footer';
 import { createClient } from 'contentful';
@@ -91,8 +92,8 @@ class App extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     const content = createClient({
-      space: 'yq2ab76w5obt',
-      accessToken: 'wePDL7dw8XEw_ph3Ds_c4us7XthCD3b1TMWUmSe_p94',
+      space: contentful.contentSpace,
+      accessToken: contentful.contentToken,
     });
     this.getContent(content, 'announcement');
     this.getContent(content, 'page');
