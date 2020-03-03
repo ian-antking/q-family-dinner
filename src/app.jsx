@@ -111,16 +111,17 @@ class App extends React.Component {
               )}
             />
             {
-              ['Events', 'Contact'].map(page => {
+              this.state.content.pages && this.state.content.pages.concat(['Events', 'Contact']).map(page => {
                 return (
                   <Route
-                    key={page}
-                    path={`/${page.toLowerCase()}`}
+                    key={(page.sys && page.sys.id) || page}
+                    path={`/${(page.fields && page.fields.path.toLowerCase()) || page.toLowerCase()}`}
                     render={(props) => (
                       <Page
                         {...props}
-                        title={page}
-                        page={page.toLowerCase()}
+                        title={(page.fields && page.fields.title) || page}
+                        page={(typeof page === 'string' && page.toLowerCase()) || null}
+                        content={page}
                         events={this.state.events}
                       />
                     )
@@ -128,25 +129,6 @@ class App extends React.Component {
                   />
                 );
               })
-            }
-            {
-              this.state.content.pages && (
-                this.state.content.pages.map(page => {
-                  return (
-                    <Route
-                      key={page.sys.id}
-                      path={`/${page.fields.path.toLowerCase()}`}
-                      render={(props) => (
-                        <Page
-                          {...props}
-                          title={page.fields.title}
-                          content={page}
-                        />
-                      )}
-                    />
-                  );
-                })
-              )
             }
             <Route
               render={() => <Redirect to="/" />}

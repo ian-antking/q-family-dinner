@@ -25,7 +25,7 @@ const Page = (props) => {
     page: pages[props.page],
   } : null;
 
-  const content = props.content ? (
+  const content = props.content.fields ? (
     documentToHtmlString(props.content.fields.content)
   ) : (
     null
