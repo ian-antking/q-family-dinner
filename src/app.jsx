@@ -77,43 +77,28 @@ class App extends React.Component {
     }
   };
 
+  getContent(content, type) {
+    content.getEntries({
+      content_type: type,
+    }).then(data => {
+      this.setState({
+        ...this.state,
+        [`${type}s`]: data.items,
+      });
+    });
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     const content = createClient({
       space: 'yq2ab76w5obt',
       accessToken: 'wePDL7dw8XEw_ph3Ds_c4us7XthCD3b1TMWUmSe_p94',
     });
-    content.getEntries({
-      content_type: 'announcement',
-    }).then(data => {
-      this.setState({
-        ...this.state,
-        announcements: data.items,
-      });
-    });
-    content.getEntries({
-      content_type: 'page',
-    }).then(data => {
-      this.setState({
-        ...this.state,
-        pages: data.items,
-      });
-    });
-    content.getEntries({
-      content_type: 'article',
-    }).then(data => {
-      this.setState({
-        ...this.state,
-        articles: data.items,
-      });
-      console.log(this.state);
-    });
+    this.getContent(content, 'announcement');
+    this.getContent(content, 'page');
+    this.getContent(content, 'article');
     this._fetchEvents();
     this._fetchImages();
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.flagInterval);
   }
 
   render() {
