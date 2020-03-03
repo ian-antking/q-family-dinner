@@ -23,7 +23,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      announcements: [],
+      announcements: null,
+      articles: null,
       pages: null,
       events: null,
       images: null,
@@ -105,6 +106,15 @@ class App extends React.Component {
         ...this.state,
         pages: items,
       });
+    });
+    content.getEntries({
+      content_type: 'article',
+    }).then(data => {
+      this.setState({
+        ...this.state,
+        articles: data.items,
+      });
+      console.log(this.state);
     });
     this._fetchEvents();
     this._fetchImages();
