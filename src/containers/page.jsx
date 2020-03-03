@@ -20,13 +20,14 @@ const randomColor = () => {
   return colors[index];
 };
 
-const Page = (props) => {
-  const render = props.page ? {
-    page: pages[props.page],
+const Page = props => {
+  const { page, title} = props;
+  const render = typeof page === 'string' ? {
+    appPage: pages[page.toLowerCase()],
   } : null;
 
-  const content = props.content.fields ? (
-    documentToHtmlString(props.content.fields.content)
+  const content = page.fields ? (
+    documentToHtmlString(page.fields.content)
   ) : (
     null
   );
@@ -34,7 +35,7 @@ const Page = (props) => {
   return (
     <React.Fragment>
       <PageHeader
-        title={props.title}
+        title={title}
         color={randomColor()}
       />
       <div
@@ -49,7 +50,7 @@ const Page = (props) => {
         }
       >
         {content && <Content dangerouslySetInnerHTML={{ __html: content }} />}
-        {render && <render.page {...props} />}
+        {render && <render.appPage {...props} />}
       </div>
     </React.Fragment>
   );

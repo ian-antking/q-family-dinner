@@ -115,13 +115,12 @@ class App extends React.Component {
                 return (
                   <Route
                     key={(page.sys && page.sys.id) || page}
-                    path={`/${(page.fields && page.fields.path.toLowerCase()) || page.toLowerCase()}`}
+                    path={`/${((page.fields && page.fields.path) || page).toLowerCase()}`}
                     render={(props) => (
                       <Page
                         {...props}
                         title={(page.fields && page.fields.title) || page}
-                        page={(typeof page === 'string' && page.toLowerCase()) || null}
-                        content={page}
+                        page={page}
                         events={this.state.events}
                       />
                     )
