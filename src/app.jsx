@@ -94,17 +94,9 @@ class App extends React.Component {
     content.getEntries({
       content_type: 'page',
     }).then(data => {
-      const items = data.items.map(item => {
-        return {
-          id: item.sys.id,
-          path: item.fields.path,
-          title: item.fields.title,
-          content: item.fields.content,
-        };
-      });
       this.setState({
         ...this.state,
-        pages: items,
+        pages: data.items,
       });
     });
     content.getEntries({
@@ -149,13 +141,13 @@ class App extends React.Component {
                 this.state.pages.map(page => {
                   return (
                     <Route
-                      key={page.id}
-                      path={`/${page.path.toLowerCase()}`}
+                      key={page.sys.id}
+                      path={`/${page.fields.path.toLowerCase()}`}
                       render={(props) => (
                         <Page
                           {...props}
-                          title={page.title}
-                          content={page.content}
+                          title={page.fields.title}
+                          content={page.fields.content}
                         />
                       )}
                     />
