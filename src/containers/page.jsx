@@ -21,7 +21,7 @@ const randomColor = () => {
 };
 
 const Page = props => {
-  const { page, title} = props;
+  const { page, title } = props;
   const render = typeof page === 'string' ? {
     appPage: pages[page.toLowerCase()],
   } : null;
