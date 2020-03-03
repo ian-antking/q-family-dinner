@@ -42,7 +42,7 @@ class App extends React.Component {
     return Flags[keys[Math.floor(Math.random() * keys.length)]];
   };
 
-  _fetchEvents() {
+  fetchEvents() {
     window.fetch(`${apiString}/event`)
       .then(res => res.json())
       .then(body => {
@@ -55,7 +55,7 @@ class App extends React.Component {
       });
   }
 
-  _fetchImages() {
+  fetchImages() {
     const url = `https://www.instagram.com/${instagramUsername}/?__a=1`;
     window.fetch(url)
       .then(res => res.json())
@@ -97,8 +97,8 @@ class App extends React.Component {
     this.getContent(content, 'announcement');
     this.getContent(content, 'page');
     this.getContent(content, 'article');
-    this._fetchEvents();
-    this._fetchImages();
+    this.fetchEvents();
+    this.fetchImages();
   }
 
   render() {
