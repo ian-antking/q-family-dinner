@@ -24,18 +24,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      announcements: null,
-      articles: null,
-      pages: null,
-      events: null,
-      images: null,
+      content: {},
       splashFlag: this._randomFlag(),
     };
-    this.flagInterval = setInterval(() => {
-      if (this.props.location.pathname === '/') {
-        this.changeFlag();
-      }
-    }, 5000);
+    this.flagInterval = setInterval(() => this.props.location.pathname === '/' && this.changeFlag(), 5000);
   }
 
   _randomFlag = () => {
@@ -78,26 +70,22 @@ class App extends React.Component {
     }
   };
 
-  getContent(content, type) {
-    content.getEntries({
-      content_type: type,
-    }).then(data => {
-      this.setState({
-        ...this.state,
-        [`${type}s`]: data.items,
-      });
-    });
-  }
-
   componentDidMount() {
-    window.scrollTo(0, 0);
-    const content = createClient({
+    const contentClient = createClient({
       space: contentful.contentSpace,
       accessToken: contentful.contentToken,
     });
-    this.getContent(content, 'announcement');
-    this.getContent(content, 'page');
-    this.getContent(content, 'article');
+    contentClient.getEntries().then(data => {
+      const contentTypes = [...new Set(data.items.map(item => item.sys.contentType.sys.id))];
+      const content = {};
+      contentTypes.forEach(type => {
+        content[`${type}s`] = data.items.filter(item => item.sys.contentType.sys.id === type);
+      });
+      this.setState({
+        ...this.state,
+        content: content,
+      });
+    });
     this.fetchEvents();
     this.fetchImages();
   }
@@ -118,7 +106,7 @@ class App extends React.Component {
                   {...props}
                   flag={this.state.splashFlag}
                   images={this.state.images}
-                  announcements={this.state.announcements}
+                  announcements={this.state.content.announcements}
                 />
               )}
             />
@@ -142,8 +130,8 @@ class App extends React.Component {
               })
             }
             {
-              this.state.pages && (
-                this.state.pages.map(page => {
+              this.state.content.pages && (
+                this.state.content.pages.map(page => {
                   return (
                     <Route
                       key={page.sys.id}
