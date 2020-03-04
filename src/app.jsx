@@ -16,6 +16,7 @@ import {
 import Flags from './utils/q-flags';
 import Footer from './components/footer';
 import { createClient } from 'contentful';
+import dynamicPages from './config/dynamic-pages';
 
 import './styles/index.scss';
 import './styles/mobile.scss';
@@ -111,23 +112,24 @@ class App extends React.Component {
               )}
             />
             {
-              this.state.content.pages && this.state.content.pages.concat(['Events', 'Contact']).map(page => {
-                return (
-                  <Route
-                    key={(page.sys && page.sys.id) || page}
-                    path={`/${((page.fields && page.fields.path) || page).toLowerCase()}`}
-                    render={(props) => (
-                      <Page
-                        {...props}
-                        title={(page.fields && page.fields.title) || page}
-                        page={page}
-                        events={this.state.events}
-                      />
-                    )
-                }
-                  />
-                );
-              })
+              this.state.content.pages && this.state.content.pages
+                .concat(dynamicPages)
+                .map(page => {
+                  return (
+                    <Route
+                      key={page.sys.id}
+                      path={`/${page.fields.path}`}
+                      render={(props) => (
+                        <Page
+                          {...props}
+                          page={page}
+                          events={this.state.events}
+                        />
+                      )
+                  }
+                    />
+                  );
+                })
             }
             <Route
               render={() => <Redirect to="/" />}
