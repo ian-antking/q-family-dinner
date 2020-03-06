@@ -5,20 +5,6 @@ import { withRouter } from 'react-router-dom';
 class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.links = [
-      {
-        name: 'About',
-        route: '/about',
-      },
-      {
-        name: 'Events',
-        route: '/events',
-      },
-      {
-        name: 'Contact',
-        route: '/contact',
-      },
-    ];
     this.state = {
       open: false,
     };
@@ -36,6 +22,7 @@ class Nav extends React.Component {
   }
 
   render() {
+    const { pages } = this.props;
     return (
       <Navbar
         fixed="top"
@@ -63,13 +50,13 @@ class Nav extends React.Component {
             position="end"
           >
             {
-              this.links.map(link => {
-                return (
+              pages && pages.map(page => {
+                return page.fields.primaryPage && (
                   <Navbar.Item
-                    key={`navlink-${link.name}`}
-                    onClick={() => this._handleNavClick(link.route)}
+                    key={`navlink-${page.sys.id}`}
+                    onClick={() => this._handleNavClick(`/${page.fields.slug}`)}
                   >
-                    <Heading>{link.name}</Heading>
+                    <Heading>{page.fields.title}</Heading>
                   </Navbar.Item>
                 );
               })

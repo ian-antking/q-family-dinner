@@ -95,7 +95,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <header>
-          <Nav />
+          <Nav pages={this.state.content.pages && this.state.content.pages.concat(dynamicPages)} />
         </header>
         <article>
           <Switch>

@@ -6,6 +6,7 @@ class PageData {
     this.fields = {
       slug: name.toLowerCase(),
       title: name,
+      primaryPage: true,
     };
   }
 }
