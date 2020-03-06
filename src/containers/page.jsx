@@ -3,7 +3,7 @@ import PageHeader from '../components/page-header';
 import EventsPage from './events';
 import ContactPage from './contact';
 import Colors from '../utils/colors';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
   Content,
 } from 'react-bulma-components/full';
@@ -23,7 +23,7 @@ const randomColor = () => {
 const Page = props => {
   const page = { ...props.page.fields };
   const render = pages[page.slug] && { appPage: pages[page.slug.toLowerCase()] };
-  const content = page.content && documentToHtmlString(page.content);
+  const content = page.content && documentToReactComponents(page.content);
 
   return (
     <React.Fragment>
@@ -42,7 +42,7 @@ const Page = props => {
           }
         }
       >
-        {content && <Content dangerouslySetInnerHTML={{ __html: content }} />}
+        {content && <Content>{content}</Content>}
         {render && <render.appPage {...props} />}
       </div>
     </React.Fragment>
