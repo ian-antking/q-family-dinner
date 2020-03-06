@@ -118,7 +118,7 @@ class App extends React.Component {
                   return (
                     <Route
                       key={page.sys.id}
-                      path={`/${page.fields.path}`}
+                      path={`/${page.fields.slug}`}
                       render={(props) => (
                         <Page
                           {...props}

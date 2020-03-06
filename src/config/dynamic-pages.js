@@ -4,7 +4,7 @@ class PageData {
   constructor(name) {
     this.sys = { id: `${name}_key` };
     this.fields = {
-      path: name.toLowerCase(),
+      slug: name.toLowerCase(),
       title: name,
     };
   }

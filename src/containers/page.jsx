@@ -22,7 +22,7 @@ const randomColor = () => {
 
 const Page = props => {
   const page = { ...props.page.fields };
-  const render = pages[page.path] && { appPage: pages[page.path.toLowerCase()] };
+  const render = pages[page.slug] && { appPage: pages[page.slug.toLowerCase()] };
   const content = page.content && documentToHtmlString(page.content);
 
   return (
