@@ -1,34 +1,15 @@
 import React from 'react';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { INLINES, BLOCKS } from '@contentful/rich-text-types';
-import { Content, Section, Image } from 'react-bulma-components/full';
+import { Content, Section } from 'react-bulma-components/full';
 import HeroImage from '../components/hero-image';
 import ContributorCard from '../components/contributor-card';
-import { Link } from 'react-router-dom';
 import PageHeader from '../components/page-header';
 import EventsPage from '../containers/events';
 import ContactPage from '../containers/contact';
+import RichText from './rich-text';
 
 const PageContent = props => {
   const { page, color } = props;
   const path = props.match.url.slice(1);
-  const options = {
-    renderNode: {
-      [INLINES.ENTRY_HYPERLINK]: (node) => {
-        return <Link to={`/${node.data.target.fields.slug}`}>{node.data.target.fields.title}</Link>;
-      },
-      [INLINES.HYPERLINK]: (node) => {
-        return <a href={node.data.uri}>{node.content[0].value}</a>;
-      },
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return node.data.target.fields.file.contentType === 'image/png' ? (
-          <Image src={node.data.target.fields.file.url} />
-        ) : (
-          <a href={node.data.target.fields.file.url} download>{node.data.target.fields.title}</a>
-        );
-      },
-    },
-  };
 
   const header = page.heroImage ? (
     <HeroImage
@@ -54,7 +35,7 @@ const PageContent = props => {
           </Content>
         </Section>
         )}
-        {page.content && <Content size="medium">{documentToReactComponents(page.content, options)}</Content>}
+        {page.content && <Content size="medium"><RichText content={page.content} /></Content>}
         {path === 'events' && <EventsPage {...props} />}
         {path === 'contact' && <ContactPage {...props} />}
         <div id="contributor-box">
