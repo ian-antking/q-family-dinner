@@ -6,6 +6,7 @@ import Colors from '../utils/colors';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Content } from 'react-bulma-components/full';
 import HeroImage from '../components/hero-image';
+import ContributorCard from '../components/contributor-card';
 
 const pages = {
   events: EventsPage,
@@ -22,7 +23,6 @@ const randomColor = () => {
 const Page = props => {
   const page = { ...props.page.fields };
   const render = pages[page.slug] && { appPage: pages[page.slug.toLowerCase()] };
-  const content = page.content && documentToReactComponents(page.content);
 
   const header = page.heroImage ? (
     <HeroImage
@@ -40,19 +40,19 @@ const Page = props => {
   return (
     <React.Fragment>
       {header}
-      <div
-        style={
-          {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            width: '75%',
-            margin: 'auto',
-          }
-        }
-      >
-        {content && <Content>{content}</Content>}
+      <div id="content-box">
+        {page.content && <Content size="medium">{documentToReactComponents(page.content)}</Content>}
         {render && <render.appPage {...props} />}
+        <div id="contributor-box">
+          {page.contributors && page.contributors.map(contributor => {
+            return (
+              <ContributorCard
+                key={contributor.sys.id}
+                contributor={contributor}
+              />
+            );
+          })}
+        </div>
       </div>
     </React.Fragment>
   );

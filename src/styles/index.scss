@@ -1,7 +1,7 @@
 body{
   margin: 0px;
   padding: 0px;
-  
+
 }
 
 form{
@@ -62,4 +62,18 @@ form{
 
 .three-words{
   width: 50%;
+}
+
+#content-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+#contributor-box{
+  display: flex;
+  flex-wrap: wrap;
 }
