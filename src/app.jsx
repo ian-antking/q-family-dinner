@@ -135,6 +135,7 @@ class App extends React.Component {
               render={(props) => (
                 <Page
                   {...props}
+                  pages={this.state.content.pages}
                   events={this.state.events}
                 />)
               }

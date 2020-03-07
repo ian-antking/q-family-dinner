@@ -1,8 +1,8 @@
 import React from 'react';
 import Colors from '../utils/colors';
 import PageContent from '../components/page-content';
-import { Image, Heading, Content } from 'react-bulma-components/full';
-
+import NotFound from '../components/not-found';
+import Loading from '../components/loading';
 
 const randomColor = () => {
   const { pink, blue } = Colors.trans;
@@ -15,6 +15,9 @@ const Page = props => {
   const page = props.page ? { ...props.page.fields } : null;
   const color = randomColor();
 
+  const placeholder = props.pages ? <NotFound /> : <Loading />;
+
+
   return page ? (
     <PageContent
       {...props}
@@ -23,10 +26,7 @@ const Page = props => {
       events={props.events}
     />
   ) : (
-    <Content>
-      <Image src="src/assets/undraw_page_not_found_su7k.svg" />
-      <Heading>Page Not Found</Heading>
-    </Content>
+    placeholder
   );
 };
 export default Page;
