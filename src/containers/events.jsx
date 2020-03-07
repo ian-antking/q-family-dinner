@@ -1,10 +1,8 @@
 import React from 'react';
 import EventCard from '../components/event-card';
 import Loading from '../components/loading';
+import Planning from '../components/planning';
 import { parseISO, getUnixTime } from 'date-fns';
-import {
-  Heading,
-} from 'react-bulma-components/full';
 
 
 const _sortEvents = events => {
@@ -40,10 +38,7 @@ const _resolveEventType = sortedEvents => {
 
 const _renderNoEvents = () => {
   return (
-    <React.Fragment>
-      <Heading>We're still planning!</Heading>
-      <Heading subtitle>Why not come to our weekly get-together?</Heading>
-    </React.Fragment>
+    <Planning />
   );
 };
 
