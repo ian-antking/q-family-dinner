@@ -1,9 +1,13 @@
 import React from 'react';
-import { Loader, Heading, Content } from 'react-bulma-components/full';
+import {
+  Loader,
+  Content,
+  Image,
+} from 'react-bulma-components/full';
 
 const Loading = () => (
   <Content>
-    <Heading>Loading...</Heading>
+    <Image src="src/assets/undraw_synchronize_ccxk.svg" />
     <Loader />
   </Content>
 );

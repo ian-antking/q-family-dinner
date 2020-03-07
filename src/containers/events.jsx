@@ -1,7 +1,11 @@
 import React from 'react';
 import EventCard from '../components/event-card';
-import { Loader, Heading } from 'react-bulma-components/full';
+import Loading from '../components/loading';
 import { parseISO, getUnixTime } from 'date-fns';
+import {
+  Heading,
+} from 'react-bulma-components/full';
+
 
 const _sortEvents = events => {
   const time = Math.round(new Date().getTime() / 1000);
@@ -55,10 +59,7 @@ const EventsPage = props => {
   return props.events ? (
     renderEvents(props.events)
   ) : (
-    <React.Fragment>
-      <Heading>Loading...</Heading>
-      <Loader />
-    </React.Fragment>
+    <Loading />
   );
 };
 
