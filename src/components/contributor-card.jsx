@@ -34,7 +34,7 @@ const ContributorCard = props => {
             {
             contributor.email && (
             <Heading subtitle size={6}>
-              <a href={contributor.email}>{contributor.email}</a>
+              <a href={`mailto:${contributor.email}`}>{contributor.email}</a>
             </Heading>
             )}
           </Media.Item>

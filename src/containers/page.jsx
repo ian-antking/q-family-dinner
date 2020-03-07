@@ -4,8 +4,8 @@ import EventsPage from './events';
 import ContactPage from './contact';
 import Colors from '../utils/colors';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { INLINES } from '@contentful/rich-text-types';
-import { Content, Section } from 'react-bulma-components/full';
+import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import { Content, Section, Image } from 'react-bulma-components/full';
 import HeroImage from '../components/hero-image';
 import ContributorCard from '../components/contributor-card';
 import { Link } from 'react-router-dom';
@@ -33,6 +33,13 @@ const Page = props => {
       },
       [INLINES.HYPERLINK]: (node) => {
         return <a href={node.data.uri}>{node.content[0].value}</a>;
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        return node.data.target.fields.file.contentType === 'image/png' ? (
+          <Image src={node.data.target.fields.file.url} />
+        ) : (
+          <a href={node.data.target.fields.file.url} download>{node.data.target.fields.title}</a>
+        );
       },
     },
   };
