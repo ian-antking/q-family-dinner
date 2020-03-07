@@ -4,9 +4,7 @@ import EventsPage from './events';
 import ContactPage from './contact';
 import Colors from '../utils/colors';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import {
-  Content,
-} from 'react-bulma-components/full';
+import { Content } from 'react-bulma-components/full';
 
 const pages = {
   events: EventsPage,

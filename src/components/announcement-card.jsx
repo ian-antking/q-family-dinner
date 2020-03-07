@@ -3,7 +3,11 @@ import {
   Card,
   Content,
 } from 'react-bulma-components/full';
-import { parseISO, format } from 'date-fns';
+import {
+  parseISO,
+  format,
+} from 'date-fns';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const AnnoucementCard = props => {
   const { announcement } = props;
@@ -13,7 +17,7 @@ const AnnoucementCard = props => {
       <Card.Header>{announcement.fields.title}:</Card.Header>
       <Card.Content>
         <Content>
-          {announcement.fields.messageBody}
+          {documentToReactComponents(announcement.fields.content)}
         </Content>
       </Card.Content>
       <Card.Footer>{format(date, 'do MMM yyyy')}</Card.Footer>
