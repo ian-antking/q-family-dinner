@@ -4,7 +4,7 @@ import EventsPage from './events';
 import ContactPage from './contact';
 import Colors from '../utils/colors';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Content } from 'react-bulma-components/full';
+import { Content, Section } from 'react-bulma-components/full';
 import HeroImage from '../components/hero-image';
 import ContributorCard from '../components/contributor-card';
 
@@ -41,6 +41,13 @@ const Page = props => {
     <React.Fragment>
       {header}
       <div id="content-box">
+        {page.blurb && (
+        <Section>
+          <Content size="large">
+            {page.blurb}
+          </Content>
+        </Section>
+        )}
         {page.content && <Content size="medium">{documentToReactComponents(page.content)}</Content>}
         {render && <render.appPage {...props} />}
         <div id="contributor-box">
