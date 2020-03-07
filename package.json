@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ian-antking/q-family-dinner#readme",
   "dependencies": {
+    "@contentful/rich-text-types": "^14.1.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-brands-svg-icons": "^5.10.2",
