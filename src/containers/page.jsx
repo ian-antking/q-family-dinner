@@ -1,7 +1,7 @@
 import React from 'react';
 import Colors from '../utils/colors';
 import PageContent from '../components/page-content';
-import { Heading, Content } from 'react-bulma-components/full';
+import { Image, Heading, Content } from 'react-bulma-components/full';
 
 
 const randomColor = () => {
@@ -24,7 +24,8 @@ const Page = props => {
     />
   ) : (
     <Content>
-      <Heading>Loading</Heading>
+      <Image src="src/assets/undraw_page_not_found_su7k.svg" />
+      <Heading>Page Not Found</Heading>
     </Content>
   );
 };
