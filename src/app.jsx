@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Switch,
   Route,
-  Redirect,
   withRouter,
 } from 'react-router-dom';
 import HomePage from './containers/home';
@@ -29,6 +28,10 @@ class App extends React.Component {
       splashFlag: this._randomFlag(),
     };
     this.flagInterval = setInterval(() => this.props.location.pathname === '/' && this.changeFlag(), 5000);
+    this.contentClient = createClient({
+      space: contentful.contentSpace,
+      accessToken: contentful.contentToken,
+    });
   }
 
   _randomFlag = () => {
@@ -72,11 +75,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const contentClient = createClient({
-      space: contentful.contentSpace,
-      accessToken: contentful.contentToken,
-    });
-    contentClient.getEntries().then(data => {
+    this.contentClient.getEntries().then(data => {
       const contentTypes = [...new Set(data.items.map(item => item.sys.contentType.sys.id))];
       const content = {};
       contentTypes.forEach(type => {
@@ -132,7 +131,13 @@ class App extends React.Component {
                 })
             }
             <Route
-              render={() => <Redirect to="/" />}
+              path={'/:name'}
+              render={(props) => (
+                <Page
+                  {...props}
+                  events={this.state.events}
+                />)
+              }
             />
           </Switch>
         </article>
