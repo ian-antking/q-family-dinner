@@ -7,7 +7,7 @@ import CollapseText from './collapse-text';
 
 const ImageCard = (props) => {
   return (
-    <Card>
+    <Card classname="image-card">
       <Image
         src={props.image}
         alt={props.altText}

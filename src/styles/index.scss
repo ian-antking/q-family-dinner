@@ -38,13 +38,18 @@ form{
   align-items: center;
 }
 
-.card{
+.image-card{
   width: 500px;
   margin: 1%;
   padding: 1%;
 }
 
-.image-gallery{
+.page-card{
+  width: 500px;
+  margin: 1%;
+}
+
+.gallery{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

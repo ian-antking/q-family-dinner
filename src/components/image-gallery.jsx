@@ -1,11 +1,9 @@
 import React from 'react';
-import {
-  Section,
-} from 'react-bulma-components/full';
+import { Section } from 'react-bulma-components/full';
 import ImageCard from './image-card';
 
 const ImageGallery = (props) => (
-  <Section className="image-gallery">
+  <Section className="gallery">
     {
       props.images.map(image => {
         return (

@@ -5,9 +5,10 @@ import AnnouncementCard from '../components/announcement-card';
 import {
   Content,
 } from 'react-bulma-components/full';
+import PageDiscovery from '../components/page-discovery';
 
 const HomePage = props => {
-  const { images, announcements } = props;
+  const { images, announcements, pages } = props;
   return (
     <React.Fragment>
       <Splash flag={props.flag} />
@@ -18,6 +19,7 @@ const HomePage = props => {
           );
         })}
       </Content>
+      {pages && <PageDiscovery pages={pages} />}
       {images && <ImageGallery images={props.images} />}
     </React.Fragment>
   );

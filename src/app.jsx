@@ -107,6 +107,7 @@ class App extends React.Component {
                   flag={this.state.splashFlag}
                   images={this.state.images}
                   announcements={this.state.content.announcements}
+                  pages={this.state.content.pages}
                 />
               )}
             />
