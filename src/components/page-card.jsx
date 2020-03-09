@@ -9,7 +9,6 @@ const PageCard = withRouter((props) => {
   const { page } = props;
 
   const image = page.fields.heroImage ? page.fields.heroImage.fields.file.url : null;
-
   return (
     <Card
       className="page-card"
@@ -19,12 +18,26 @@ const PageCard = withRouter((props) => {
         color={randomColor()}
         title={page.fields.title}
         image={image}
+        pageCardHero
       />
       <Card.Content>
         <Content>
           {page.fields.blurb}
         </Content>
       </Card.Content>
+      <Card.Footer className="tag-box">
+        {page.fields.tags && page.fields.tags.map(tag => {
+          return (
+            <span
+              to={`/articles?tag=${tag}`}
+              className="tag-link"
+              key={`${page.fields.title}-${tag}`}
+            >
+              {`#${tag}`}
+            </span>
+          );
+        })}
+      </Card.Footer>
     </Card>
   );
 });

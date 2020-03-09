@@ -14,6 +14,7 @@ const HeroImage = props => {
       imageSrc={props.image}
       color={props.color}
       parallaxOffset={parallax}
+      className={props.pageCardHero ? 'page-card-hero' : ''}
       opacity={0.5}
     >
       <Box

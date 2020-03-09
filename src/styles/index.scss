@@ -46,14 +46,19 @@ form{
 
 .page-card{
   width: 500px;
-  margin: 1%;
+  margin-top: 5%;
+}
+
+.page-card-hero{
+  max-height: 30vh;
+  min-height: 25vh;
 }
 
 .gallery{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -67,6 +72,13 @@ form{
 
 .three-words{
   width: 50%;
+}
+
+.tag-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 #content-box{
