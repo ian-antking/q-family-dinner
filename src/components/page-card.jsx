@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Content } from 'react-bulma-components/full';
 import HeroImage from './hero-image';
 import randomColor from '../utils/random-color';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
 
 const PageCard = withRouter((props) => {
