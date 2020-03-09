@@ -9,7 +9,7 @@ const PageDiscovery = (props) => {
       <Heading>New Articles</Heading>
       <Section className="gallery">
         {
-          pages.filter(page => page.fields.discoverable).map(page => {
+          pages.map(page => {
             return (
               <PageCard
                 key={page.sys.id}
