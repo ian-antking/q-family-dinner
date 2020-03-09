@@ -1,13 +1,21 @@
 import React from 'react';
 import { Card, Content } from 'react-bulma-components/full';
+import HeroImage from './hero-image';
+import randomColor from '../utils/random-color';
+
 
 const PageCard = (props) => {
   const { page } = props;
+
+  const image = page.fields.heroImage ? page.fields.heroImage.fields.file.url : null;
+
   return (
     <Card className="page-card">
-      {page.fields.heroImage && (
-        <Card.Image src={page.fields.heroImage.fields.file.url} />
-      )}
+      <HeroImage
+        color={randomColor()}
+        title={page.fields.title}
+        image={image}
+      />
       <Card.Header>
         <Card.Header.Title>{page.fields.title}</Card.Header.Title>
       </Card.Header>

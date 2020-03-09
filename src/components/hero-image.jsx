@@ -8,11 +8,12 @@ import '../styles/index.scss';
 const HeroImage = props => {
   const angle = Math.floor(Math.random() * 20);
   const rotation = Math.random() > 0.5 ? '-' : '';
+  const parallax = props.parallax ? 100 : 0;
   return (
     <LazyHero
       imageSrc={props.image}
       color={props.color}
-      parallaxOffset={100}
+      parallaxOffset={parallax}
       opacity={0.5}
     >
       <Box

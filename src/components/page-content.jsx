@@ -16,6 +16,7 @@ const PageContent = props => {
       image={page.heroImage.fields.file.url}
       color={color}
       title={page.title}
+      parallax
     />
   ) : (
     <PageHeader
