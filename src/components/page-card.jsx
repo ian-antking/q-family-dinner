@@ -2,23 +2,24 @@ import React from 'react';
 import { Card, Content } from 'react-bulma-components/full';
 import HeroImage from './hero-image';
 import randomColor from '../utils/random-color';
+import { withRouter } from 'react-router-dom'
 
 
-const PageCard = (props) => {
+const PageCard = withRouter((props) => {
   const { page } = props;
 
   const image = page.fields.heroImage ? page.fields.heroImage.fields.file.url : null;
 
   return (
-    <Card className="page-card">
+    <Card
+      className="page-card"
+      onClick={() => props.history.push(`/${page.fields.slug}`)}
+    >
       <HeroImage
         color={randomColor()}
         title={page.fields.title}
         image={image}
       />
-      <Card.Header>
-        <Card.Header.Title>{page.fields.title}</Card.Header.Title>
-      </Card.Header>
       <Card.Content>
         <Content>
           {page.fields.blurb}
@@ -26,6 +27,6 @@ const PageCard = (props) => {
       </Card.Content>
     </Card>
   );
-};
+});
 
 export default PageCard;
