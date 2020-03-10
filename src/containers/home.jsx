@@ -9,8 +9,7 @@ import PageDiscovery from '../components/page-discovery';
 
 const HomePage = props => {
   const { images, announcements, pages } = props;
-  const discoverablePages = pages && pages.filter(page => page.fields.discoverable);
-  const renderDiscovery = discoverablePages && discoverablePages.length > 0;
+  const renderDiscovery = pages.length > 0;
 
   return (
     <React.Fragment>
@@ -22,7 +21,7 @@ const HomePage = props => {
           );
         })}
       </Content>
-      {renderDiscovery && <PageDiscovery pages={discoverablePages} />}
+      {renderDiscovery && <PageDiscovery pages={pages} />}
       {images && <ImageGallery images={props.images} />}
     </React.Fragment>
   );
