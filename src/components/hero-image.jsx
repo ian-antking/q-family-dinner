@@ -18,6 +18,7 @@ const HeroImage = props => {
       opacity={0.5}
     >
       <Box
+        onClick={props.onClick}
         style={{
           backgroundColor: Colors.general.darkGrey,
           padding: '50px',
