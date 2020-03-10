@@ -93,7 +93,7 @@ class App extends React.Component {
   render() {
     const pages = this.state.content.pages && this.state.content.pages;
     const primaryPages = pages ? pages.filter(page => page.fields.primaryPage) : [];
-    const discoverablePages = pages ? pages.filter(page => page.fields) : [];
+    const discoverablePages = pages ? pages.filter(page => page.fields.discoverable) : [];
     return (
       <React.Fragment>
         <header>
