@@ -3,7 +3,6 @@ import { Message } from 'react-bulma-components/full';
 import RichText from './rich-text';
 import { parseISO, format } from 'date-fns';
 
-
 const AnnoucementCard = props => {
   const { announcement } = props;
   const date = parseISO(announcement.fields.date);
