@@ -23,11 +23,13 @@ const HeroImage = props => {
           backgroundColor: Colors.general.darkGrey,
           padding: '50px',
           transform: `rotate(${rotation}${angle}deg)`,
+          cursor: props.link ? 'pointer' : 'default',
         }}
       >
         <Heading
           style={{
             color: props.textColor || 'white',
+            textDecoration: props.link ? 'underline' : 'none',
           }}
         >
           {props.title}

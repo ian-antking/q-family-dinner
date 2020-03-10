@@ -19,6 +19,7 @@ const PageCard = withRouter((props) => {
         title={page.fields.title}
         image={image}
         pageCardHero
+        link
       />
       <Card.Content>
         <Content>
