@@ -29,7 +29,7 @@ const PageContent = props => {
   return (
     <React.Fragment>
       {header}
-      <div id="content-box">
+      <div className="content-box">
         {page.blurb && (
         <Section>
           <Content size="large">

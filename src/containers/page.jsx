@@ -19,7 +19,9 @@ const Page = props => {
       pages={props.pages}
     />
   ) : (
-    placeholder
+    <div className="content-box">
+      {placeholder}
+    </div>
   );
 };
 export default Page;

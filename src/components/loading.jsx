@@ -1,15 +1,14 @@
 import React from 'react';
 import {
   Loader,
-  Content,
   Image,
 } from 'react-bulma-components/full';
 
 const Loading = () => (
-  <Content>
+  <React.Fragment>
     <Image src="src/assets/undraw_synchronize_ccxk.svg" />
     <Loader />
-  </Content>
+  </React.Fragment>
 );
 
 export default Loading;
