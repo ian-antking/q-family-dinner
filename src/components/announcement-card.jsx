@@ -1,10 +1,7 @@
 import React from 'react';
 import { Message } from 'react-bulma-components/full';
 import RichText from './rich-text';
-import {
-  parseISO,
-  format,
-} from 'date-fns';
+import { parseISO, format } from 'date-fns';
 
 
 const AnnoucementCard = props => {
