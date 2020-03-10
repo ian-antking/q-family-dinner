@@ -10,13 +10,13 @@ const Page = props => {
 
   const placeholder = props.pages ? <NotFound /> : <Loading />;
 
-
   return page ? (
     <PageContent
       {...props}
       page={page}
       color={color}
       events={props.events}
+      pages={props.pages}
     />
   ) : (
     placeholder

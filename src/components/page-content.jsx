@@ -5,6 +5,7 @@ import ContributorCard from '../components/contributor-card';
 import PageHeader from '../components/page-header';
 import EventsPage from '../containers/events';
 import ContactPage from '../containers/contact';
+import ArticlesPage from '../containers/articles';
 import RichText from './rich-text';
 
 const PageContent = props => {
@@ -39,6 +40,7 @@ const PageContent = props => {
         {page.content && <Content size="medium"><RichText content={page.content} /></Content>}
         {path === 'events' && <EventsPage {...props} />}
         {path === 'contact' && <ContactPage {...props} />}
+        {path === 'articles' && <ArticlesPage {...props} />}
         <div id="contributor-box">
           {page.contributors && page.contributors.map(contributor => {
             return (

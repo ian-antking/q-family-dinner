@@ -9,7 +9,7 @@ import PageDiscovery from '../components/page-discovery';
 
 const HomePage = props => {
   const { images, announcements, pages } = props;
-  const discoverablePages = pages && pages.filter(page => page.fields.discoverable);
+  const discoverablePages = pages && pages.filter(page => page.fields);
   const renderDiscovery = discoverablePages && discoverablePages.length > 0;
 
   return (

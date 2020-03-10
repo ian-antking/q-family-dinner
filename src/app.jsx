@@ -124,6 +124,7 @@ class App extends React.Component {
                           {...props}
                           page={page}
                           events={this.state.events}
+                          pages={this.state.content.pages}
                         />
                       )
                   }
