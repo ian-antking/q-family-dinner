@@ -91,10 +91,13 @@ class App extends React.Component {
   }
 
   render() {
+    const pages = this.state.content.pages && this.state.content.pages;
+    const primaryPages = pages ? pages.filter(page => page.fields.primaryPage) : [];
+    const discoverablePages = pages ? pages.filter(page => page.fields) : [];
     return (
       <React.Fragment>
         <header>
-          <Nav pages={this.state.content.pages && this.state.content.pages.concat(dynamicPages)} />
+          <Nav pages={primaryPages.concat(dynamicPages)} />
         </header>
         <article>
           <Switch>
@@ -107,13 +110,12 @@ class App extends React.Component {
                   flag={this.state.splashFlag}
                   images={this.state.images}
                   announcements={this.state.content.announcements}
-                  pages={this.state.content.pages}
+                  pages={discoverablePages}
                 />
               )}
             />
             {
-              this.state.content.pages && this.state.content.pages
-                .concat(dynamicPages)
+              pages && pages.concat(dynamicPages)
                 .map(page => {
                   return (
                     <Route
@@ -124,7 +126,7 @@ class App extends React.Component {
                           {...props}
                           page={page}
                           events={this.state.events}
-                          pages={this.state.content.pages}
+                          pages={discoverablePages}
                         />
                       )
                   }
