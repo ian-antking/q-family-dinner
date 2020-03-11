@@ -3,8 +3,8 @@ import { apiString } from '../config/api';
 import {
   Heading,
   Content,
+  Image,
 } from 'react-bulma-components/full';
-import ReactSVG from 'react-svg';
 
 
 class ThreeWordsCard extends React.Component {
@@ -35,7 +35,7 @@ class ThreeWordsCard extends React.Component {
     const words = this.state.threeWords;
     return (
       <Content>
-        <ReactSVG
+        <Image
           src="src/assets/three-words-logo.svg"
           className="three-words"
         />

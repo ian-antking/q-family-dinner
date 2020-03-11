@@ -36,11 +36,7 @@ const _resolveEventType = sortedEvents => {
   });
 };
 
-const _renderNoEvents = () => {
-  return (
-    <Planning />
-  );
-};
+const _renderNoEvents = () => <Planning />;
 
 const renderEvents = events => {
   const sortedEvents = _sortEvents(events);
