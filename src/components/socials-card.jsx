@@ -1,13 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookSquare,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faEnvelopeSquare,
-  faDesktop,
-} from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons/faEnvelopeSquare';
+import { faDesktop } from '@fortawesome/free-solid-svg-icons/faDesktop';
 
 const SocialsCard = (props) => (
   <div className="link-list">
