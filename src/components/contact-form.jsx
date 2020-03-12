@@ -8,10 +8,9 @@ import {
   Checkbox,
 } from 'react-bulma-components/lib/components/form';
 import Button from 'react-bulma-components/lib/components/button';
-import Loader from 'react-bulma-components/lib/components/loader';
-import Heading from 'react-bulma-components/lib/components/heading';
 import Notification from 'react-bulma-components/lib/components/notification';
 import { apiString } from '../config/api';
+import { Loader, Heading } from 'react-bulma-components/full';
 
 class ContactForm extends React.Component {
   constructor(props) {
