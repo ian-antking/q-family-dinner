@@ -4,7 +4,8 @@ import Content from 'react-bulma-components/lib/components/content';
 import HeroImage from './hero-image';
 import randomColor from '../utils/random-color';
 import { withRouter, Link } from 'react-router-dom';
-import { parseISO, format } from 'date-fns';
+import parseISO from 'date-fns/parseISO';
+import format from 'date-fns/format';
 
 
 const PageCard = withRouter((props) => {

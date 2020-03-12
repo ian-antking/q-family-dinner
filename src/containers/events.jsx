@@ -2,7 +2,8 @@ import React from 'react';
 import EventCard from '../components/event-card';
 import Loading from '../components/loading';
 import Planning from '../components/planning';
-import { parseISO, getUnixTime } from 'date-fns';
+import parseISO from 'date-fns/parseISO';
+import getUnixTime from 'date-fns/getUnixTime';
 
 
 const _sortEvents = events => {
