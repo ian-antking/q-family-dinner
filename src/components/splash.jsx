@@ -1,6 +1,7 @@
 import React from 'react';
 import LazyHero from 'react-lazy-hero';
-import { Heading, Box } from 'react-bulma-components/full';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Box from 'react-bulma-components/lib/components/box';
 import Colors from '../utils/colors';
 
 const textStyle = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message } from 'react-bulma-components/full';
+import Message from 'react-bulma-components/lib/components/message';
 import RichText from './rich-text';
 import { parseISO, format } from 'date-fns';
 

@@ -1,13 +1,10 @@
 import React from 'react';
 import SocialsCard from './socials-card';
 import ContactForm from './contact-form';
-
-import {
-  Content,
-  Container,
-  Heading,
-  Section,
-} from 'react-bulma-components/full';
+import Content from 'react-bulma-components/lib/components/content';
+import Container from 'react-bulma-components/lib/components/container';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Section from 'react-bulma-components/lib/components/section';
 
 import '../styles/contact-info.scss';
 

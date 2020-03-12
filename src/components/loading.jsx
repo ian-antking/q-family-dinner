@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-  Loader,
-  Image,
-} from 'react-bulma-components/full';
+import Loader from 'react-bulma-components/lib/components/loader';
+import Image from 'react-bulma-components/lib/components/image';
 
 const Loading = () => (
   <React.Fragment>

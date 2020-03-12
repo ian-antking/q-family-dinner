@@ -1,11 +1,8 @@
 import React from 'react';
 import { apiString } from '../config/api';
-import {
-  Heading,
-  Content,
-  Image,
-} from 'react-bulma-components/full';
-
+import Heading from 'react-bulma-components/lib/components/heading';
+import Content from 'react-bulma-components/lib/components/content';
+import Image from 'react-bulma-components/lib/components/image';
 
 class ThreeWordsCard extends React.Component {
   constructor(props) {

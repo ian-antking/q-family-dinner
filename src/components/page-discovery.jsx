@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section, Heading } from 'react-bulma-components/full';
+import Section from 'react-bulma-components/lib/components/section';
+import Heading from 'react-bulma-components/lib/components/heading';
 import PageCard from '../components/page-card';
 
 const PageDiscovery = (props) => {

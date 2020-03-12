@@ -1,5 +1,6 @@
 import React from 'react';
-import { Heading, Image } from 'react-bulma-components/full';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Image from 'react-bulma-components/lib/components/image';
 
 const UnderConstruction = () => (
   <React.Fragment>

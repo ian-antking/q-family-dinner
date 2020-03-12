@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image, Heading } from 'react-bulma-components/full';
+import Image from 'react-bulma-components/lib/components/image';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 const NotFound = () => (
   <React.Fragment>

@@ -1,10 +1,8 @@
 import React from 'react';
 import ContactInfo from '../components/contact-info';
-import {
-  Container,
-  Content,
-  Heading,
-} from 'react-bulma-components/full';
+import Container from 'react-bulma-components/lib/components/container';
+import Content from 'react-bulma-components/lib/components/content';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 const ContactPage = () => (
   <Content>

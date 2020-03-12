@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Heading } from 'react-bulma-components/full';
+import Box from 'react-bulma-components/lib/components/box';
+import Heading from 'react-bulma-components/lib/components/heading';
 import LazyHero from 'react-lazy-hero';
 import Colors from '../utils/colors';
 

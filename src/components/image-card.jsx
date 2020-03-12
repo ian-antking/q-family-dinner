@@ -1,14 +1,12 @@
 import React from 'react';
-import {
-  Image,
-  Card,
-} from 'react-bulma-components/full';
+import Card from 'react-bulma-components/lib/components/card';
 import CollapseText from './collapse-text';
+import LazyImage from './lazy-image';
 
 const ImageCard = (props) => {
   return (
     <Card className="image-card">
-      <Image
+      <LazyImage
         src={props.image}
         alt={props.altText}
         size={'square'}

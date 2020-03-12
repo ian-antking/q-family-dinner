@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  Card,
-  Heading,
-  Media,
-  Content,
-} from 'react-bulma-components/full';
+import Card from 'react-bulma-components/lib/components/card';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Media from 'react-bulma-components/lib/components/media';
+import Content from 'react-bulma-components/lib/components/content';
 import RichText from './rich-text';
 
 

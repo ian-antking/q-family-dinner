@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Content } from 'react-bulma-components/full';
+import Card from 'react-bulma-components/lib/components/card';
+import Content from 'react-bulma-components/lib/components/content';
 import HeroImage from './hero-image';
 import randomColor from '../utils/random-color';
 import { withRouter, Link } from 'react-router-dom';

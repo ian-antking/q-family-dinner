@@ -2,9 +2,7 @@ import React from 'react';
 import Splash from '../components/splash';
 import ImageGallery from '../components/image-gallery';
 import AnnouncementCard from '../components/announcement-card';
-import {
-  Content,
-} from 'react-bulma-components/full';
+import Content from 'react-bulma-components/lib/components/content';
 import PageDiscovery from '../components/page-discovery';
 
 const HomePage = props => {

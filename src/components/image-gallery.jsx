@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section } from 'react-bulma-components/full';
+import Section from 'react-bulma-components/lib/components/section';
 import ImageCard from './image-card';
 
 const ImageGallery = (props) => (

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Heading } from 'react-bulma-components/full';
+import Navbar from 'react-bulma-components/lib/components/navbar';
+import Heading from 'react-bulma-components/lib/components/heading';
 import { withRouter } from 'react-router-dom';
 
 class Nav extends React.Component {

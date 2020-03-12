@@ -1,5 +1,6 @@
 import React from 'react';
-import { Hero, Heading } from 'react-bulma-components/full';
+import Hero from 'react-bulma-components/lib/components/hero';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 import '../styles/index.scss';
 

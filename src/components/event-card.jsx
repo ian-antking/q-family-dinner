@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-  Card,
-  Heading,
-} from 'react-bulma-components/full';
+import Card from 'react-bulma-components/lib/components/card';
+import Heading from 'react-bulma-components/lib/components/heading';
 import CollapseText from './collapse-text';
 import { parseISO, format } from 'date-fns';
 import MapComponent from './map-component';

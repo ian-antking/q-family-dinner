@@ -1,5 +1,6 @@
 import React from 'react';
-import { Content, Section } from 'react-bulma-components/full';
+import Content from 'react-bulma-components/lib/components/content';
+import Section from 'react-bulma-components/lib/components/section';
 import HeroImage from '../components/hero-image';
 import ContributorCard from '../components/contributor-card';
 import PageHeader from '../components/page-header';
