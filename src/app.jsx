@@ -17,6 +17,7 @@ import Footer from './components/footer';
 import { createClient } from 'contentful';
 import dynamicPages from './config/dynamic-pages';
 
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 import './styles/index.scss';
 import './styles/mobile.scss';
 

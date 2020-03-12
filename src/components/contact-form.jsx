@@ -10,7 +10,8 @@ import {
 import Button from 'react-bulma-components/lib/components/button';
 import Notification from 'react-bulma-components/lib/components/notification';
 import { apiString } from '../config/api';
-import { Loader, Heading } from 'react-bulma-components/full';
+import Loader from 'react-bulma-components/lib/components/loader';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 class ContactForm extends React.Component {
   constructor(props) {
