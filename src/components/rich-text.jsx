@@ -4,6 +4,11 @@ import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 import Image from 'react-bulma-components/lib/components/image';
 import { Link } from 'react-router-dom';
 
+const IMAGES = [
+  'image/png',
+  'image/jpeg',
+];
+
 const RichText = props => {
   const { content } = props;
   const options = {
@@ -15,8 +20,14 @@ const RichText = props => {
         return <a href={node.data.uri}>{node.content[0].value}</a>;
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return node.data.target.fields.file.contentType === 'image/png' ? (
-          <Image src={node.data.target.fields.file.url} />
+        console.log(node);
+        return IMAGES.includes(node.data.target.fields.file.contentType) ? (
+          <Image
+            style={{
+              maxWidth: '50%',
+            }}
+            src={node.data.target.fields.file.url}
+          />
         ) : (
           <a href={node.data.target.fields.file.url} download>{node.data.target.fields.title}</a>
         );
