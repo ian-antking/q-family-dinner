@@ -4,7 +4,7 @@ import Image from 'react-bulma-components/lib/components/image';
 
 const Loading = () => (
   <React.Fragment>
-    <Image src="src/assets/undraw_synchronize_ccxk.svg" />
+    <Image src="public/assets/undraw_synchronize_ccxk.svg" />
     <Loader />
   </React.Fragment>
 );

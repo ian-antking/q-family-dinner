@@ -33,7 +33,7 @@ class ThreeWordsCard extends React.Component {
     return (
       <Content>
         <Image
-          src="src/assets/three-words-logo.svg"
+          src="public/assets/three-words-logo.svg"
           className="three-words"
         />
         <Heading

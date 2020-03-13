@@ -10,7 +10,7 @@ const planning = () => (
       style={{
         width: '75%',
       }}
-      src="src/assets/undraw_coffee_break_j3of.svg"
+      src="public/assets/undraw_coffee_break_j3of.svg"
     />
   </React.Fragment>
 );
