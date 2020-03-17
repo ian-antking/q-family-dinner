@@ -20,7 +20,6 @@ const RichText = props => {
         return <a href={node.data.uri}>{node.content[0].value}</a>;
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node);
         return IMAGES.includes(node.data.target.fields.file.contentType) ? (
           <Image
             style={{
