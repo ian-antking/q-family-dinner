@@ -1,26 +1,25 @@
 import React from 'react';
 import Splash from '../components/splash';
 import ImageGallery from '../components/image-gallery';
-import AnnouncementCard from '../components/announcement-card';
-import Content from 'react-bulma-components/lib/components/content';
 import PageDiscovery from '../components/page-discovery';
 
 const HomePage = props => {
-  const { images, announcements, pages } = props;
+  const {
+    images,
+    announcements,
+    pages,
+    flag,
+  } = props;
   const renderDiscovery = pages.length > 0;
 
   return (
     <React.Fragment>
-      <Splash flag={props.flag} />
-      <Content>
-        {announcements && announcements.map(announcement => {
-          return (
-            <AnnouncementCard key={announcement.sys.id} announcement={announcement} />
-          );
-        })}
-      </Content>
+      <Splash
+        flag={flag}
+        announcements={announcements}
+      />
       {renderDiscovery && <PageDiscovery pages={pages} />}
-      {images && <ImageGallery images={props.images} />}
+      {images && <ImageGallery images={images} />}
     </React.Fragment>
   );
 };

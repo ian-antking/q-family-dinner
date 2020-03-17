@@ -3,12 +3,16 @@ import LazyHero from 'react-lazy-hero';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Box from 'react-bulma-components/lib/components/box';
 import Colors from '../utils/colors';
+import AnnouncementCard from '../components/announcement-card';
 
 const textStyle = {
   color: Colors.trans.white,
 };
 
 const Splash = (props) => {
+  const { announcements } = props;
+  const announcement = announcements && announcements[0];
+  const rotation = announcements ? '0' : '-20';
   return (
     <LazyHero
       minHeight="100vh"
@@ -26,7 +30,7 @@ const Splash = (props) => {
         {
           backgroundColor: Colors.general.darkGrey,
           padding: '50px',
-          transform: 'rotate(-20deg)',
+          transform: `rotate(${rotation}deg)`,
         }
       }
       >
@@ -45,6 +49,7 @@ const Splash = (props) => {
         For the queer community by the queer community.
         </Heading>
       </Box>
+      {announcement && <AnnouncementCard key={announcement.sys.id} announcement={announcement} />}
     </LazyHero>);
 };
 
