@@ -35,7 +35,7 @@ const EventCard = (props) => {
           longitude: longitude,
         }}
       />
-      <MapComponent
+      {/* <MapComponent
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${googleKey}`}
         loadingElement={<div style={{ height: '100%' }} />}
@@ -43,7 +43,7 @@ const EventCard = (props) => {
         mapElement={<div style={{ height: '100%' }} />}
         longitude={longitude}
         latitude={latitude}
-      />
+      /> */}
     </Card>
   );
 };
