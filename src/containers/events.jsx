@@ -2,17 +2,10 @@ import React from 'react';
 import EventCard from '../components/event-card';
 import Loading from '../components/loading';
 import Planning from '../components/planning';
-import parseISO from 'date-fns/parseISO';
-import getUnixTime from 'date-fns/getUnixTime';
 
 
 const _sortEvents = events => {
-  const time = Math.round(new Date().getTime() / 1000);
-  return events
-    .filter(event => {
-      return getUnixTime(parseISO(event.start_time)) > time;
-    })
-    .reverse();
+  return events.reverse();
 };
 
 const _renderRepeatEvents = event => {
