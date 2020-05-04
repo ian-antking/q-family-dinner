@@ -1,4 +1,4 @@
-const pageNames = ['Articles', 'Events', 'Contact'];
+const pageNames = ['Articles', 'Contact'];
 
 class PageData {
   constructor(name) {
