@@ -8,8 +8,8 @@
     "build:dev": "webpack --env dev --progress --profile --colors",
     "build:prod": "webpack --env prod --progress --profile --colors",
     "test": "jest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build:prod"
+    "predeploy": "npm run build:prod",
+    "deploy": "gh-pages -d"
   },
   "keywords": [
     "react"
