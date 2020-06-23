@@ -87,7 +87,7 @@ class App extends React.Component {
         content: content,
       });
     });
-    this.fetchEvents();
+    // this.fetchEvents();
     this.fetchImages();
   }
 
