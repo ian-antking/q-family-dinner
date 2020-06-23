@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import LazyHero from 'react-lazy-hero';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Box from 'react-bulma-components/lib/components/box';
 import Colors from '../utils/colors';
 import AnnouncementCard from '../components/announcement-card';
+import Flags from '../utils/q-flags';
 
 const textStyle = {
   color: Colors.trans.white,
@@ -13,6 +14,19 @@ const Splash = (props) => {
   const { announcements } = props;
   const announcement = announcements && announcements[0];
   const rotation = announcements ? '0' : '-20';
+
+  const randomFlag = () => {
+    const keys = Object.keys(Flags);
+    return Flags[keys[Math.floor(Math.random() * keys.length)]];
+  };
+
+  const [flag, setFlag] = useState(randomFlag());
+
+  useEffect(() => {
+    const flagTimer = setInterval(() => setFlag(randomFlag()), 5000);
+    return () => clearInterval(flagTimer);
+  });
+
   return (
     <LazyHero
       minHeight="100vh"
@@ -20,7 +34,7 @@ const Splash = (props) => {
       imgSrc=""
       style={
       {
-        background: props.flag,
+        background: flag,
         overflow: 'hidden',
       }
     }

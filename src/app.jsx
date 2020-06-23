@@ -12,7 +12,6 @@ import {
   instagramUsername,
   contentful,
 } from './config/api';
-import Flags from './utils/q-flags';
 import Footer from './components/footer';
 import { createClient } from 'contentful';
 import dynamicPages from './config/dynamic-pages';
@@ -26,19 +25,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       content: {},
-      splashFlag: this._randomFlag(),
     };
-    this.flagInterval = setInterval(() => this.props.location.pathname === '/' && this.changeFlag(), 5000);
     this.contentClient = createClient({
       space: contentful.contentSpace,
       accessToken: contentful.contentToken,
     });
   }
-
-  _randomFlag = () => {
-    const keys = Object.keys(Flags);
-    return Flags[keys[Math.floor(Math.random() * keys.length)]];
-  };
 
   fetchEvents() {
     window.fetch(`${apiString}/event`)
@@ -63,17 +55,6 @@ class App extends React.Component {
         });
       });
   }
-
-  changeFlag = () => {
-    const flag = this._randomFlag();
-    if (this.state.splashFlag !== flag) {
-      this.setState({
-        splashFlag: flag,
-      });
-    } else {
-      this.changeFlag();
-    }
-  };
 
   componentDidMount() {
     this.contentClient.getEntries().then(data => {
