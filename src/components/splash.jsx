@@ -4,21 +4,15 @@ import Heading from 'react-bulma-components/lib/components/heading';
 import Box from 'react-bulma-components/lib/components/box';
 import Colors from '../utils/colors';
 import AnnouncementCard from '../components/announcement-card';
-import Flags from '../utils/q-flags';
+import randomFlag from '../utils/random-flag';
 
 const textStyle = {
   color: Colors.trans.white,
 };
 
-const Splash = (props) => {
-  const { announcements } = props;
+const Splash = ({ announcements }) => {
   const announcement = announcements && announcements[0];
   const rotation = announcements ? '0' : '-20';
-
-  const randomFlag = () => {
-    const keys = Object.keys(Flags);
-    return Flags[keys[Math.floor(Math.random() * keys.length)]];
-  };
 
   const [flag, setFlag] = useState(randomFlag());
 
