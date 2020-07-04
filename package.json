@@ -8,7 +8,8 @@
     "build": "webpack --env.NODE_ENV=production --progress --profile --colors",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "postinstall": "patch-package"
   },
   "keywords": [
     "react"
