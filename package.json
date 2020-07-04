@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --no-info --env dev",
-    "build:dev": "webpack --env dev --progress --profile --colors",
-    "build:prod": "webpack --env prod --progress --profile --colors",
+    "build": "webpack --env.NODE_ENV=production --progress --profile --colors",
     "test": "jest",
-    "predeploy": "npm run build:prod",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d public"
   },
   "keywords": [
