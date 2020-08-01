@@ -1,0 +1,98 @@
+@import "~react-bulma-components/src/index.sass";
+
+body{
+  margin: 0px;
+  padding: 0px;
+
+}
+
+form{
+  width: 100%;
+}
+
+.content{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.container{
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-card{
+  width: 500px;
+  margin: 1%;
+  padding: 1%;
+}
+
+.page-card{
+  width: 500px;
+  margin-top: 5%;
+}
+
+.page-card-hero{
+  max-height: 30vh;
+  min-height: 25vh;
+}
+
+.gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.image{
+   min-width: 150px;
+}
+
+.notification{
+  width: 100%;
+}
+
+.three-words{
+  width: 50%;
+}
+
+.tag-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.content-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+#contributor-box{
+  display: flex;
+  flex-wrap: wrap;
+}

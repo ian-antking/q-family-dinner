@@ -1,38 +1,84 @@
 {
   "name": "q-family-dinner",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "contentful": "^7.14.6",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
+  "version": "1.0.0",
+  "description": "front end app for managing lgbt+ dinner club",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --inline --hot --no-info --env dev",
+    "build": "webpack --env.NODE_ENV=production --progress --profile --colors",
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public",
+    "postinstall": "patch-package"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [
+    "react"
+  ],
+  "author": "Ian King",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-antking/q-family-dinner.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "bugs": {
+    "url": "https://github.com/ian-antking/q-family-dinner/issues"
+  },
+  "homepage": "https://github.com/ian-antking/q-family-dinner#readme",
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^14.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "contentful": "^7.14.4",
+    "date-fns": "^2.14.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.13.1",
+    "raf": "^3.4.1",
+    "react": "^16.13.1",
+    "react-bulma-components": "2.3.0",
+    "react-dom": "^16.13.1",
+    "react-google-maps": "^9.4.5",
+    "react-lazy-hero": "^2.0.0",
+    "react-lazy-load": "^3.0.13",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "styled-components": "^5.1.1"
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "<=4.19.1",
+    "eslint-config-mcr-codes": "^1.3.0",
+    "file-loader": "^1.1.11",
+    "gh-pages": "^3.1.0",
+    "jest": "^22.4.3",
+    "node-sass": "^4.14.1",
+    "react-test-renderer": "^16.13.1",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.s?css$": "<rootDir>/__jest__/stub.js"
+    },
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/__jest__/setup.js"
+    ],
+    "testEnvironment": "node"
   }
 }
