@@ -1,4 +1,5 @@
 import React from 'react';
+import getContent from '../services/get-content';
 
 function App() {
   return (
