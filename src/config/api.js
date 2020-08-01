@@ -1,4 +1,6 @@
-const apiUrl = 'https://q-family-dinner.herokuapp.com';
+const apiString = 'https://q-family-dinner.herokuapp.com';
+const googleKey = 'AIzaSyAF8ycsjyy9eeofTAP0lB3U6_a2_LXcB68';
+const instagramUsername = 'queerfamilytea';
 
 const contentful = {
   contentSpace: 'yq2ab76w5obt',
@@ -6,6 +8,8 @@ const contentful = {
 };
 
 export {
-  apiUrl,
+  apiString,
+  googleKey,
+  instagramUsername,
   contentful,
 };
