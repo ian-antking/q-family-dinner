@@ -1,20 +1,15 @@
 import React from "react";
-import getContent from "../services/get-content";
+import { ThemeProvider } from "styled-components";
+import themes from "../styles/themes";
 
 function App() {
-
-  const Test = async () => {
-    const content = await getContent();
-    console.log(content);
-  };
-
-  Test();
-
   return (
     <>
-      <header>
-        <p>Queer Family Tea</p>
-      </header>
+      <ThemeProvider theme={themes.default}>
+        <header>
+          <p>Queer Family Tea</p>
+        </header>
+      </ThemeProvider>
     </>
   );
 }
