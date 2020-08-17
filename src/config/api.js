@@ -5,7 +5,4 @@ const contentful = {
   contentToken: 'wePDL7dw8XEw_ph3Ds_c4us7XthCD3b1TMWUmSe_p94',
 };
 
-export {
-  apiUrl,
-  contentful,
-};
+export { apiUrl, contentful };

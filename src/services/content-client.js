@@ -1,10 +1,10 @@
-import { createClient } from "contentful";
-import { contentful } from "../config/api";
+import { createClient } from 'contentful';
+import { contentful } from '../config/api';
 
 const environments = {
   development: 'test',
-  production: 'master'
-}
+  production: 'master',
+};
 
 export default createClient({
   space: contentful.contentSpace,

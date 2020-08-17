@@ -1,4 +1,4 @@
-import contentClient from "./content-client";
+import contentClient from './content-client';
 
 export default async () => {
   const content = {};

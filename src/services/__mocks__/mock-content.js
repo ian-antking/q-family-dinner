@@ -4,7 +4,7 @@ export default {
       sys: {
         contentType: {
           sys: {
-            id: "page",
+            id: 'page',
           },
         },
       },
@@ -13,7 +13,7 @@ export default {
       sys: {
         contentType: {
           sys: {
-            id: "page",
+            id: 'page',
           },
         },
       },
@@ -22,7 +22,7 @@ export default {
       sys: {
         contentType: {
           sys: {
-            id: "page",
+            id: 'page',
           },
         },
       },
@@ -31,7 +31,7 @@ export default {
       sys: {
         contentType: {
           sys: {
-            id: "contributor",
+            id: 'contributor',
           },
         },
       },
@@ -40,7 +40,7 @@ export default {
       sys: {
         contentType: {
           sys: {
-            id: "contributor",
+            id: 'contributor',
           },
         },
       },
