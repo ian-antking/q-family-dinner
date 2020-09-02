@@ -27,7 +27,7 @@ const StyledNavbar = styled.div`
 
 const NavBar = () => {
   return (
-    <StyledNavbar>
+    <StyledNavbar data-testid="navbar">
       <Link to="/">Queer Family Tea</Link>
     </StyledNavbar>
   );

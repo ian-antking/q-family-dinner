@@ -12,3 +12,14 @@ test('snapshot: Navbar component', () => {
   const component = asFragment();
   expect(component).toMatchSnapshot();
 });
+
+test('Navbar component renders', () => {
+  const {getByTestId } = render(
+    <Router>
+      <Navbar />
+    </Router>
+  );
+  const componentId = getByTestId('navbar');
+  expect(componentId).toBeInTheDocument();
+});
+
