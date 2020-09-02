@@ -18,9 +18,6 @@ function App() {
     <>
       <ThemeProvider theme={themes.default}>
         <Navbar />
-        <header>
-          <p>Queer Family Tea</p>
-        </header>
       </ThemeProvider>
     </>
   );

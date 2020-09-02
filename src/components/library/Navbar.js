@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import BurgerMenu from './BurgerMenu';
 
 const StyledNavbar = styled.div`
   position: fixed;
@@ -29,6 +30,7 @@ const NavBar = () => {
   return (
     <StyledNavbar data-testid="navbar">
       <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
+      <BurgerMenu />
     </StyledNavbar>
   );
 };
