@@ -28,7 +28,7 @@ const StyledNavbar = styled.div`
 const NavBar = () => {
   return (
     <StyledNavbar data-testid="navbar">
-      <Link to="/">Queer Family Tea</Link>
+      <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
     </StyledNavbar>
   );
 };

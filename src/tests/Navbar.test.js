@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/library/Navbar';
 
 test('snapshot: Navbar component', () => {
   const { asFragment } = render(
@@ -14,7 +14,7 @@ test('snapshot: Navbar component', () => {
 });
 
 test('Navbar component renders', () => {
-  const {getByTestId } = render(
+  const { getByTestId } = render(
     <Router>
       <Navbar />
     </Router>
@@ -23,3 +23,12 @@ test('Navbar component renders', () => {
   expect(componentId).toBeInTheDocument();
 });
 
+test(`Navbar includes a Home Link that links to "#/"`, () => {                                       
+  const { getByTestId } = render( 
+    <Router>
+      <Navbar />
+    </Router>
+  );
+  const homeLink = getByTestId('homeLink');
+  expect(homeLink.getAttribute("href")).toBe("#/")
+ });
