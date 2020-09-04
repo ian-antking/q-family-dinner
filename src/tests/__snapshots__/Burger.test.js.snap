@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot: Burger component 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-AxjAm dOvMlp"
+    data-testid="burger"
+  >
+    <div />
+    <div />
+    <div />
+  </button>
+</DocumentFragment>
+`;
