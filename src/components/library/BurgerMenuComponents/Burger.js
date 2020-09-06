@@ -46,9 +46,9 @@ const StyledBurger = styled.button`
 const Burger = ({ open, setOpen }) => {
   return (
     <StyledBurger data-testid="burger" open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
+      <div data-testid="slice-one"/> 
+      <div data-testid="slice-two"/>
+      <div data-testid="slice-three"/>
     </StyledBurger>
   );
 };

@@ -19,9 +19,15 @@ exports[`snapshot: Navbar component 1`] = `
         class="sc-AxjAm dOvMlp"
         data-testid="burger"
       >
-        <div />
-        <div />
-        <div />
+        <div
+          data-testid="slice-one"
+        />
+        <div
+          data-testid="slice-two"
+        />
+        <div
+          data-testid="slice-three"
+        />
       </button>
       <nav
         class="sc-AxirZ QGhep"
