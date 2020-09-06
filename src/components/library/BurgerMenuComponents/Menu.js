@@ -41,7 +41,7 @@ const MenuLink = styled(Link)`
 
 const Menu = ({ open }) => {
   return (
-    <StyledMenu open={open}>
+    <StyledMenu data-testid="menu" open={open}>
       <MenuLink to="/">Home</MenuLink>
       <MenuLink to="/">Also Home</MenuLink>
       <MenuLink to="/">Home Again!</MenuLink>

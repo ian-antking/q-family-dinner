@@ -4,6 +4,7 @@ exports[`snapshot: Menu component 1`] = `
 <DocumentFragment>
   <nav
     class="sc-AxjAm fyOvYq"
+    data-testid="menu"
   >
     <a
       class="sc-AxirZ bematR"
