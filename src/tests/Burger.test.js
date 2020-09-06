@@ -1,5 +1,4 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
 import Burger from '../components/library/BurgerMenuComponents/Burger';
 
