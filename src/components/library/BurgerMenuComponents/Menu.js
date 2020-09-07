@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { bool } from 'prop-types';
+import pages from '../../App';
 
 export const StyledMenu = styled.nav`
   position: absolute;
@@ -39,12 +40,25 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const Menu = ({ open }) => {
+const Menu = ({ open, content }) => {
+
+  console.log(content);
+  const pages = content.pages;
+
   return (
     <StyledMenu data-testid="menu" open={open}>
-      <MenuLink to="/">Home</MenuLink>
-      <MenuLink to="/">Also Home</MenuLink>
-      <MenuLink to="/">Home Again!</MenuLink>
+      {pages && pages.map(page => {
+        return page.fields.primaryPage && (
+          <MenuLink
+            key={`menulink-${page.sys.id}`}
+            to={`/${page.fields.slug}`}
+          >
+            {page.fields.title}
+          </MenuLink>
+        );
+      })
+}
+
     </StyledMenu>
   );
 };

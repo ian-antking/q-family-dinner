@@ -26,11 +26,11 @@ const StyledNavbar = styled.div`
   }
 `;
 
-const NavBar = () => {
+const NavBar = ({ content }) => {
   return (
     <StyledNavbar data-testid="navbar">
       <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
-      <BurgerMenu />
+      <BurgerMenu content={content}/>
     </StyledNavbar>
   );
 };

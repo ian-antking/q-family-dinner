@@ -5,7 +5,7 @@ import getContent from '../services/get-content';
 import Navbar from  './library/Navbar';
 
 function App() {
-  const [content, setContent] = useState({});
+  const [content, setContent] = useState({});  
 
   useEffect(() => {
     (async () => {
@@ -14,10 +14,12 @@ function App() {
     })();
   }, []);
 
+  console.log(content);
+
   return (
     <>
       <ThemeProvider theme={themes.default}>
-        <Navbar />
+        <Navbar content={content} />
       </ThemeProvider>
     </>
   );

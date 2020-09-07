@@ -11,7 +11,7 @@ const StyledBurgerMenu = styled.div`
   width: 60px;
 `;
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ content }) => {
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
@@ -19,7 +19,7 @@ const BurgerMenu = () => {
   return (
     <StyledBurgerMenu ref={node}>
       <Burger open={open} setOpen={setOpen} />
-      <Menu open={open} />
+      <Menu open={open} content={content}/>
     </StyledBurgerMenu>
   );
 };
