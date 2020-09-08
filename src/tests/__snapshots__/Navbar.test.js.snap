@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot: Navbar component 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy hcLtgI"
+    data-testid="navbar"
+  >
+    <a
+      data-testid="homeLink"
+      href="#/"
+    >
+      Queer Family Tea
+    </a>
+    <div
+      class="sc-AxhCb hxzONC"
+    >
+      <button
+        class="sc-AxjAm dOvMlp"
+        data-testid="burger"
+      >
+        <div
+          data-testid="slice-one"
+        />
+        <div
+          data-testid="slice-two"
+        />
+        <div
+          data-testid="slice-three"
+        />
+      </button>
+      <nav
+        class="sc-AxirZ QGhep"
+        data-testid="menu"
+      >
+        <a
+          class="sc-AxiKw eKIwHF"
+          href="#/"
+        >
+          Home
+        </a>
+        <a
+          class="sc-AxiKw eKIwHF"
+          href="#/"
+        >
+          Also Home
+        </a>
+        <a
+          class="sc-AxiKw eKIwHF"
+          href="#/"
+        >
+          Home Again!
+        </a>
+      </nav>
+    </div>
+  </div>
+</DocumentFragment>
+`;

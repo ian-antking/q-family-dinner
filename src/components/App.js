@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import themes from '../styles/themes';
 import getContent from '../services/get-content';
+import Navbar from  './library/Navbar';
 
 function App() {
-  const [content, setContent] = useState({});
+  const [content, setContent] = useState({});  
 
   useEffect(() => {
     (async () => {
@@ -13,12 +14,12 @@ function App() {
     })();
   }, []);
 
+  console.log(content);
+
   return (
     <>
       <ThemeProvider theme={themes.default}>
-        <header>
-          <p>Queer Family Tea</p>
-        </header>
+        <Navbar content={content} />
       </ThemeProvider>
     </>
   );
