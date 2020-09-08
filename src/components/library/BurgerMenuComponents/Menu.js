@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { bool } from 'prop-types';
-import pages from '../../App';
 
 export const StyledMenu = styled.nav`
   position: absolute;
@@ -40,7 +39,7 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const Menu = ({ open, content }) => {
+const Menu = ({ open, setOpen, content }) => {
 
   console.log(content);
   const pages = content.pages;
@@ -52,6 +51,7 @@ const Menu = ({ open, content }) => {
           <MenuLink
             key={`menulink-${page.sys.id}`}
             to={`/${page.fields.slug}`}
+            onClick={() => setOpen(!open)}
           >
             {page.fields.title}
           </MenuLink>
