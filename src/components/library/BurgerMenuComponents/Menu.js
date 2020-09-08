@@ -35,7 +35,7 @@ const MenuLink = styled(Link)`
   align-items: center;
 
   &:hover {
-    color: yellow;
+    color: black;
   }
 `;
 

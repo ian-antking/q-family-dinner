@@ -8,8 +8,8 @@ const StyledNavbar = styled.div`
   top: 0;
   left: 0;
   height: 50px;
-  width: calc(100vw - 30px);
-  padding: 0 15px;
+  width: calc(100vw - 20px);
+  padding: 0 5px 0 15px;
   color: #000000;
   background: whitesmoke;
   display: flex;
@@ -23,6 +23,10 @@ const StyledNavbar = styled.div`
     font-weight: bold;
     color: #000000;
     text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 15px;
   }
 `;
 
