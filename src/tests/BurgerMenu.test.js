@@ -37,3 +37,15 @@ test('BurgerMenu component renders', () => {
   const componentId = getByTestId('burgermenu');
   expect(componentId).toBeInTheDocument();
 });
+
+test('BurgerMenu component contains the Burger component and the Menu component', () => {
+  const { getByTestId } = render(
+    <Router>
+      <BurgerMenu content={content}/>
+    </Router>
+  );
+  const burger = getByTestId('burger');
+  const menu = getByTestId('menu');
+  expect(burger).toBeInTheDocument();
+  expect(menu).toBeInTheDocument();
+});
