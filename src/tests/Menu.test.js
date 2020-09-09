@@ -5,11 +5,25 @@ import Menu from '../components/library/BurgerMenuComponents/Menu';
 
 const closed = false;
 const open = true;
+const content = {
+  pages: [
+    {
+      fields: {
+        title: "test-title",
+        slug: "test-slug",
+        primaryPage: true
+      },
+      sys: {
+        id: "test-id"
+      }
+    }
+  ]
+};
 
 test('snapshot: Menu component', () => {
 	const { asFragment } = render(
 		<Router>
-	  		<Menu open={closed} />
+	  		<Menu open={closed} content={content} />
 	  	</Router>
 	);
 	const component = asFragment();
@@ -19,7 +33,7 @@ test('snapshot: Menu component', () => {
   test('Menu component renders', () => {
 	const { getByTestId } = render(
 	  <Router>
-		<Menu open={closed} />
+		<Menu open={closed} content={content} />
 	  </Router>
 	);
 	const component = getByTestId('menu');

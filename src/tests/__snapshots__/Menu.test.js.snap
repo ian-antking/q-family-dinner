@@ -3,26 +3,14 @@
 exports[`snapshot: Menu component 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-AxjAm fyOvYq"
+    class="sc-bdnylx hTGIvb"
     data-testid="menu"
   >
     <a
-      class="sc-AxirZ bematR"
-      href="#/"
+      class="sc-gtssRu hdObnR"
+      href="#/test-slug"
     >
-      Home
-    </a>
-    <a
-      class="sc-AxirZ bematR"
-      href="#/"
-    >
-      Also Home
-    </a>
-    <a
-      class="sc-AxirZ bematR"
-      href="#/"
-    >
-      Home Again!
+      test-title
     </a>
   </nav>
 </DocumentFragment>
