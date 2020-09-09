@@ -40,8 +40,6 @@ const MenuLink = styled(Link)`
 `;
 
 const Menu = ({ open, setOpen, content }) => {
-
-  console.log(content);
   const pages = content.pages;
 
   return (

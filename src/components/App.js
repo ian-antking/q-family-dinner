@@ -14,8 +14,6 @@ function App() {
     })();
   }, []);
 
-  console.log(content);
-
   return (
     <>
       <ThemeProvider theme={themes.default}>

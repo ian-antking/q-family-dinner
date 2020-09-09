@@ -29,7 +29,7 @@ test('the function passed to onClick is called on click', () => {
   expect(setOpen).toHaveBeenCalled();
 });
 
-test('when open = false the styles of child divs are such that they form a burger', () => {
+xtest('when open = false the styles of child divs are such that they form a burger', () => {
   const { getByTestId } = render (
     <Burger open={false} setOpen={setOpen} />
   );
@@ -44,7 +44,7 @@ test('when open = false the styles of child divs are such that they form a burge
   expect(slice3).toHaveStyle('transform: rotate(0)');
 });
 
-test('when open = true the styles of child divs are such that they form a cross', () => {
+xtest('when open = true the styles of child divs are such that they form a cross', () => {
   const { getByTestId } = render (
     <Burger open={true} setOpen={setOpen} />
   );
