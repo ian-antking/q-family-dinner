@@ -38,7 +38,7 @@ test('BurgerMenu component renders', () => {
   expect(componentId).toBeInTheDocument();
 });
 
-test('BurgerMenu component contains the Burger component and the Menu component', () => {
+test('BurgerMenu component renders the Burger component and the Menu component', () => {
   const { getByTestId } = render(
     <Router>
       <BurgerMenu content={content}/>

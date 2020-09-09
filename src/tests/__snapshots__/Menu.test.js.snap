@@ -8,9 +8,21 @@ exports[`snapshot: Menu component 1`] = `
   >
     <a
       class="sc-gtssRu hdObnR"
-      href="#/test-slug"
+      href="#/test-slug-1"
     >
-      test-title
+      test-title-1
+    </a>
+    <a
+      class="sc-gtssRu hdObnR"
+      href="#/test-slug-2"
+    >
+      test-title-2
+    </a>
+    <a
+      class="sc-gtssRu hdObnR"
+      href="#/test-slug-3"
+    >
+      test-title-3
     </a>
   </nav>
 </DocumentFragment>

@@ -44,7 +44,7 @@ const Menu = ({ open, setOpen, content }) => {
 
   return (
     <StyledMenu data-testid="menu" open={open}>
-      {pages && pages.map(page => {
+      {pages && pages.map(page => { 
         return page.fields.primaryPage && (
           <MenuLink
             key={`menulink-${page.sys.id}`}
