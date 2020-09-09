@@ -17,7 +17,7 @@ const BurgerMenu = ({ content }) => {
   useOnClickOutside(node, () => setOpen(false));
 
   return (
-    <StyledBurgerMenu ref={node}>
+    <StyledBurgerMenu data-testid="burgermenu"ref={node}>
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} setOpen={setOpen} content={content}/>
     </StyledBurgerMenu>
