@@ -40,7 +40,8 @@ const MenuLink = styled(Link)`
 `;
 
 const Menu = ({ open, setOpen, content }) => {
-  const pages = [content.pages];
+  console.log(content);
+  const pages = content.pages;
 
   return (
     <StyledMenu data-testid="menu" open={open}>
