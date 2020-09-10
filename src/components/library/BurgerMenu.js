@@ -1,9 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import useOnClickOutside from '../../hooks/hooks';
-// eslint-disable-next-line import/no-unresolved
 import Burger from './BurgerMenuComponents/Burger';
-// eslint-disable-next-line import/no-unresolved
 import Menu from './BurgerMenuComponents/Menu';
 
 const StyledBurgerMenu = styled.div`
@@ -17,9 +15,9 @@ const BurgerMenu = ({ content }) => {
   useOnClickOutside(node, () => setOpen(false));
 
   return (
-    <StyledBurgerMenu data-testid="burgermenu"ref={node}>
+    <StyledBurgerMenu data-testid="burgermenu" ref={node}>
       <Burger open={open} setOpen={setOpen} />
-      <Menu open={open} setOpen={setOpen} content={content}/>
+      <Menu open={open} setOpen={setOpen} content={content} />
     </StyledBurgerMenu>
   );
 };
