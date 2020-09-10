@@ -5,7 +5,10 @@ import getContent from '../services/get-content';
 import Navbar from  './library/Navbar';
 
 function App() {
-  const [content, setContent] = useState({});  
+  const [content, setContent] = useState({
+    pages: [],
+    contributors: []
+  });  
 
   useEffect(() => {
     (async () => {
