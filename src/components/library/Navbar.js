@@ -30,13 +30,11 @@ const StyledNavbar = styled.div`
   }
 `;
 
-const NavBar = ({ content }) => {
-  return (
-    <StyledNavbar data-testid="navbar">
-      <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
-      <BurgerMenu content={content}/>
-    </StyledNavbar>
-  );
-};
+const NavBar = ({ content }) => (
+  <StyledNavbar data-testid="navbar">
+    <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
+    <BurgerMenu content={content} />
+  </StyledNavbar>
+);
 
 export default NavBar;

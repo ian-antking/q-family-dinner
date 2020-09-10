@@ -40,22 +40,19 @@ const MenuLink = styled(Link)`
 `;
 
 const Menu = ({ open, setOpen, content }) => {
-  const pages = content.pages;
+  const { pages } = content;
 
   return (
     <StyledMenu data-testid="menu" open={open}>
-      {pages && pages.map(page => { 
-        return page.fields.primaryPage && (
-          <MenuLink
-            key={`menulink-${page.sys.id}`}
-            to={`/${page.fields.slug}`}
-            onClick={() => setOpen(!open)}
-          >
-            {page.fields.title}
-          </MenuLink>
-        );
-      })
-}
+      {pages && pages.map((page) => page.fields.primaryPage && (
+      <MenuLink
+        key={`menulink-${page.sys.id}`}
+        to={`/${page.fields.slug}`}
+        onClick={() => setOpen(!open)}
+      >
+        {page.fields.title}
+      </MenuLink>
+      ))}
 
     </StyledMenu>
   );

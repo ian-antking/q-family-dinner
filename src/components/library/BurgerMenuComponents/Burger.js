@@ -43,15 +43,13 @@ const StyledBurger = styled.button`
   }
 `;
 
-const Burger = ({ open, setOpen }) => {
-  return (
-    <StyledBurger data-testid="burger" open={open} onClick={() => setOpen(!open)}>
-      <div data-testid="slice-one"/> 
-      <div data-testid="slice-two"/>
-      <div data-testid="slice-three"/>
-    </StyledBurger>
-  );
-};
+const Burger = ({ open, setOpen }) => (
+  <StyledBurger data-testid="burger" open={open} onClick={() => setOpen(!open)}>
+    <div data-testid="slice-one" />
+    <div data-testid="slice-two" />
+    <div data-testid="slice-three" />
+  </StyledBurger>
+);
 
 Burger.propTypes = {
   open: bool.isRequired,
