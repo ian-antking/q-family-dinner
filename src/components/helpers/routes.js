@@ -9,7 +9,7 @@ const Routes = ({ pages }) => (
         data-testId="route"
         key={`route-${page.sys.id}`}
         path={`/${page.fields.slug}`}
-        render={() => <h1>Test</h1>}
+        render={() => <h1>{page.fields.title}</h1>}
       />
     ))}
   </div>
