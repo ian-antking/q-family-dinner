@@ -22,7 +22,7 @@ function App() {
     <>
       <ThemeProvider theme={themes.default}>
         <Navbar content={content} />
-        <Page />
+        {content.pages && <Page pageContent={content.pages[0]} />}
       </ThemeProvider>
     </>
   );

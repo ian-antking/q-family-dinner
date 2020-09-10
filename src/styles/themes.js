@@ -1,3 +1,5 @@
 export default {
-  default: {},
+  default: {
+    filter: "#FFFFFF"
+  },
 };

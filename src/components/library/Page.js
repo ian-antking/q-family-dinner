@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import HeroImage from './HeroImage';
 
 
-const Page = () => {
+const Page = ({ pageContent }) => {
+
 	return (
 		<>
-			<HeroImage />
+			<HeroImage image={pageContent.fields.heroImage.fields.file.url} />
 		</>
 	)
 };
