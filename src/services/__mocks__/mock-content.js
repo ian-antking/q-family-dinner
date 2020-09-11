@@ -10,8 +10,9 @@ export default {
         },
       },
       fields: {
-        slug: 'test-page-1',
-        title: 'test-page-1',
+        slug: 'test-page-1-slug',
+        title: 'test-page-1-title',
+        primaryPage: true,
       },
     },
     {
@@ -24,8 +25,9 @@ export default {
         },
       },
       fields: {
-        slug: 'test-page-2',
-        title: 'test-page-2',
+        slug: 'test-page-2-slug',
+        title: 'test-page-2-title',
+        primaryPage: true,
       },
     },
     {
@@ -38,8 +40,9 @@ export default {
         },
       },
       fields: {
-        slug: 'test-page-3',
-        title: 'test-page-3',
+        slug: 'test-page-3-slug',
+        title: 'test-page-3-title',
+        primaryPage: true,
       },
     },
     {
