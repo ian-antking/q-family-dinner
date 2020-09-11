@@ -12,6 +12,7 @@ const Routes = ({ pages }) => (
         render={() => <h1>{page.fields.title}</h1>}
       />
     ))}
+    <Route exact path="/" render={() => <h1>home</h1>} />
   </div>
 );
 
@@ -19,6 +20,7 @@ Routes.propTypes = {
   pages: arrayOf(shape({
     fields: shape({
       slug: string.isRequired,
+      title: string.isRequired,
     }).isRequired,
     sys: shape({
       id: string.isRequired,

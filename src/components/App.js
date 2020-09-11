@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import themes from '../styles/themes';
 import getContent from '../services/get-content';
 import Navbar from './library/Navbar';
-import Routes from './helpers/routes';
+import Routes from './helpers/Routes';
 
 function App() {
   const [content, setContent] = useState({});
@@ -20,9 +20,11 @@ function App() {
     <>
       <ThemeProvider theme={themes.default}>
         <Navbar content={content} />
-        <Switch>
-          { content.pages?.length && <Routes pages={content.pages} /> }
-        </Switch>
+        <main>
+          <Switch>
+            { content.pages?.length && <Routes pages={content.pages} /> }
+          </Switch>
+        </main>
       </ThemeProvider>
     </>
   );
