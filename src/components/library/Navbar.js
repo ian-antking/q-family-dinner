@@ -10,8 +10,8 @@ const StyledNavbar = styled.div`
   height: 50px;
   width: calc(100vw - 20px);
   padding: 0 5px 0 15px;
-  color: #000000;
-  background: whitesmoke;
+  color: ${(props) => props.theme.navbarText};
+  background: ${(props) => props.theme.navbar};
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
