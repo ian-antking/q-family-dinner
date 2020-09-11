@@ -1,5 +1,5 @@
 export default {
   default: {
-    filter: "#FFFFFF"
+    filter: "rgba(255, 255, 255, 0.5)"
   },
 };

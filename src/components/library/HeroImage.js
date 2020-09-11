@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Heading from './Heading';
 
 
 const StyledHeroImage = styled.div`
@@ -14,14 +15,21 @@ const StyledHeroImage = styled.div`
 		height: 100%;
 		width: 100%;
 		background: ${(props) => props.theme.filter };
-		opacity: 0.4;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
 	}
 `;
 
-const HeroImage = ({ image }) => {
+const HeroImage = ({ image, heading }) => {
 	return (
 		<StyledHeroImage image={image}>
-			<div data-testid="filter"/>
+			<div data-testid="filter">
+				<Heading>
+					{heading}
+				</Heading>
+			</div>
 		</StyledHeroImage>
 	)
 };
