@@ -1,22 +1,24 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { render, waitForElement } from '@testing-library/react';
+import { render, waitForElement, fireEvent } from '@testing-library/react';
 import App from '../components/App';
 
 jest.mock('../services/content-client');
 
 describe('App', () => {
   describe('navigation', () => {
-    it('renders a route for each page', async () => {
-      const { getByText } = await render((
+    it('defaults to the home page', async () => {
+      const { getByText } = await waitForElement(() => render(
         <MemoryRouter>
           <App />
-        </MemoryRouter>
+        </MemoryRouter>,
       ));
+      const home = getByText('home');
+      expect(home).toBeInTheDocument();
 
-      await waitForElement(() => {
-        expect(getByText('home')).toBeInTheDocument();
-      });
+      fireEvent.click(getByText('test-page-1-title'));
+
+      // TODO: rewrite this test once the page component is complete/
     });
   });
 });
