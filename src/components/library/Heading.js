@@ -5,9 +5,9 @@ const Heading = styled.h1`
 	width: fit-content;
 	padding: 10px 20px;
 	text-align: center;
-	border: 2px solid #EEEEEE;
+	border: 2px solid ${(props) => props.theme.cardBorder};
 	border-radius: 5px;
-	background: whitesmoke;
+	background: ${(props) => props.theme.cardBackground};
 	display: flex;
 `;
 
