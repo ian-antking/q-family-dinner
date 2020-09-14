@@ -1,25 +1,42 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 
 
-
-const StyledArticle = styled.p`
-	width: calc(100vw - 40px);
-	margin: 0;
-	padding: 20px;
-	color: ${(props) => props.theme.articleText };
-	background: whitesmoke;
+const TestStyle = styled.h1`
+	color: red;
 `;
 
-//Insert media query to increase font size to 1.2em on desktop scale.
+const IMAGES = [
+  'image/png',
+  'image/jpeg',
+];
 
 const Article = ({ text }) => {
-	console.log(text.fields.content);
+
+	const options = {
+		renderNode: {
+			[BLOCKS.HEADING_1]: (node) => {
+				return <TestStyle>{node.content[0].value}</TestStyle>
+			},
+			[BLOCKS.HEADING_2]: (node) => {
+				return <h2>{node.content[0].value}</h2>
+			},
+			[BLOCKS.HEADING_3]: (node) => {
+				return <h3>{node.content[0].value}</h3>
+			},
+			[BLOCKS.PARAGRAPH]: (node, children) => {
+				return <p>{children}</p>
+			},
+		},
+	};
+
+
 	return (
 		<>
-			{documentToReactComponents(text.fields.content)}
+			{documentToReactComponents(text.fields.content, options)}
 		</>
 	)
 };
