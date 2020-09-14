@@ -13,7 +13,7 @@ const Page = ({ pageContent }) => {
 				heading={pageContent.fields.title}
 			/>
 			<Article 
-				text={"Placeholder Text"}
+				text={pageContent}
 			/>
 		</>
 	)
