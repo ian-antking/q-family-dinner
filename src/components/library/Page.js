@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import HeroImage from './HeroImage';
 import Heading from './Heading';
 import Article from './Article';
+import ContributorCard from './ContributorCard';
 
 const Page = ({ pageContent }) => {
 
@@ -15,6 +16,8 @@ const Page = ({ pageContent }) => {
 			<Article 
 				text={pageContent}
 			/>
+			<ContributorCard>
+			</ContributorCard>
 		</>
 	)
 };
