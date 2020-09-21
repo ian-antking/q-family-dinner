@@ -16,7 +16,8 @@ const Page = ({ pageContent }) => {
 			<Article 
 				text={pageContent}
 			/>
-			<ContributorCard>
+			<ContributorCard
+				contributors={pageContent.fields.contributors}>
 			</ContributorCard>
 		</>
 	)

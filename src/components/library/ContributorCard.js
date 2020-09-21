@@ -35,10 +35,42 @@ const StyledContributorCard = styled.div`
 
 `;
 
-const ContributorCard = () => {
+const ContributorCard = (contributors) => {
+
+
 	return(
-		<>
-		</>
+		<StyledContributorCard>
+			<div>
+				<img />
+			</div>
+
+			<div>
+				<h3>{contributor.fields.bio.name}</h3>
+				<p>{contributor.fields.bio.content[0].content[0].value}</p>
+				<div>
+					<a href={`https://www.instagram.com/${contributor.fields.bio.instagram}`}>
+						Instagram icon
+					</a>
+
+					<a href={`https://www.facebook.com/${contributor.fields.bio.facebook}`}>
+						Facebook icon
+					</a>
+
+					<a href={contributor.fields.bio.website}>
+						Website icon
+					</a>
+
+					<a 
+						href={`mailto:${contributor.fields.bio.email}`} 
+						target="_blank" 
+						rel="noreferrer"
+					>
+						Email icon
+					</a>
+				</div>
+			</div>
+
+		</StyledContributorCard>
 	)
 };
 
