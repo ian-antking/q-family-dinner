@@ -8,13 +8,16 @@ const StyledContributorCard = styled.div`
 	background: ${(props) => props.theme.cardBackground};
 	display: flex;
 	flex-flow: row nowrap;
+	background-color:blue;
 
 	div {
 		display: flex;
 		flex-flow: column nowrap;
+		background-color:green;
 
 		.social-links {
       flex-flow: row nowrap;
+			background-color:yellow;
     }
 	}
 

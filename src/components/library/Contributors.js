@@ -7,6 +7,7 @@ const Contributors = ({ contributors }) => {
       {contributors[0] && contributors.map(contributor => {
         return (
           <ContributorCard
+            key={contributor.fields.name}
             contributor={contributor}
           />
         )
