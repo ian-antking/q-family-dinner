@@ -12,6 +12,10 @@ const StyledContributorCard = styled.div`
 	div {
 		display: flex;
 		flex-flow: column nowrap;
+
+		.social-links {
+      flex-flow: row nowrap;
+    }
 	}
 
 	img {
@@ -35,33 +39,35 @@ const StyledContributorCard = styled.div`
 
 `;
 
-const ContributorCard = (contributors) => {
+const ContributorCard = ({ contributor }) => {
 
 
 	return(
 		<StyledContributorCard>
 			<div>
-				<img />
+				<img 
+					src={contributor.fields.photo.fields.file.url} 
+					alt={contributor.fields.photo.fields.description}/>
 			</div>
 
 			<div>
-				<h3>{contributor.fields.bio.name}</h3>
+				<h3>{contributor.fields.name}</h3>
 				<p>{contributor.fields.bio.content[0].content[0].value}</p>
-				<div>
-					<a href={`https://www.instagram.com/${contributor.fields.bio.instagram}`}>
+				<div className="social-links">
+					<a href={`https://www.instagram.com/${contributor.fields.instagram}`}>
 						Instagram icon
 					</a>
 
-					<a href={`https://www.facebook.com/${contributor.fields.bio.facebook}`}>
+					<a href={`https://www.facebook.com/${contributor.fields.facebook}`}>
 						Facebook icon
 					</a>
 
-					<a href={contributor.fields.bio.website}>
+					<a href={contributor.fields.website}>
 						Website icon
 					</a>
 
 					<a 
-						href={`mailto:${contributor.fields.bio.email}`} 
+						href={`mailto:${contributor.fields.email}`} 
 						target="_blank" 
 						rel="noreferrer"
 					>
