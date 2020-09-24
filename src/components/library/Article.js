@@ -5,13 +5,37 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 
 
-const TestStyle = styled.h1`
-	color: red;
-`;
+const ArticleStyles = styled.div`
+	padding: 0 20px;
+
+	blockquote {
+		color: ${(props) => props.theme.quoteText};
+		font-style: italic;
+		font-size: 1.1em;
+	}
+
+	img {
+		margin: 10%;
+		max-width: 80%;
+	}
+	
+	li>p {
+		margin: 8px;
+	}
+
+	hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+
+
+`
 
 const IMAGES = [
   'image/png',
-  'image/jpeg',
+	'image/jpeg',
+	'images/webp',
 ];
 
 const Article = ({ text }) => {
@@ -19,7 +43,7 @@ const Article = ({ text }) => {
 	const options = {
 		renderNode: {
 			[BLOCKS.HEADING_1]: (node) => {
-				return <TestStyle>{node.content[0].value}</TestStyle>
+				return <h1>{node.content[0].value}</h1>
 			},
 			[BLOCKS.HEADING_2]: (node) => {
 				return <h2>{node.content[0].value}</h2>
@@ -30,14 +54,23 @@ const Article = ({ text }) => {
 			[BLOCKS.PARAGRAPH]: (node, children) => {
 				return <p>{children}</p>
 			},
+			[BLOCKS.EMBEDDED_ASSET]: (node) => {
+				return <img 
+					src={node.data.target.fields.file.url} 
+					alt={node.data.target.fields.description}
+				/>
+			},
+			[INLINES.ASSET_HYPERLINK]: (node) => {
+				return <a href={node.data.target.fields.file.url}>{node.content[0].value}</a>
+			},
 		},
 	};
 
 
 	return (
-		<>
+		<ArticleStyles>
 			{documentToReactComponents(text.fields.content, options)}
-		</>
+		</ArticleStyles>
 	)
 };
 

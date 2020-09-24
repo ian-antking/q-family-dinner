@@ -14,7 +14,7 @@ const StyledHeroImage = styled.div`
 	div {
 		height: 100%;
 		width: 100%;
-		background: ${(props) => props.theme.filter };
+		background: ${(props) => props.theme.filter};
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
