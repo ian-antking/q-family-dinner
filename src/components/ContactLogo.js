@@ -7,6 +7,7 @@ import {
   FaTwitterSquare,
   FaEnvelope,
   FaLink,
+  FaGlobe,
 } from 'react-icons/fa';
 
 const Logos = {
@@ -14,11 +15,12 @@ const Logos = {
   email: <FaEnvelope />,
   instagram: <FaInstagram />,
   twitter: <FaTwitterSquare />,
+  website: <FaGlobe />,
   default: <FaLink />,
 };
 
 const LogoBox = styled.div`
-  margin: 5px;
+margin: 5px;
 `;
 
 const ContactLogo = ({ name, link }) => (

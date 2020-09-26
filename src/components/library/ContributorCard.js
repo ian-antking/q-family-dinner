@@ -1,34 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
+import ContactLogo from '../ContactLogo';
 import Contacts from '../Contacts';
 
 const StyledContributorCard = styled.div`
-	padding: 10px 20px;
+	width: calc(100vw - 60px);
+	margin: 10px;
+	padding: 20px;
 	border-radius: 5px;
 	border: 2px solid ${(props) => props.theme.cardBorder};
 	background: ${(props) => props.theme.cardBackground};
 	display: flex;
 	flex-flow: row nowrap;
-	background-color:blue;
 
 	div {
 		display: flex;
 		flex-flow: column nowrap;
-		background-color:green;
 
 		.social-links {
+			height: 40px;
+			font-size: 2.2em;
       flex-flow: row nowrap;
-			background-color:yellow;
     }
 	}
 
 	img {
 		height: 100px;
 		width: 100px;
+		margin: 0 20px 0 0;
 		border-radius: 50px;
 	}
 
-	h3 {
+	h2 {
+		margin: 0;
 		color: ${(props) => props.theme.cardHeadingText};
 		font-weight: bold;
 	}
@@ -53,28 +57,14 @@ const ContributorCard = ({ contributor }) => (
     </div>
 
     <div>
-      <h3>{contributor.fields.name}</h3>
+      <h2>{contributor.fields.name}</h2>
       <p>{contributor.fields.bio.content[0].content[0].value}</p>
-
-      <a href={`https://www.instagram.com/${contributor.fields.instagram}`}>
-        Instagram icon
-      </a>
-
-      <a href={`https://www.facebook.com/${contributor.fields.facebook}`}>
-        Facebook icon
-      </a>
-
-      <a href={contributor.fields.website}>
-        Website icon
-      </a>
-
-      <a
-        href={`mailto:${contributor.fields.email}`}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Email icon
-      </a>
+      <div className="social-links">
+        <ContactLogo name="instagram" link={contributor.fields.instagram} />
+        <ContactLogo name="facebook" link={contributor.fields.facebook} />
+        <ContactLogo name="website" link={contributor.fields.website} />
+        <ContactLogo name="email" link={contributor.fields.email} />
+      </div>
     </div>
   </StyledContributorCard>
 );
