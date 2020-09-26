@@ -3,11 +3,7 @@
 exports[`snapshot: Navbar component 1`] = `
 <DocumentFragment>
   <div
-<<<<<<< HEAD
-    class="sc-AxhUy jvVuJ"
-=======
     class="sc-eCApGN fwKblR"
->>>>>>> c6420638d2a25e140f5b9c22abf504290d6cfc4b
     data-testid="navbar"
   >
     <a
