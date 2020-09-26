@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Contacts from './Contacts';
 import FundingPartners from './FundingPartners';
@@ -27,15 +27,18 @@ const LogosBox = styled.div`
   align-items: center;
 `;
 
-const Footer = ({ fundingPartners, contacts }) => (
-  <FooterBox>
-    <LogosBox>
-      <Contacts contacts={contacts} />
-      <FundingPartners fundingPartners={fundingPartners} />
-    </LogosBox>
-    <Link to="privacy">our privacy policy</Link>
-  </FooterBox>
-);
+const Footer = ({ fundingPartners, contacts }) => {
+  const location = useLocation();
+  return (
+    <FooterBox>
+      <LogosBox>
+        { location.pathname !== '/contact' && <Contacts contacts={contacts} /> }
+        <FundingPartners fundingPartners={fundingPartners} />
+      </LogosBox>
+      <Link to="privacy">our privacy policy</Link>
+    </FooterBox>
+  );
+};
 
 Footer.defaultProps = {
   fundingPartners: [],
