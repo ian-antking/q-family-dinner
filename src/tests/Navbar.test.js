@@ -7,8 +7,17 @@ const content = {
   pages: [
     {
       fields: {
+<<<<<<< HEAD
         primaryPage: true,
         atitle: "Test Link"
+=======
+        title: "test-title",
+        slug: "test-slug",
+        primaryPage: true
+      },
+      sys: {
+        id: "test-id"
+>>>>>>> c6420638d2a25e140f5b9c22abf504290d6cfc4b
       }
     }
   ]
