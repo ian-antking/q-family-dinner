@@ -5,6 +5,7 @@ import themes from '../styles/themes';
 import getContent from '../services/get-content';
 import Navbar from './library/Navbar';
 import Routes from './helpers/Routes';
+import Footer from './Footer';
 
 function App() {
   const [content, setContent] = useState({});
@@ -22,9 +23,12 @@ function App() {
         <Navbar content={content} />
         <main>
           <Switch>
-            { content.pages?.length && <Routes pages={content.pages} /> }
+            { content.pages?.length && (
+              <Routes pages={content.pages} />
+            )}
           </Switch>
         </main>
+        <Footer fundingPartners={content.fundingPartners} contacts={content.contacts} />
       </ThemeProvider>
     </>
   );
