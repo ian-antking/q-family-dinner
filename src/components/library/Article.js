@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import ArticleCard from './ArticleCard';
 
 
 const ArticleStyles = styled.div`
@@ -60,9 +61,15 @@ const Article = ({ text }) => {
 					alt={node.data.target.fields.description}
 				/>
 			},
-			[INLINES.ASSET_HYPERLINK]: (node) => {
+			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
+				return <ArticleCard 
+					targetArticleData={node}
+				/>
+			},
+			[INLINES.ASSET_HYPERLINK]: (node, children) => {
 				return <a href={node.data.target.fields.file.url}>{node.content[0].value}</a>
 			},
+
 		},
 	};
 
