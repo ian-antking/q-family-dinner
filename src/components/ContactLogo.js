@@ -21,21 +21,19 @@ const LogoBox = styled.div`
   margin: 5px;
 `;
 
-const ContactLogo = ({ contact }) => (
+const ContactLogo = ({ name, link }) => (
   <LogoBox>
-    <a href={contact.fields.link}>
-      {Logos[contact.fields.name] || Logos.default}
+    <a href={link}>
+      {Logos[name] || Logos.default}
     </a>
   </LogoBox>
 );
 
 ContactLogo.propTypes = {
-  contact: PropTypes.shape({
-    fields: PropTypes.shape({
+
       name: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
+
 };
 
 export default ContactLogo;

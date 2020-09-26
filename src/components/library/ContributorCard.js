@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Contacts from '../Contacts';
 
 const StyledContributorCard = styled.div`
 	padding: 10px 20px;
@@ -42,45 +43,40 @@ const StyledContributorCard = styled.div`
 
 `;
 
-const ContributorCard = ({ contributor }) => {
+const ContributorCard = ({ contributor }) => (
+  <StyledContributorCard>
+    <div>
+      <img
+        src={contributor.fields.photo.fields.file.url}
+        alt={contributor.fields.photo.fields.description}
+      />
+    </div>
 
+    <div>
+      <h3>{contributor.fields.name}</h3>
+      <p>{contributor.fields.bio.content[0].content[0].value}</p>
 
-	return(
-		<StyledContributorCard>
-			<div>
-				<img 
-					src={contributor.fields.photo.fields.file.url} 
-					alt={contributor.fields.photo.fields.description}/>
-			</div>
+      <a href={`https://www.instagram.com/${contributor.fields.instagram}`}>
+        Instagram icon
+      </a>
 
-			<div>
-				<h3>{contributor.fields.name}</h3>
-				<p>{contributor.fields.bio.content[0].content[0].value}</p>
-				<div className="social-links">
-					<a href={`https://www.instagram.com/${contributor.fields.instagram}`}>
-						Instagram icon
-					</a>
+      <a href={`https://www.facebook.com/${contributor.fields.facebook}`}>
+        Facebook icon
+      </a>
 
-					<a href={`https://www.facebook.com/${contributor.fields.facebook}`}>
-						Facebook icon
-					</a>
+      <a href={contributor.fields.website}>
+        Website icon
+      </a>
 
-					<a href={contributor.fields.website}>
-						Website icon
-					</a>
-
-					<a 
-						href={`mailto:${contributor.fields.email}`} 
-						target="_blank" 
-						rel="noreferrer"
-					>
-						Email icon
-					</a>
-				</div>
-			</div>
-
-		</StyledContributorCard>
-	)
-};
+      <a
+        href={`mailto:${contributor.fields.email}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Email icon
+      </a>
+    </div>
+  </StyledContributorCard>
+);
 
 export default ContributorCard;
