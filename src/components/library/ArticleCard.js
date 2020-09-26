@@ -24,20 +24,15 @@ const StyledArticleCard = styled(Link)`
   p {
     margin: 0 15px 10px 15px
   }
-
-  .author {
-    font-weight: bold;
-  }
 `
 
-const ArticleCard = ({ targetArticleData }) => {
+const ArticleCard = ({ targetArticle }) => {
 
   return (
-    <StyledArticleCard to={targetArticleData.data.target.fields.slug}>
-      <img src="https://images.unsplash.com/photo-1535568824865-a801351e8483?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80" alt="A ring donut with pink icing, blueberries and a drizzle of white icing."/>
-      <h1>Page Title</h1>
-      <p>This blurb is an introduction to the page.</p>
-      <p className="author">David Arrowsmith</p>
+    <StyledArticleCard to={targetArticle.data.target.fields.slug}>
+      <img src={targetArticle.data.target.fields.heroImage.fields.file.url} alt={targetArticle.data.target.fields.heroImage.fields.file.title}/>
+      <h1>{targetArticle.data.target.fields.title}</h1>
+      <p>{targetArticle.data.target.fields.blurb}</p>
     </StyledArticleCard>
   )
 };

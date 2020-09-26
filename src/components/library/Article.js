@@ -63,7 +63,7 @@ const Article = ({ text }) => {
 			},
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				return <ArticleCard 
-					targetArticleData={node}
+					targetArticle={node}
 				/>
 			},
 			[INLINES.ASSET_HYPERLINK]: (node, children) => {
