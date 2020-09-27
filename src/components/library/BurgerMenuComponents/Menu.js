@@ -58,8 +58,12 @@ const Menu = ({ open, setOpen, content }) => {
   );
 };
 
+Menu.defaultProps = {
+  open: false,
+};
+
 Menu.propTypes = {
-  open: bool.isRequired,
+  open: bool,
 };
 
 export default Menu;

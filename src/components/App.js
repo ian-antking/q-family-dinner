@@ -21,8 +21,6 @@ function App() {
     })();
   }, []);
 
-  console.log(images);
-
   return (
     <>
       <ThemeProvider theme={themes.default}>

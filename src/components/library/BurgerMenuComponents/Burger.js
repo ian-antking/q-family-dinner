@@ -51,8 +51,12 @@ const Burger = ({ open, setOpen }) => (
   </StyledBurger>
 );
 
+Burger.defaultProps = {
+  open: false,
+};
+
 Burger.propTypes = {
-  open: bool.isRequired,
+  open: bool,
   setOpen: func.isRequired,
 };
 
