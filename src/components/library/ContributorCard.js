@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContactLogo from '../ContactLogo';
-import Contacts from '../Contacts';
 
 const StyledContributorCard = styled.div`
 	width: calc(100vw - 60px);
@@ -20,7 +19,8 @@ const StyledContributorCard = styled.div`
 		.social-links {
 			height: 40px;
 			font-size: 2.2em;
-      flex-flow: row nowrap;
+      flex-flow: row wrap;
+			justify-content: flex-end;
     }
 	}
 
@@ -47,26 +47,41 @@ const StyledContributorCard = styled.div`
 
 `;
 
-const ContributorCard = ({ contributor }) => (
-  <StyledContributorCard>
-    <div>
-      <img
-        src={contributor.fields.photo.fields.file.url}
-        alt={contributor.fields.photo.fields.description}
-      />
-    </div>
+const ContributorCard = ({ contributor }) => {
+  const contactTypes = [
+    'instagram', 'twitter', 'facebook', 'website', 'email',
+  ];
 
-    <div>
-      <h2>{contributor.fields.name}</h2>
-      <p>{contributor.fields.bio.content[0].content[0].value}</p>
-      <div className="social-links">
-        <ContactLogo name="instagram" link={contributor.fields.instagram} />
-        <ContactLogo name="facebook" link={contributor.fields.facebook} />
-        <ContactLogo name="website" link={contributor.fields.website} />
-        <ContactLogo name="email" link={contributor.fields.email} />
+  const renderContacts = () => {
+    return contactTypes.map((type) => contributor.fields[type] && (
+      <ContactLogo
+				key={contributor.fields[type]}
+        name={type}
+        link={contributor.fields[type]}
+      />
+    ));
+  };
+
+	console.log(contributor);
+
+  return (
+    <StyledContributorCard>
+      <div>
+        <img
+          src={contributor.fields.photo.fields.file.url}
+          alt={contributor.fields.photo.fields.description}
+        />
       </div>
-    </div>
-  </StyledContributorCard>
-);
+
+      <div>
+        <h2>{contributor.fields.name}</h2>
+        <p>{contributor.fields.bio.content[0].content[0].value}</p>
+        <div className="social-links">
+          {renderContacts()}
+        </div>
+      </div>
+    </StyledContributorCard>
+  );
+};
 
 export default ContributorCard;
