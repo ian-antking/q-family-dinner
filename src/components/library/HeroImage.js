@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Heading from './Heading';
 
 const StyledHeroImage = styled.div`
@@ -31,5 +32,10 @@ const HeroImage = ({ image, heading }) => (
     </div>
   </StyledHeroImage>
 );
+
+HeroImage.propTypes = {
+  image: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
+};
 
 export default HeroImage;
