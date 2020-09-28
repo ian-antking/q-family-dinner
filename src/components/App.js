@@ -5,11 +5,12 @@ import themes from '../styles/themes';
 import getContent from '../services/get-content';
 import Navbar from './library/Navbar';
 import Routes from './helpers/routes';
-import Page from './library/Page';
 import Footer from './Footer';
 
 function App() {
   const [content, setContent] = useState({});
+
+  console.log(content);
 
   useEffect(() => {
     (async () => {

@@ -52,17 +52,15 @@ const ContributorCard = ({ contributor }) => {
     'instagram', 'twitter', 'facebook', 'website', 'email',
   ];
 
-  const renderContacts = () => {
-    return contactTypes.map((type) => contributor.fields[type] && (
-      <ContactLogo
-				key={contributor.fields[type]}
-        name={type}
-        link={contributor.fields[type]}
-      />
-    ));
-  };
+  const renderContacts = () => contactTypes.map((type) => contributor.fields[type] && (
+  <ContactLogo
+    key={contributor.fields[type]}
+    name={type}
+    link={contributor.fields[type]}
+  />
+  ));
 
-	console.log(contributor);
+  console.log(contributor);
 
   return (
     <StyledContributorCard>
