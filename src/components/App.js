@@ -10,8 +10,6 @@ import Footer from './Footer';
 function App() {
   const [content, setContent] = useState({});
 
-  console.log(content);
-
   useEffect(() => {
     (async () => {
       const data = await getContent();

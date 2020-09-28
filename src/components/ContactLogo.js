@@ -32,10 +32,8 @@ const ContactLogo = ({ name, link }) => (
 );
 
 ContactLogo.propTypes = {
-
-      name: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default ContactLogo;
