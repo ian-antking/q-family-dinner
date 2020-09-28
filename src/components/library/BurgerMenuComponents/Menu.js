@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { bool } from 'prop-types';
 
 export const StyledMenu = styled.nav`
   position: absolute;
@@ -58,8 +58,16 @@ const Menu = ({ open, setOpen, content }) => {
   );
 };
 
+Menu.defaultProps = {
+  content: {},
+};
+
 Menu.propTypes = {
-  open: bool.isRequired,
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
+  content: PropTypes.shape({
+    pages: PropTypes.arrayOf.isRequired,
+  }),
 };
 
 export default Menu;
