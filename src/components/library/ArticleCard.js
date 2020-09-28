@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -63,5 +64,31 @@ const ArticleCard = ({ targetArticle }) => (
     <p className="articleCardText">{targetArticle.data.target.fields.blurb}</p>
   </StyledArticleCard>
 );
+
+ArticleCard.defaultProps = {
+  targetArticle: {},
+};
+
+ArticleCard.propTypes = {
+  targetArticle: PropTypes.shape({
+    data: PropTypes.shape({
+      target: PropTypes.shape({
+        fields: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          blurb: PropTypes.string.isRequired,
+          slug: PropTypes.string.isRequired,
+          heroImage: PropTypes.shape({
+            fields: PropTypes.shape({
+              file: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+              }),
+            }),
+          }),
+        }),
+      }),
+    }),
+  }),
+};
 
 export default ArticleCard;

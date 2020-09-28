@@ -20,18 +20,7 @@ const Page = ({ pageContent }) => (
 );
 
 Page.defaultProps = {
-  pageContent: {
-    fields: {
-      heroImage: {
-        fields: {
-          file: {
-            url: '',
-          },
-        },
-      },
-      contributors: {},
-    },
-  },
+  pageContent: {},
 };
 
 Page.propTypes = {
