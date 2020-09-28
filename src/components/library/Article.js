@@ -6,28 +6,28 @@ import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 import ArticleCard from './ArticleCard';
 
 const ArticleStyles = styled.div`
-	padding: 0 20px;
+  padding: 0 20px;
 
-	blockquote {
-		color: ${(props) => props.theme.quoteText};
-		font-style: italic;
-		font-size: 1.1em;
-	}
+  blockquote {
+    color: ${(props) => props.theme.quoteText};
+    font-style: italic;
+    font-size: 1.1em;
+  }
 
-	img {
-		margin: 10%;
-		max-width: 80%;
-	}
-	
-	li>p {
-		margin: 8px;
-	}
+  img {
+    margin: 10%;
+    max-width: 80%;
+  }
 
-	hr {
+  li>p {
+    margin: 8px;
+  }
+
+  hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
+  }
 `;
 
 const Article = ({ text }) => {
