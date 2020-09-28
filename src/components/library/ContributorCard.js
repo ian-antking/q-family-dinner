@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ContactLogo from '../ContactLogo';
 
@@ -60,8 +61,6 @@ const ContributorCard = ({ contributor }) => {
   />
   ));
 
-  console.log(contributor);
-
   return (
     <StyledContributorCard>
       <div>
@@ -80,6 +79,33 @@ const ContributorCard = ({ contributor }) => {
       </div>
     </StyledContributorCard>
   );
+};
+
+ContributorCard.defaultProps = {
+  contributor: {},
+};
+
+ContributorCard.propTypes = {
+  contributor: PropTypes.shape({
+    fields: PropTypes.shape({
+      photo: PropTypes.shape({
+        fields: PropTypes.shape({
+          description: PropTypes.string.isRequired,
+          file: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+          }),
+        }),
+      }),
+      name: PropTypes.string.isRequired,
+      bio: PropTypes.shape({
+        content: PropTypes.arrayOf({
+          content: PropTypes.arrayOf({
+            value: PropTypes.string.isRequired,
+          }),
+        }),
+      }),
+    }),
+  }),
 };
 
 export default ContributorCard;
