@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import useOnClickOutside from '../../hooks/hooks';
 import Burger from './BurgerMenuComponents/Burger';
@@ -20,6 +21,10 @@ const BurgerMenu = ({ content }) => {
       <Menu open={open} setOpen={setOpen} content={content} />
     </StyledBurgerMenu>
   );
+};
+
+BurgerMenu.propTypes = {
+  content: PropTypes.shape.isRequired,
 };
 
 export default BurgerMenu;
