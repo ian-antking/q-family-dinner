@@ -24,7 +24,7 @@ const BurgerMenu = ({ content }) => {
 };
 
 BurgerMenu.propTypes = {
-  content: PropTypes.shape.isRequired,
+  content: PropTypes.object.isRequired,
 };
 
 export default BurgerMenu;

@@ -14,7 +14,7 @@ const Contributors = ({ contributors }) => (
 );
 
 Contributors.propTypes = {
-  contributors: PropTypes.arrayOf.isRequired,
+  contributors: PropTypes.array.isRequired,
 };
 
 export default Contributors;

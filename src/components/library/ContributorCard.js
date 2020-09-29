@@ -98,11 +98,16 @@ ContributorCard.propTypes = {
       }),
       name: PropTypes.string.isRequired,
       bio: PropTypes.shape({
-        content: PropTypes.arrayOf({
-          content: PropTypes.arrayOf({
-            value: PropTypes.string.isRequired,
+        content: PropTypes.arrayOf(
+          PropTypes.shape({
+            content: PropTypes.arrayOf(
+              PropTypes.shape({
+                value: PropTypes.string.isRequired,
+
+              }),
+            ),
           }),
-        }),
+        ),
       }),
     }),
   }),
