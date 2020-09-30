@@ -49,6 +49,7 @@ ArticleCard.propTypes = {
             fields: PropTypes.shape({
               file: PropTypes.shape({
                 url: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
               }),
               title: PropTypes.string.isRequired,
             }),
