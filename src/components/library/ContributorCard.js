@@ -5,7 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 import Card from './Card';
 import ArticleCard from './ArticleCard';
-import ContactLogo from '../ContactLogo';
+import renderContacts from '../helpers/renderContacts';
 
 const StyledContributorCard = styled(Card)`
   flex-flow: row nowrap;
@@ -62,18 +62,6 @@ const StyledContributorCard = styled(Card)`
 `;
 
 const ContributorCard = ({ contributor }) => {
-  const contactTypes = [
-    'instagram', 'twitter', 'facebook', 'website', 'email',
-  ];
-
-  const renderContacts = () => contactTypes.map((type) => contributor.fields[type] && (
-  <ContactLogo
-    key={contributor.fields[type]}
-    name={type}
-    link={contributor.fields[type]}
-  />
-  ));
-
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node) => <h1>{node.content[0].value}</h1>,
@@ -115,7 +103,7 @@ const ContributorCard = ({ contributor }) => {
         <h2>{contributor.fields.name}</h2>
         {documentToReactComponents(contributor.fields.bio, options)}
         <div className="social-links">
-          {renderContacts()}
+          {renderContacts(contributor)}
         </div>
       </div>
     </StyledContributorCard>
