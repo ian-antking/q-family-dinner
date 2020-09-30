@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { INLINES, BLOCKS } from '@contentful/rich-text-types';
-import ArticleCard from './ArticleCard';
+import options from '../helpers/options';
 
 const ArticleStyles = styled.div`
   padding: 0 20px;
@@ -30,40 +29,11 @@ const ArticleStyles = styled.div`
   }
 `;
 
-const Article = ({ text }) => {
-  const options = {
-    renderNode: {
-      [BLOCKS.HEADING_1]: (node) => <h1>{node.content[0].value}</h1>,
-      [BLOCKS.HEADING_2]: (node) => <h2>{node.content[0].value}</h2>,
-      [BLOCKS.HEADING_3]: (node) => <h3>{node.content[0].value}</h3>,
-      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-      [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <img
-          src={node.data.target.fields.file.url}
-          alt={node.data.target.fields.description}
-        />
-      ),
-      [BLOCKS.EMBEDDED_ENTRY]: (node) => (
-        <ArticleCard
-          targetArticle={node}
-        />
-      ),
-      [INLINES.ASSET_HYPERLINK]: (node) => (
-        <a
-          href={node.data.target.fields.file.url}
-        >
-          {node.content[0].value}
-        </a>
-      ),
-    },
-  };
-
-  return (
-    <ArticleStyles>
-      {documentToReactComponents(text.fields.content, options)}
-    </ArticleStyles>
-  );
-};
+const Article = ({ text }) => (
+  <ArticleStyles>
+    {documentToReactComponents(text.fields.content, options)}
+  </ArticleStyles>
+);
 
 Article.defaultProps = {
   text: {},
