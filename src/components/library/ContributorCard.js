@@ -3,29 +3,23 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import Card from './Card';
 import ArticleCard from './ArticleCard';
 import ContactLogo from '../ContactLogo';
 
-const StyledContributorCard = styled.div`
-  width: calc(100vw - 60px);
-  margin: 10px;
-  padding: 20px;
-  border-radius: 5px;
-  border: 2px solid ${(props) => props.theme.cardBorder};
-  background: ${(props) => props.theme.cardBackground};
-  display: flex;
+const StyledContributorCard = styled(Card)`
   flex-flow: row nowrap;
 
   div {
-  display: flex;
-  flex-flow: column nowrap;
+    display: flex;
+    flex-flow: column nowrap;
+  }
 
   .social-links {
     height: 40px;
     font-size: 2.2em;
     flex-flow: row wrap;
     justify-content: flex-end;
-    }
   }
 
   .contributor-thumb {
