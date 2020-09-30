@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const StyledArticleCard = styled(Link)`
   width: calc(100vw - 20px);
-  margin: 0 10px;
+  margin: 10px 10px 20px 10px;
   max-width: 300px;
   background: ${(props) => props.theme.cardBackground};
   border: 2px solid ${(props) => props.theme.cardBorder};
