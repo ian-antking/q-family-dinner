@@ -1,7 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
+        "es6": true,
         "jest": true
     },
     "extends": [
@@ -19,6 +19,7 @@
         "react"
     ],
     "rules": {
+        "linebreak-style": 0,
         "react/jsx-props-no-spreading": [0],
         "react/jsx-filename-extension": [
           1,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, func } from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledBurger = styled.button`
@@ -43,19 +43,17 @@ const StyledBurger = styled.button`
   }
 `;
 
-const Burger = ({ open, setOpen }) => {
-  return (
-    <StyledBurger data-testid="burger" open={open} onClick={() => setOpen(!open)}>
-      <div data-testid="slice-one"/> 
-      <div data-testid="slice-two"/>
-      <div data-testid="slice-three"/>
-    </StyledBurger>
-  );
-};
+const Burger = ({ open, setOpen }) => (
+  <StyledBurger data-testid="burger" open={open} onClick={() => setOpen(!open)}>
+    <div data-testid="slice-one" />
+    <div data-testid="slice-two" />
+    <div data-testid="slice-three" />
+  </StyledBurger>
+);
 
 Burger.propTypes = {
-  open: bool.isRequired,
-  setOpen: func.isRequired,
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 export default Burger;

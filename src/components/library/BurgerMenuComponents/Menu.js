@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { bool } from 'prop-types';
 
 export const StyledMenu = styled.nav`
   position: absolute;
@@ -40,30 +40,34 @@ const MenuLink = styled(Link)`
 `;
 
 const Menu = ({ open, setOpen, content }) => {
-  console.log(content);
-  const pages = content.pages;
+  const { pages } = content;
 
   return (
     <StyledMenu data-testid="menu" open={open}>
-      {pages && pages.map(page => {
-        return page.fields.primaryPage && (
-          <MenuLink
-            key={`menulink-${page.sys.id}`}
-            to={`/${page.fields.slug}`}
-            onClick={() => setOpen(!open)}
-          >
-            {page.fields.title}
-          </MenuLink>
-        );
-      })
-}
+      {pages && pages.map((page) => page.fields.primaryPage && (
+      <MenuLink
+        key={`menulink-${page.sys.id}`}
+        to={`/${page.fields.slug}`}
+        onClick={() => setOpen(!open)}
+      >
+        {page.fields.title}
+      </MenuLink>
+      ))}
 
     </StyledMenu>
   );
 };
 
+Menu.defaultProps = {
+  content: {},
+};
+
 Menu.propTypes = {
-  open: bool.isRequired,
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
+  content: PropTypes.shape({
+    pages: PropTypes.arrayOf.isRequired,
+  }),
 };
 
 export default Menu;

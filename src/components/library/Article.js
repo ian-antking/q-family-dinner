@@ -1,67 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { INLINES, BLOCKS } from '@contentful/rich-text-types';
+import options from '../helpers/options';
 
+const ArticleStyles = styled.div`
+  padding: 0 20px;
 
-const TestStyle = styled.h1`
-	color: red;
+  blockquote {
+    color: ${(props) => props.theme.quoteText};
+    font-style: italic;
+    font-size: 1.1em;
+  }
+
+  img {
+    margin: 10%;
+    max-width: 80%;
+  }
+
+  li>p {
+    margin: 8px;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
 `;
 
-const IMAGES = [
-  'image/png',
-	'image/jpeg',
-	'image/webp'
-];
+const Article = ({ text }) => (
+  <ArticleStyles>
+    {documentToReactComponents(text.fields.content, options)}
+  </ArticleStyles>
+);
 
-const Article = ({ text }) => {
+Article.defaultProps = {
+  text: {},
+};
 
-	const options = {
-		renderNode: {
-			[BLOCKS.HEADING_1]: (node) => {
-				return <TestStyle>{node.content[0].value}</TestStyle>
-			},
-			[BLOCKS.HEADING_2]: (node) => {
-				return <h2>{node.content[0].value}</h2>
-			},
-			[BLOCKS.HEADING_3]: (node) => {
-				return <h3>{node.content[0].value}</h3>
-			},
-			[BLOCKS.HEADING_4]: (node) => {
-				return <h4>{node.content[0].value}</h4>
-			},
-			[BLOCKS.HEADING_5]: (node) => {
-				return <h5>{node.content[0].value}</h5>
-			},
-			[BLOCKS.HEADING_6]: (node) => {
-				return <h6>{node.content[0].value}</h6>
-			},
-			[BLOCKS.PARAGRAPH]: (node, children) => {
-				return <p>{children}</p>
-			},
-			[BLOCKS.EMBEDDED_ASSET]: (node) => {
-				return IMAGES.includes(node.data.target.fields.file.contentType) ? (
-					<img 
-						src={node.data.target.fields.file.url} 
-						alt={node.data.target.fields.title}   
-					/>
-				) : (
-					<>
-						{null}
-					</>
-				)
-			}
-		},
-	};
-
-
-	return (
-		<>
-			<h1>{text.fields.blurb}</h1> {/*TODO: Is there a better way to do this?*/}
-			{documentToReactComponents(text.fields.content, options)}
-		</>
-	)
+Article.propTypes = {
+  text: PropTypes.shape({
+    fields: PropTypes.shape({
+      content: PropTypes.shape.isRequired,
+    }),
+  }),
 };
 
 export default Article;

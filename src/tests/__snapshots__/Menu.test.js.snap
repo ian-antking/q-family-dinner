@@ -3,26 +3,26 @@
 exports[`snapshot: Menu component 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-AxjAm fyOvYq"
+    class="sc-bdnylx hTGIvb"
     data-testid="menu"
   >
     <a
-      class="sc-AxirZ bematR"
-      href="#/"
+      class="sc-gtssRu hdObnR"
+      href="#/test-slug-1"
     >
-      Home
+      test-title-1
     </a>
     <a
-      class="sc-AxirZ bematR"
-      href="#/"
+      class="sc-gtssRu hdObnR"
+      href="#/test-slug-2"
     >
-      Also Home
+      test-title-2
     </a>
     <a
-      class="sc-AxirZ bematR"
-      href="#/"
+      class="sc-gtssRu hdObnR"
+      href="#/test-slug-3"
     >
-      Home Again!
+      test-title-3
     </a>
   </nav>
 </DocumentFragment>

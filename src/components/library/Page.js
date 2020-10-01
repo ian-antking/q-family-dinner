@@ -1,22 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import HeroImage from './HeroImage';
-import Heading from './Heading';
 import Article from './Article';
+import Contributors from './Contributors';
 
-const Page = ({ pageContent }) => {
+const Page = ({ pageContent }) => (
+  <>
+    <HeroImage
+      image={pageContent.fields.heroImage.fields.file.url}
+      heading={pageContent.fields.title}
+    />
+    <Article
+      text={pageContent}
+    />
+    <Contributors
+      contributors={pageContent.fields.contributors}
+    />
+  </>
+);
 
-	return (
-		<>
-			<HeroImage 
-				image={pageContent.fields.heroImage.fields.file.url} 
-				heading={pageContent.fields.title}
-			/>
-			<Article 
-				text={pageContent}
-			/>
-		</>
-	)
+Page.defaultProps = {
+  pageContent: {},
+};
+
+Page.propTypes = {
+  pageContent: PropTypes.shape({
+    fields: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      heroImage: PropTypes.shape({
+        fields: PropTypes.shape({
+          file: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+          }),
+        }),
+      }),
+      contributors: PropTypes.arrayOf.isRequired,
+    }),
+  }),
 };
 
 export default Page;

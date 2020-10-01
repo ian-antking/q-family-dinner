@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import BurgerMenu from './BurgerMenu';
@@ -30,13 +31,15 @@ const StyledNavbar = styled.div`
   }
 `;
 
-const NavBar = ({ content }) => {
-  return (
-    <StyledNavbar data-testid="navbar">
-      <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
-      <BurgerMenu content={content}/>
-    </StyledNavbar>
-  );
+const Navbar = ({ content }) => (
+  <StyledNavbar data-testid="navbar">
+    <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
+    <BurgerMenu content={content} />
+  </StyledNavbar>
+);
+
+Navbar.propTypes = {
+  content: PropTypes.object.isRequired,
 };
 
-export default NavBar;
+export default Navbar;

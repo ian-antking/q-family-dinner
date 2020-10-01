@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Navbar from '../components/library/Navbar';
+import BurgerMenu from '../components/library/BurgerMenu';
 
 const content = {
   pages: [
@@ -18,32 +18,34 @@ const content = {
   ],
 };
 
-test('snapshot: Navbar component', () => {
+test('snapshot: BurgerMenu component', () => {
   const { asFragment } = render(
     <Router>
-      <Navbar content={content} />
+      <BurgerMenu content={content} />
     </Router>,
   );
   const component = asFragment();
   expect(component).toMatchSnapshot();
 });
 
-test('Navbar component renders', () => {
+test('BurgerMenu component renders', () => {
   const { getByTestId } = render(
     <Router>
-      <Navbar content={content} />
+      <BurgerMenu content={content} />
     </Router>,
   );
-  const componentId = getByTestId('navbar');
+  const componentId = getByTestId('burgermenu');
   expect(componentId).toBeInTheDocument();
 });
 
-test('Navbar includes a Home Link that links to "#/"', () => {
+test('BurgerMenu component renders the Burger component and the Menu component', () => {
   const { getByTestId } = render(
     <Router>
-      <Navbar content={content} />
+      <BurgerMenu content={content} />
     </Router>,
   );
-  const homeLink = getByTestId('homeLink');
-  expect(homeLink.getAttribute('href')).toBe('#/');
+  const burger = getByTestId('burger');
+  const menu = getByTestId('menu');
+  expect(burger).toBeInTheDocument();
+  expect(menu).toBeInTheDocument();
 });

@@ -3,7 +3,7 @@
 exports[`snapshot: Navbar component 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxhUy jvVuJ"
+    class="sc-eCApGN fwKblR"
     data-testid="navbar"
   >
     <a
@@ -13,10 +13,11 @@ exports[`snapshot: Navbar component 1`] = `
       Queer Family Tea
     </a>
     <div
-      class="sc-AxhCb hxzONC"
+      class="sc-hKFyIo lnHSxj"
+      data-testid="burgermenu"
     >
       <button
-        class="sc-AxjAm dOvMlp"
+        class="sc-bdnylx bimBLs"
         data-testid="burger"
       >
         <div
@@ -30,9 +31,20 @@ exports[`snapshot: Navbar component 1`] = `
         />
       </button>
       <nav
-        class="sc-AxirZ QGhep"
+        class="sc-gtssRu gtXGLq"
         data-testid="menu"
+<<<<<<< HEAD
       />
+=======
+      >
+        <a
+          class="sc-dlnjPT gpLYWd"
+          href="#/test-slug"
+        >
+          test-title
+        </a>
+      </nav>
+>>>>>>> c6420638d2a25e140f5b9c22abf504290d6cfc4b
     </div>
   </div>
 </DocumentFragment>

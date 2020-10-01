@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot: BurgerMenu component 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFyIo lnHSxj"
+    data-testid="burgermenu"
+  >
+    <button
+      class="sc-bdnylx bimBLs"
+      data-testid="burger"
+    >
+      <div
+        data-testid="slice-one"
+      />
+      <div
+        data-testid="slice-two"
+      />
+      <div
+        data-testid="slice-three"
+      />
+    </button>
+    <nav
+      class="sc-gtssRu gtXGLq"
+      data-testid="menu"
+    >
+      <a
+        class="sc-dlnjPT gpLYWd"
+        href="#/test-slug"
+      >
+        test-title
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;

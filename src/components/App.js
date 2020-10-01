@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import themes from '../styles/themes';
 import getContent from '../services/get-content';
-import Navbar from  './library/Navbar';
-import Page from './library/Page';
+import Navbar from './library/Navbar';
+import Routes from './helpers/routes';
+import Footer from './Footer';
 
 function App() {
-  const [content, setContent] = useState({
-  });  
+  const [content, setContent] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -16,13 +17,18 @@ function App() {
     })();
   }, []);
 
-  console.log(content);
-
   return (
     <>
       <ThemeProvider theme={themes.default}>
         <Navbar content={content} />
-        {content.pages && <Page pageContent={content.pages[0]} />}
+        <main>
+          <Switch>
+            { content.pages?.length && (
+              <Routes pages={content.pages} />
+            )}
+          </Switch>
+        </main>
+        <Footer fundingPartners={content.fundingPartners} contacts={content.contacts} />
       </ThemeProvider>
     </>
   );
