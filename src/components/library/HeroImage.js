@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import Heading from './Heading';
 
 const StyledHeroImage = styled.div`
-  height: calc(60vh - 50px);
+  height: fit-content;
+  min-height: calc(60vh - 50px);
   margin: 50px 0 0 0;
   width: 100vw;
   background-color: ${(props) => props.theme.cardBackground};
@@ -13,7 +14,8 @@ const StyledHeroImage = styled.div`
   background-size: cover;
 
   div {
-    height: 100%;
+    height: fit-content;
+    min-height: calc(60vh - 50px);
     width: 100%;
     background: ${(props) => props.theme.filter};
     display: flex;
