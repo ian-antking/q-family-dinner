@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Heading = styled.h1`
-  width: fit-content;
+  max-width: 80%;
+  max-height: 80%;
   padding: 10px 20px;
   color: ${(props) => props.theme.headingText};
   text-align: center;

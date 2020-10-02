@@ -8,7 +8,7 @@ export default {
     quoteText: 'rgba(132, 153, 177, 1)',
     cardHeadingText: 'black',
     cardText: 'black',
-    cardBackground: 'whitesmoke',
+    cardBackground: 'rgba(245, 245, 245, 0.95)',
     cardBorder: '#eeeeee',
   },
 };
