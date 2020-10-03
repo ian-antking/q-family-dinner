@@ -60,9 +60,7 @@ const StyledContributorCard = styled(Card)`
 
 `;
 
-const ContributorCard = ({ contributor }) => {
-  console.log(contributor);
-  return (
+const ContributorCard = ({ contributor }) => (
   <StyledContributorCard>
     <div>
       <img
@@ -81,7 +79,6 @@ const ContributorCard = ({ contributor }) => {
     </div>
   </StyledContributorCard>
 );
-  };
 
 ContributorCard.defaultProps = {
   contributor: {},

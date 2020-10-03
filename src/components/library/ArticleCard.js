@@ -28,7 +28,7 @@ const StyledArticleCard = styled(LinkCard)`
 
 const ArticleCard = ({ targetArticle }) => (
   <StyledArticleCard to={targetArticle.data.target.fields.slug}>
-    <img className="articleCardImage" src={targetArticle.data.target.fields.heroImage.fields.file.url} alt={targetArticle.data.target.fields.heroImage.fields.file.title} />
+    <img className="articleCardImage" src={targetArticle.data.target.fields.heroImage.fields.file.url} alt={targetArticle.data.target.fields.heroImage.fields.title} />
     <h1 className="articleCardHeading">{targetArticle.data.target.fields.title}</h1>
     <p className="articleCardText">{targetArticle.data.target.fields.blurb}</p>
   </StyledArticleCard>
