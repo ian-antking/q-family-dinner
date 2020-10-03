@@ -60,7 +60,9 @@ const StyledContributorCard = styled(Card)`
 
 `;
 
-const ContributorCard = ({ contributor }) => (
+const ContributorCard = ({ contributor }) => {
+  console.log(contributor);
+  return (
   <StyledContributorCard>
     <div>
       <img
@@ -79,6 +81,7 @@ const ContributorCard = ({ contributor }) => (
     </div>
   </StyledContributorCard>
 );
+  };
 
 ContributorCard.defaultProps = {
   contributor: {},
@@ -100,10 +103,7 @@ ContributorCard.propTypes = {
         content: PropTypes.arrayOf(
           PropTypes.shape({
             content: PropTypes.arrayOf(
-              PropTypes.shape({
-                value: PropTypes.string.isRequired,
-
-              }),
+              PropTypes.shape({}),
             ),
           }),
         ),

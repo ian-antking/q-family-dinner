@@ -39,7 +39,7 @@ const Navbar = ({ content }) => (
 );
 
 Navbar.propTypes = {
-  content: PropTypes.object.isRequired,
+  content: PropTypes.shape({}).isRequired,
 };
 
 export default Navbar;

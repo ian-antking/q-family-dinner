@@ -33,6 +33,7 @@ const ArticleCard = ({ targetArticle }) => (
     <p className="articleCardText">{targetArticle.data.target.fields.blurb}</p>
   </StyledArticleCard>
 );
+
 ArticleCard.defaultProps = {
   targetArticle: {},
 };
@@ -49,7 +50,6 @@ ArticleCard.propTypes = {
             fields: PropTypes.shape({
               file: PropTypes.shape({
                 url: PropTypes.string.isRequired,
-                title: PropTypes.string.isRequired,
               }),
               title: PropTypes.string.isRequired,
             }),
