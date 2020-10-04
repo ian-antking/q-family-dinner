@@ -28,7 +28,11 @@ const StyledArticleCard = styled(LinkCard)`
 
 const ArticleCard = ({ targetArticle }) => (
   <StyledArticleCard to={targetArticle.data.target.fields.slug}>
-    <img className="articleCardImage" src={targetArticle.data.target.fields.heroImage.fields.file.url} alt={targetArticle.data.target.fields.heroImage.fields.title} />
+    <img
+      className="articleCardImage"
+      src={targetArticle.data.target.fields.heroImage?.fields.file.url || 'http://images.ctfassets.net/yq2ab76w5obt/2dVGN7sDbJIbBGRjy6qftW/e87b464009c3df4cb5a1527c0d4f906e/hero-placeholder.jpg'}
+      alt={targetArticle.data.target.fields.heroImage?.fields.title || 'Placeholder header image. Geometric shapes on a purple grid.'}
+    />
     <h1 className="articleCardHeading">{targetArticle.data.target.fields.title}</h1>
     <p className="articleCardText">{targetArticle.data.target.fields.blurb}</p>
   </StyledArticleCard>
