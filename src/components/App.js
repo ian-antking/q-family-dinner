@@ -5,7 +5,7 @@ import themes from '../styles/themes';
 import getContent from '../services/get-content';
 import getImages from '../services/get-images';
 import Navbar from './library/Navbar';
-import Routes from './helpers/routes';
+import Routes from './helpers/Routes';
 import Footer from './Footer';
 
 function App() {
