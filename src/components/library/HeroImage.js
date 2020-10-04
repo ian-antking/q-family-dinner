@@ -7,7 +7,7 @@ const StyledHeroImage = styled.div`
   height: fit-content;
   min-height: calc(60vh - 50px);
   margin: 50px 0 0 0;
-  width: 100vw;
+  width: 100%;
   background-color: ${(props) => props.theme.cardBackground};
   background-image: url(${(props) => props.image});
   background-position: center;

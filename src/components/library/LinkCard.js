@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const LinkCard = styled(Link)`
-  width: calc(100vw - 20px);
+  width: calc(100% - 20px);
   margin: 10px 10px 20px 10px;
   max-width: 300px;
   background: ${(props) => props.theme.cardBackground};
