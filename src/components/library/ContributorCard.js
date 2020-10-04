@@ -67,7 +67,9 @@ const ContributorCard = ({ contributor }) => (
       <img
         className="contributor-thumb"
         src={contributor.fields.photo.fields.file.url}
-        alt={contributor.fields.photo.fields.description}
+        alt={contributor.fields.photo.fields.description
+          ? contributor.fields.photo.fields.description
+          : 'Contributor thumbnail image.'}
       />
       <h2>{contributor.fields.name}</h2>
     </div>
@@ -89,7 +91,7 @@ ContributorCard.propTypes = {
     fields: PropTypes.shape({
       photo: PropTypes.shape({
         fields: PropTypes.shape({
-          description: PropTypes.string.isRequired,
+          description: PropTypes.string,
           file: PropTypes.shape({
             url: PropTypes.string.isRequired,
           }),
