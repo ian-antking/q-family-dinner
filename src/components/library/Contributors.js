@@ -22,7 +22,9 @@ const Contributors = ({ contributors }) => (
 );
 
 Contributors.propTypes = {
-  contributors: PropTypes.array.isRequired,
+  contributors: PropTypes.arrayOf(
+    PropTypes.shape({}),
+  ).isRequired,
 };
 
 export default Contributors;

@@ -3,7 +3,7 @@ import ContactLogo from '../ContactLogo';
 
 const renderContacts = (contributor) => {
   const contactTypes = [
-    'instagram', 'twitter', 'facebook', 'website', 'email',
+    'twitter', 'instagram', 'facebook', 'website', 'email',
   ];
   return contactTypes.map((type) => contributor.fields[type] && (
     <ContactLogo
