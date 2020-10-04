@@ -48,6 +48,11 @@ const StyledContributorCard = styled(Card)`
   color: ${(props) => props.theme.cardText};
   }
 
+  ul, ol {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
 `;
 
 const ContributorCard = ({ contributor }) => (
