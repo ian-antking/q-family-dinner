@@ -7,33 +7,33 @@ import renderContacts from '../helpers/renderContacts';
 import options from '../helpers/options';
 
 const StyledContributorCard = styled(Card)`
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
 
   div {
     display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .contributor-bio {
     flex-flow: column nowrap;
+  }
+
+  .contributor-thumb {
+    height: 100px;
+    width: 100px;
+    margin: 0 20px 20px 0;
+    border-radius: 50px;
+    object-fit: cover;
   }
 
   .social-links {
     height: 40px;
     font-size: 2.2em;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: space-evenly;
   }
 
-  .contributor-thumb {
-    height: 100px;
-    width: 100px;
-    margin: 0 20px 0 0;
-    border-radius: 50px;
-    object-fit: cover;
-  }
-
-  img {
-    width: 80%;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     margin: 0 0 10px 0;
     color: ${(props) => props.theme.cardHeadingText};
     font-weight: bold;
@@ -48,16 +48,6 @@ const StyledContributorCard = styled(Card)`
   color: ${(props) => props.theme.cardText};
   }
 
-  li>p {
-    margin: 8px;
-  }
-
-  blockquote {
-    color: ${(props) => props.theme.quoteText};
-    font-style: italic;
-    font-size: 1.1em;
-  }
-
 `;
 
 const ContributorCard = ({ contributor }) => (
@@ -68,14 +58,13 @@ const ContributorCard = ({ contributor }) => (
         src={contributor.fields.photo.fields.file.url}
         alt={contributor.fields.photo.fields.description}
       />
-    </div>
-
-    <div>
       <h2>{contributor.fields.name}</h2>
+    </div>
+    <div className="contributor-bio">
       {documentToReactComponents(contributor.fields.bio, options)}
-      <div className="social-links">
-        {renderContacts(contributor)}
-      </div>
+    </div>
+    <div className="social-links">
+      {renderContacts(contributor)}
     </div>
   </StyledContributorCard>
 );

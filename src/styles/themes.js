@@ -10,5 +10,7 @@ export default {
     cardText: 'black',
     cardBackground: 'rgba(245, 245, 245, 0.95)',
     cardBorder: '#eeeeee',
+    contributorsBackground: 'rgba(205, 205, 205, 1)',
+    contributorsBorder: '#eeeeee',
   },
 };
