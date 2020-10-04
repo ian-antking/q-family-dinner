@@ -18,8 +18,9 @@ const ArticleStyles = styled.div`
     max-width: 80%;
   }
 
-  li>p {
-    margin: 8px;
+  ul, ol {
+    margin-left: 0;
+    padding-left: 20px;
   }
 
   hr {
