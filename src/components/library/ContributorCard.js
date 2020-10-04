@@ -7,6 +7,7 @@ import renderContacts from '../helpers/renderContacts';
 import options from '../helpers/options';
 
 const StyledContributorCard = styled(Card)`
+  padding-top: 10px;
   flex-flow: column nowrap;
 
   div {
@@ -14,16 +15,13 @@ const StyledContributorCard = styled(Card)`
     flex-flow: row nowrap;
   }
 
-  .contributor-bio {
-    flex-flow: column nowrap;
+  .contributor-heading {
+    height: 120px;
+    align-items: center;
   }
 
-  .contributor-thumb {
-    height: 100px;
-    width: 100px;
-    margin: 0 20px 20px 0;
-    border-radius: 50px;
-    object-fit: cover;
+  .contributor-bio {
+    flex-flow: column nowrap;
   }
 
   .social-links {
@@ -31,6 +29,14 @@ const StyledContributorCard = styled(Card)`
     font-size: 2.2em;
     flex-flow: row wrap;
     justify-content: space-evenly;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 0 20px 0 0;
+    border-radius: 50px;
+    object-fit: cover;
   }
 
   h1 {
@@ -57,7 +63,7 @@ const StyledContributorCard = styled(Card)`
 
 const ContributorCard = ({ contributor }) => (
   <StyledContributorCard>
-    <div>
+    <div className="contributor-heading">
       <img
         className="contributor-thumb"
         src={contributor.fields.photo.fields.file.url}
