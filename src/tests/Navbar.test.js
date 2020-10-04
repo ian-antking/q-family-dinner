@@ -7,22 +7,22 @@ const content = {
   pages: [
     {
       fields: {
-        title: "test-title",
-        slug: "test-slug",
-        primaryPage: true
+        title: 'test-title',
+        slug: 'test-slug',
+        primaryPage: true,
       },
       sys: {
-        id: "test-id"
-      }
-    }
-  ]
+        id: 'test-id',
+      },
+    },
+  ],
 };
 
 test('snapshot: Navbar component', () => {
   const { asFragment } = render(
     <Router>
-      <Navbar content={content}/>
-    </Router>
+      <Navbar content={content} />
+    </Router>,
   );
   const component = asFragment();
   expect(component).toMatchSnapshot();
@@ -31,19 +31,19 @@ test('snapshot: Navbar component', () => {
 test('Navbar component renders', () => {
   const { getByTestId } = render(
     <Router>
-      <Navbar content={content}/>
-    </Router>
+      <Navbar content={content} />
+    </Router>,
   );
   const componentId = getByTestId('navbar');
   expect(componentId).toBeInTheDocument();
 });
 
-test(`Navbar includes a Home Link that links to "#/"`, () => {                                       
-  const { getByTestId } = render( 
+test('Navbar includes a Home Link that links to "#/"', () => {
+  const { getByTestId } = render(
     <Router>
-      <Navbar content={content}/>
-    </Router>
+      <Navbar content={content} />
+    </Router>,
   );
   const homeLink = getByTestId('homeLink');
-  expect(homeLink.getAttribute("href")).toBe("#/")
- });
+  expect(homeLink.getAttribute('href')).toBe('#/');
+});

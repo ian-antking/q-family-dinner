@@ -22,7 +22,11 @@ const Contacts = ({ contacts }) => (
     <IconContext.Provider value={{ className: 'footer-icons', size: '2em' }}>
       <ContactLogos>
         { contacts.map((contact) => (
-          <ContactLogo key={contact.fields.name} contact={contact} />
+          <ContactLogo
+            key={contact.fields.name}
+            name={contact.fields.name}
+            link={contact.fields.link}
+          />
         )) }
       </ContactLogos>
     </IconContext.Provider>

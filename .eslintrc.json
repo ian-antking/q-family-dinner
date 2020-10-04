@@ -19,6 +19,7 @@
         "react"
     ],
     "rules": {
+        "linebreak-style": 0,
         "react/jsx-props-no-spreading": [0],
         "react/jsx-filename-extension": [
           1,

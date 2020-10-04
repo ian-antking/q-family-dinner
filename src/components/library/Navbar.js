@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import BurgerMenu from './BurgerMenu';
@@ -10,8 +11,8 @@ const StyledNavbar = styled.div`
   height: 50px;
   width: calc(100vw - 20px);
   padding: 0 5px 0 15px;
-  color: #000000;
-  background: whitesmoke;
+  color: ${(props) => props.theme.navbarText};
+  background: ${(props) => props.theme.navbar};
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -30,11 +31,15 @@ const StyledNavbar = styled.div`
   }
 `;
 
-const NavBar = ({ content }) => (
+const Navbar = ({ content }) => (
   <StyledNavbar data-testid="navbar">
     <Link data-testid="homeLink" to="/">Queer Family Tea</Link>
     <BurgerMenu content={content} />
   </StyledNavbar>
 );
 
-export default NavBar;
+Navbar.propTypes = {
+  content: PropTypes.shape({}).isRequired,
+};
+
+export default Navbar;

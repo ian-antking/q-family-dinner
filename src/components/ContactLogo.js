@@ -7,6 +7,7 @@ import {
   FaTwitterSquare,
   FaEnvelope,
   FaLink,
+  FaGlobe,
 } from 'react-icons/fa';
 
 const Logos = {
@@ -14,28 +15,25 @@ const Logos = {
   email: <FaEnvelope />,
   instagram: <FaInstagram />,
   twitter: <FaTwitterSquare />,
+  website: <FaGlobe />,
   default: <FaLink />,
 };
 
 const LogoBox = styled.div`
-  margin: 5px;
+margin: 5px;
 `;
 
-const ContactLogo = ({ contact }) => (
+const ContactLogo = ({ name, link }) => (
   <LogoBox>
-    <a href={contact.fields.link}>
-      {Logos[contact.fields.name] || Logos.default}
+    <a href={link}>
+      {Logos[name] || Logos.default}
     </a>
   </LogoBox>
 );
 
 ContactLogo.propTypes = {
-  contact: PropTypes.shape({
-    fields: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default ContactLogo;

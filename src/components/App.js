@@ -5,7 +5,7 @@ import themes from '../styles/themes';
 import getContent from '../services/get-content';
 import getImages from '../services/get-images';
 import Navbar from './library/Navbar';
-import Routes from './helpers/Routes';
+import Routes from './helpers/routes';
 import Footer from './Footer';
 
 function App() {
@@ -28,7 +28,9 @@ function App() {
         <main>
           <Switch>
             { content.pages?.length && (
-              <Routes pages={content.pages} />
+              <Routes
+                pages={content.pages}
+              />
             )}
           </Switch>
         </main>
