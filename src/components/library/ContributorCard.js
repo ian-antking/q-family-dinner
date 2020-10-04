@@ -37,6 +37,7 @@ const StyledContributorCard = styled(Card)`
     margin: 0 20px 0 0;
     border-radius: 50px;
     object-fit: cover;
+    background-color: white;
   }
 
   h1 {
@@ -66,10 +67,8 @@ const ContributorCard = ({ contributor }) => (
     <div className="contributor-heading">
       <img
         className="contributor-thumb"
-        src={contributor.fields.photo.fields.file.url}
-        alt={contributor.fields.photo.fields.description
-          ? contributor.fields.photo.fields.description
-          : 'Contributor thumbnail image.'}
+        src={contributor.fields.photo?.fields.file.url || 'https://images.ctfassets.net/yq2ab76w5obt/2FCrse8Q22xitoi7y2Os3I/c3e52c2d03b7928a69cdb654dfcc6e9e/thumbnail-placeholder.png'}
+        alt={contributor.fields.photo?.fields.description || 'Contributor thumbnail image.'}
       />
       <h2>{contributor.fields.name}</h2>
     </div>
