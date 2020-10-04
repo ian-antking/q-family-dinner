@@ -30,6 +30,7 @@ function App() {
             { content.pages?.length && (
               <Routes
                 pages={content.pages}
+                images={images}
               />
             )}
           </Switch>
