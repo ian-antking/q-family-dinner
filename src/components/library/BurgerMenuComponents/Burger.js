@@ -56,7 +56,7 @@ Burger.defaultProps = {
 };
 
 Burger.propTypes = {
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool,
   setOpen: PropTypes.func.isRequired,
 };
 
