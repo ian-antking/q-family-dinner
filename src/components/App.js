@@ -24,7 +24,9 @@ function App() {
         <main>
           <Switch>
             { content.pages?.length && (
-              <Routes pages={content.pages} />
+              <Routes
+                pages={content.pages}
+              />
             )}
           </Switch>
         </main>

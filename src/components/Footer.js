@@ -10,8 +10,8 @@ const FooterBox = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 5px 0;
   width: 100%;
-  height: 170px;
   background-color: whitesmoke;
 
   .footer-icons {
@@ -27,6 +27,12 @@ const LogosBox = styled.div`
   align-items: center;
 `;
 
+const Attribution = styled.a`
+  font-size: 0.8em;
+  text-align: center;
+  padding: 5px 0 0 0;
+`;
+
 const Footer = ({ fundingPartners, contacts }) => (
   <FooterBox>
     <LogosBox>
@@ -34,6 +40,7 @@ const Footer = ({ fundingPartners, contacts }) => (
       <FundingPartners fundingPartners={fundingPartners} />
     </LogosBox>
     <Link to="privacy">our privacy policy</Link>
+    <Attribution href="https://www.freepik.com/vectors/background">Default hero image created by freepik - www.freepik.com</Attribution>
   </FooterBox>
 );
 

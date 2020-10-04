@@ -7,15 +7,17 @@ import Contributors from './Contributors';
 const Page = ({ pageContent }) => (
   <>
     <HeroImage
-      image={pageContent.fields.heroImage.fields.file.url}
+      image={pageContent.fields.heroImage?.fields.file.url || 'http://images.ctfassets.net/yq2ab76w5obt/2dVGN7sDbJIbBGRjy6qftW/e87b464009c3df4cb5a1527c0d4f906e/hero-placeholder.jpg'}
       heading={pageContent.fields.title}
     />
     <Article
       text={pageContent}
     />
-    <Contributors
-      contributors={pageContent.fields.contributors}
-    />
+    {pageContent.fields.contributors && (
+      <Contributors
+        contributors={pageContent.fields.contributors}
+      />
+    )}
   </>
 );
 
