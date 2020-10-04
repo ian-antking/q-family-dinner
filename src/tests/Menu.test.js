@@ -3,8 +3,6 @@ import { HashRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import Menu from '../components/library/BurgerMenuComponents/Menu';
 
-const closed = false;
-const open = true;
 const content = {
   pages: [
     {
@@ -63,7 +61,7 @@ const content = {
 test('snapshot: Menu component', () => {
   const { asFragment } = render(
     <Router>
-      <Menu open={closed} content={content} />
+      <Menu content={content} />
     </Router>,
   );
   const component = asFragment();
@@ -73,7 +71,7 @@ test('snapshot: Menu component', () => {
 test('Menu component renders', () => {
   const { getByTestId } = render(
     <Router>
-      <Menu open={closed} content={content} />
+      <Menu content={content} />
     </Router>,
   );
   const component = getByTestId('menu');
@@ -83,7 +81,7 @@ test('Menu component renders', () => {
 test('Menu component renders', () => {
   const { getByTestId } = render(
     <Router>
-      <Menu open={closed} content={content} />
+      <Menu content={content} />
     </Router>,
   );
   const component = getByTestId('menu');
@@ -93,7 +91,7 @@ test('Menu component renders', () => {
 test('Menu component renders a number of children equal to the number of primary pages in the content prop', () => {
   const { getByTestId } = render(
     <Router>
-      <Menu open={closed} content={content} />
+      <Menu content={content} />
     </Router>,
   );
   const component = getByTestId('menu');
