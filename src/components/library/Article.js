@@ -8,9 +8,9 @@ const ArticleStyles = styled.div`
   padding: 0 20px;
 
   blockquote {
+    margin: 0 10px;
     color: ${(props) => props.theme.quoteText};
     font-style: italic;
-    font-size: 1.1em;
   }
 
   img {
