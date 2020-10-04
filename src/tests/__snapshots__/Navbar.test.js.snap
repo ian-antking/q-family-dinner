@@ -3,7 +3,7 @@
 exports[`snapshot: Navbar component 1`] = `
 <DocumentFragment>
   <div
-    class="sc-eCApGN fwKblR"
+    class="sc-eCApGN ertNKi"
     data-testid="navbar"
   >
     <a
@@ -33,9 +33,6 @@ exports[`snapshot: Navbar component 1`] = `
       <nav
         class="sc-gtssRu gtXGLq"
         data-testid="menu"
-<<<<<<< HEAD
-      />
-=======
       >
         <a
           class="sc-dlnjPT gpLYWd"
@@ -44,7 +41,6 @@ exports[`snapshot: Navbar component 1`] = `
           test-title
         </a>
       </nav>
->>>>>>> c6420638d2a25e140f5b9c22abf504290d6cfc4b
     </div>
   </div>
 </DocumentFragment>

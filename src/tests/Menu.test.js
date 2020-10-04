@@ -61,7 +61,7 @@ const content = {
 test('snapshot: Menu component', () => {
   const { asFragment } = render(
     <Router>
-      <Menu content={content} />
+      <Menu content={content} setOpen={jest.fn()} />
     </Router>,
   );
   const component = asFragment();
@@ -71,7 +71,7 @@ test('snapshot: Menu component', () => {
 test('Menu component renders', () => {
   const { getByTestId } = render(
     <Router>
-      <Menu content={content} />
+      <Menu content={content} setOpen={jest.fn()} />
     </Router>,
   );
   const component = getByTestId('menu');
@@ -81,7 +81,7 @@ test('Menu component renders', () => {
 test('Menu component renders', () => {
   const { getByTestId } = render(
     <Router>
-      <Menu content={content} />
+      <Menu content={content} setOpen={jest.fn()} />
     </Router>,
   );
   const component = getByTestId('menu');
@@ -91,7 +91,7 @@ test('Menu component renders', () => {
 test('Menu component renders a number of children equal to the number of primary pages in the content prop', () => {
   const { getByTestId } = render(
     <Router>
-      <Menu content={content} />
+      <Menu content={content} setOpen={jest.fn()} />
     </Router>,
   );
   const component = getByTestId('menu');

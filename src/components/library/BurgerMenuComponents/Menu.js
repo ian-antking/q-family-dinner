@@ -60,10 +60,11 @@ const Menu = ({ open, setOpen, content }) => {
 
 Menu.defaultProps = {
   content: {},
+  open: false,
 };
 
 Menu.propTypes = {
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool,
   setOpen: PropTypes.func.isRequired,
   content: PropTypes.shape({
     pages: PropTypes.arrayOf.isRequired,
