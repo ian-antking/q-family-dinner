@@ -5,7 +5,6 @@ import sponsors from '../utils/sponsors';
 
 const Footer = (props) => {
   const { pathname } = props;
-  console.log(sponsors)
   return (
     <footer>
       { pathname !== '/contact' ? (
