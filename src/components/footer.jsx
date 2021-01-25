@@ -15,11 +15,11 @@ const Footer = (props) => {
             instagram="https://www.instagram.com/queerfamilytea/"
             email="mailto:info@queerfamilytea.com"
           />
-          <div style={{ display: 'flex',  alignItems: 'center', justifyContent: 'space-between', margin: '10px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex',  alignItems: 'center', justifyContent: 'center', margin: '10px', flexWrap: 'wrap' }}>
           {
             sponsors.map(sponsor => (
-              <div key={sponsor}>
-                <img style={{ maxWidth: '10vw' }} src={sponsor}></img>
+              <div key={sponsor} style={{ margin: '10px' }}>
+                <img style={{ maxWidth: '20vw' }} src={sponsor}></img>
               </div>
             ))
           }
