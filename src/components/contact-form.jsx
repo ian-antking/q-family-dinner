@@ -58,7 +58,7 @@ class ContactForm extends React.Component {
       message: '',
       sending: true,
     }, () => {
-      const URL = `${apiString}/message/enquiry`;
+      const URL = `${apiString}/message`;
       const message = this.constructMessage();
       const messageBody = { text: message };
       window.fetch(URL, {
